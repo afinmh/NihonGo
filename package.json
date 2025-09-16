@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "ts-node ./src/nlp/train.ts; tsc && vite build",
-    "preview": "vite preview",
-    "train": "ts-node ./src/nlp/train.ts"
+  "dev": "vite",
+  "build": "ts-node ./src/nlp/train.ts && tsc && vite build",
+  "preview": "vite preview",
+  "train": "ts-node ./src/nlp/train.ts"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
