@@ -29,24 +29,24 @@ body {
     background-color: var(--bg-cream);
 }
 
-/* --- BARU: Logo Kanan Atas --- */
+/* --- Logo Kanan Atas --- */
 #top-right-logo-container {
     position: absolute;
-    top: 40px; /* Jarak dari atas */
-    right: 40px; /* Jarak dari kanan */
-    z-index: 50; /* Pastikan di atas elemen lain, tapi di bawah start-overlay */
-    pointer-events: none; /* Agar tidak menghalangi klik di belakangnya */
+    top: 40px;
+    right: 40px;
+    z-index: 50;
+    pointer-events: none;
 }
 
 #top-right-logo {
-    width: 250px; /* Lebar sesuai permintaan */
+    width: 250px;
     height: auto;
     opacity: 0; /* Mulai tersembunyi */
-    transition: opacity 1s ease-out; /* Animasi fade in */
 }
 
+/* Class .visible sekarang hanya mengatur opacity, transisinya di animation.css */
 #top-right-logo.visible {
-    opacity: 1; /* Akan ditambahkan via JS setelah splash screen selesai */
+    opacity: 1;
 }
 
 /* --- Overlay Tombol Mulai --- */
@@ -61,7 +61,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.5s ease-out;
 }
 
 #start-overlay.hidden {
@@ -74,7 +73,6 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
 #start-interactive-area:hover {
@@ -85,7 +83,6 @@ body {
   width: 200px;
   height: auto;
   margin-bottom: 15px;
-  animation: pulse 4s infinite ease-in-out;
 }
 
 #click-me-text {
@@ -94,12 +91,6 @@ body {
   color: white;
   text-shadow: 0 2px 5px rgba(0,0,0,0.5);
   opacity: 0.9;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
 }
 
 /* --- Splash Screen --- */
@@ -114,10 +105,10 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: transform 1s ease-in-out;
     overflow: hidden;
 }
 
+/* Class .hidden sekarang hanya mengatur transform, transisinya di animation.css */
 #splash-screen.hidden {
     transform: translateY(-100%);
 }
@@ -140,19 +131,6 @@ body {
     height: auto;
     opacity: 0.9;
     clip-path: circle(0% at 50% 50%);
-}
-
-.splash-logo.animate {
-    animation: reveal-brush 4s ease-out forwards;
-}
-
-@keyframes reveal-brush {
-    to { clip-path: circle(75% at 50% 50%); }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
 }
 
 /* --- Main Content --- */
@@ -188,11 +166,18 @@ body {
     z-index: 2;
     opacity: 0;
     transform: scale(1.1);
+    
+    /* TAMBAHKAN INI: Buat elemen lebih tinggi dari layar */
+    position: absolute; /* Pastikan posisinya absolut */
+    top: -5%;         /* Geser ke atas 5% untuk menengahkan kelebihan tinggi */
+    height: 110%;       /* Tingginya 110% agar ada "cadangan" 5% di atas & bawah */
+    width: 100%;
 }
 
 .bg-ornament {
     background-image: url('assets/ornament-bg.png');
     z-index: 3;
+    /* State awal sebelum animasi */
     opacity: 0;
     transform: translateY(20px);
 }
@@ -204,24 +189,31 @@ body {
 
 .center-start {
     position: absolute;
-    top: 65%; /* DIUBAH: Posisi vertikal digeser ke bawah (dari 50%) */
-    left: 60%;
+    top: 65%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    opacity: 0; /* Biarkan ini untuk animasi fade-in Anda */
+    opacity: 0; /* State awal sebelum animasi */
+    cursor: pointer; /* Tambahkan cursor pointer agar terlihat bisa diklik */
+    transition: transform 0.2s ease; /* Tambahkan transisi */
 }
 
-.center-start:hover {
+.about {
+    position: absolute;
+    top: 75%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0; /* State awal sebelum animasi */
+    cursor: pointer; /* Tambahkan cursor pointer */
+    transition: transform 0.2s ease; /* Tambahkan transisi */
+}
+
+/* Selector hover yang benar untuk masing-masing elemen */
+.center-start:hover,
+.about:hover {
     transform: translate(-50%, -50%) scale(1.05);
 }
-
-/* BARU: Styling untuk link agar tidak ada garis bawah */
-.start-link {
-    text-decoration: none; /* Menghilangkan garis bawah */
-    color: inherit; /* Mengambil warna dari elemen induk (var(--text-dark)) */
-    display: inline-block; /* Agar efek hover lebih rapi */
-}
-
 
 .japanese-text {
     font-family: 'Noto Sans JP', sans-serif;
@@ -235,12 +227,3 @@ body {
     font-weight: 700;
     margin-top: 10px;
 }
-
-/* Keyframes & Class Pemicu untuk Animasi Main Content */
-@keyframes fadeIn-scaleUp { to { opacity: 1; transform: scale(1); } }
-@keyframes fadeIn-slideUp { to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { to { opacity: 1; } }
-
-.bg-wave.animate { animation: fadeIn-scaleUp 1.5s ease-out forwards; }
-.bg-ornament.animate { animation: fadeIn-slideUp 1.2s ease-out forwards; }
-.center-start.animate { animation: fadeIn 1s ease-in forwards; }

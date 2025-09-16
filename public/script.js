@@ -1,22 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Definisi Variabel ---
+    // --- Definisi Variabel Global ---
     const startOverlay = document.getElementById('start-overlay');
     const startInteractiveArea = document.getElementById('start-interactive-area');
     const splashScreen = document.getElementById('splash-screen');
     const splashTextElement = document.getElementById('splash-text');
     const splashLogo = document.querySelector('.splash-logo');
-    const bgWave = document.querySelector('.bg-wave');
-    const bgOrnament = document.querySelector('.bg-ornament');
+    const bgWave = document.querySelector('#main-content .bg-wave');
+    const bgOrnament = document.querySelector('#main-content .bg-ornament');
     const centerContent = document.querySelector('.center-start');
+    const aboutContent = document.querySelector('.about');
     const topRightLogo = document.getElementById('top-right-logo');
+    
+    // Variabel untuk Logika Pergantian Section
+    const mainContent = document.getElementById('main-content');
+    const levelSelectScreen = document.getElementById('level-select-screen');
+    const aboutScreen = document.getElementById('about-screen'); // BARU
+    const startButton = document.getElementById('start-button');
+    const aboutButton = document.getElementById('about-button');
 
-    // Buat objek audio untuk musik latar
+    // Objek Audio
     const backgroundMusic = new Audio('musik-latar.mp3');
 
+    // --- Fungsi-fungsi Animasi Awal ---
     const textToType = "NihonGo!";
     let charIndex = 0;
 
-    // --- Fungsi-fungsi Animasi ---
     function startTypingAnimation() {
         splashTextElement.style.animation = 'blink-caret .75s step-end infinite';
         function type() {
@@ -27,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 splashTextElement.style.borderRight = 'none';
                 splashTextElement.style.animation = 'none';
-                // Jeda diatur agar total splash screen 8 detik
                 setTimeout(hideSplashScreen, 2100); 
             }
         }
@@ -38,9 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         bgWave.classList.add('animate');
         setTimeout(() => { bgOrnament.classList.add('animate'); }, 400);
         setTimeout(() => { centerContent.classList.add('animate'); }, 900);
+        setTimeout(() => { aboutContent.classList.add('animate'); }, 900);
         setTimeout(() => {
             topRightLogo.classList.add('visible');
-        }, 1200); // Jeda agar muncul setelah elemen lain
+        }, 1200);
     }
 
     function hideSplashScreen() {
@@ -52,18 +60,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { once: true });
     }
 
-    // --- Logika Utama: Menunggu Klik Awal ---
-    startInteractiveArea.addEventListener('click', () => {
-        // Sembunyikan overlay
-        startOverlay.classList.add('hidden');
+    // --- Fungsi-fungsi Logika UI (Pergantian Section) ---
+    const showLevelSelect = () => {
+        mainContent.classList.add('hidden');
+        levelSelectScreen.classList.remove('hidden');
+    };
 
-        // Putar musik
+    const showAboutScreen = () => { // BARU
+        mainContent.classList.add('hidden');
+        aboutScreen.classList.remove('hidden');
+    };
+
+    // --- Event Listeners (Titik Awal & Interaksi) ---
+    startInteractiveArea.addEventListener('click', () => {
+        startOverlay.classList.add('hidden');
         backgroundMusic.play();
         
-        // Jalankan seluruh urutan animasi setelah overlay diklik
         setTimeout(() => {
             splashLogo.classList.add('animate');
             setTimeout(startTypingAnimation, 2500); 
         }, 1000);
-    });
+    }, { once: true });
+
+    startButton.addEventListener('click', showLevelSelect);
+    aboutButton.addEventListener('click', showAboutScreen); // DIUBAH
 });

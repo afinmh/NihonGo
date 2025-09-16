@@ -11,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NihonGo!</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="level.css">
 </head>
 <body>
     <div id="top-right-logo-container">
@@ -37,14 +39,35 @@
         </div>
 
         <div class="content-overlay">
-            <a href="chat.html" class="start-link">
-                <div class="center-start">
-                    <p class="japanese-text">始める</p>
-                    <p class="english-text">Start!</p>
-                </div>
-            </a>
+            <div id="start-button" class="center-start">
+                <p class="japanese-text">始める</p>
+                <p class="english-text">Start!</p>
+            </div>
+            <div id="about-button" class="about">
+                <p class="japanese-text">について</p>
+                <p class="english-text">About</p>
+            </div>
         </div>
     </main>
+
+    <section id="level-select-screen" class="hidden">
+        <div class="background-layers">
+            <div class="bg-noise"></div>
+            <div class="bg-wave"></div> <div class="bg-ornament"></div>
+        </div>
+        
+        <div id="top-left-logo-container">
+             <img src="nihongo-logo.png" alt="Nihongo Logo" id="top-left-logo">
+        </div>
+
+        <div class="level-buttons-container">
+            <button class="level-button">Arc 1</button>
+            <button class="level-button">Arc 2</button>
+            <button class="level-button">Arc 3</button>
+            <button class="level-button">Arc 4</button>
+            <button class="level-button">Arc 5</button>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
