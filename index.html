@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NihonGo!</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NihonGo!</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animation.css">
-    <link rel="stylesheet" href="level.css">
+    <link rel="stylesheet" href="level.css"> <link rel="stylesheet" href="animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="top-right-logo-container">
@@ -37,7 +32,6 @@
             <div class="bg-wave"></div>
             <div class="bg-ornament"></div>
         </div>
-
         <div class="content-overlay">
             <div id="start-button" class="center-start">
                 <p class="japanese-text">始める</p>
@@ -50,25 +44,40 @@
         </div>
     </main>
 
-    <section id="level-select-screen" class="hidden">
-        <div class="background-layers">
-            <div class="bg-noise"></div>
-            <div class="bg-wave"></div> <div class="bg-ornament"></div>
-        </div>
+<section id="level-select-screen" class="hidden">
+    <div class="background-layers">
+        <div class="bg-noise"></div>
+        <div class="bg-level-select" style="background-image: url('assets/bg-level.png');"></div>
+    </div>
+    <div class="level-content-overlay">
+        <img src="nihongo-logo.png" alt="Logo" id="level-select-logo-left">
         
-        <div id="top-left-logo-container">
-             <img src="nihongo-logo.png" alt="Nihongo Logo" id="top-left-logo">
-        </div>
-
         <div class="level-buttons-container">
-            <button class="level-button">Arc 1</button>
-            <button class="level-button">Arc 2</button>
-            <button class="level-button">Arc 3</button>
-            <button class="level-button">Arc 4</button>
-            <button class="level-button">Arc 5</button>
+            <div class="level-button" data-level="1">
+                <span class="japanese-level-text">言葉の始まり</span>
+                <span class="arc-text">Arc 1</span>
+            </div>
+            <div class="level-button" data-level="2">
+                <span class="japanese-level-text">友達の言葉</span>
+                <span class="arc-text">Arc 2</span>
+            </div>
+            <div class="level-button" data-level="3">
+                <span class="japanese-level-text">日常の冒険</span>
+                <span class="arc-text">Arc 3</span>
+            </div>
+            <div class="level-button" data-level="4">
+                <span class="japanese-level-text">文字の力</span>
+                <span class="arc-text">Arc 4</span>
+            </div>
+            <div class="level-button" data-level="5">
+                <span class="japanese-level-text">日本語の達人</span>
+                <span class="arc-text">Arc 5</span>
+            </div>
         </div>
-    </section>
 
+         <div id="back-to-main-button">Back</div>
+    </div>
+</section>
     <script src="script.js"></script>
 </body>
 </html>

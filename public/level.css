@@ -1,69 +1,145 @@
-/* level-select.css */
-
-/* Kontainer utama untuk layar pemilihan level */
-/* DIUBAH MENJADI */
+/* --- Level Select Screen --- */
 #level-select-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: 100vh;
+    background-color: var(--bg-cream);
     z-index: 200;
-    opacity: 1;
-    transform: translateY(0); /* Posisi akhir */
-    /* Transisi untuk opacity DAN transform */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    overflow: hidden;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    
+    /* State Awal: Tersembunyi di atas & tidak bisa diklik */
+    transform: translateY(-100%);
+    pointer-events: none; 
 }
 
-#level-select-screen.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-100%); /* Posisi awal: di atas layar */
+/* State Tampil: Muncul dari atas & bisa diklik */
+#level-select-screen.visible {
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
-/* Posisi logo di kiri atas */
-#top-left-logo-container {
+/* State Keluar: Jatuh ke bawah */
+#level-select-screen.exiting {
+    transform: translateY(-100%);
+    pointer-events: none; /* Tidak bisa diklik saat animasi keluar */
+}
+
+/* --- Lapisan Background Level Select --- */
+.bg-level-select {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    z-index: 250;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    opacity: 0.9;
 }
 
-#top-left-logo {
-    width: 250px;
+.level-content-overlay {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* --- Logo Kiri --- */
+#level-select-logo-left {
+    position: absolute;
+    left: 50px;
+    top: 40px;
+    width: 300px; 
     height: auto;
 }
 
-/* Kontainer untuk tombol-tombol level */
+/* --- Container Tombol Level --- */
 .level-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 44%; 
     transform: translate(-50%, -50%);
-    display: flex;
-    gap: 25px; /* Jarak antar tombol */
-    z-index: 250;
+    width: 340px;
 }
 
-/* Gaya untuk setiap tombol level */
+/* --- Gaya Tombol Kuas Unik --- */
 .level-button {
-    font-family: 'Marykate', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    background-color: var(--bg-cream);
-    border: 3px solid var(--text-dark);
-    padding: 15px 40px;
-    border-radius: 50px;
+    background-color: transparent;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.25s ease-out;
+    border: 25px solid transparent;
+    padding: 5px 15px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-image-source: url('assets/brush-border.png');
+    border-image-slice: 40 fill;
+    border-image-repeat: stretch;
 }
 
-.level-button:hover {
-    transform: translateY(-5px) scale(1.05);
-    background-color: var(--main-red);
-    color: white;
-    border-color: var(--main-red);
-    box-shadow: 0 8px 15px rgba(216, 31, 38, 0.3);
+/* --- Gaya Teks di Dalam Tombol --- */
+.japanese-level-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.1;
+}
+
+.arc-text {
+    font-family: 'Marykate', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-top: 2px;
+}
+
+/* --- Posisi Zig-Zag dan Efek Hover --- */
+.level-button:nth-child(odd) {
+    transform: translateX(-30px);
+}
+
+.level-button:nth-child(even) {
+    transform: translateX(30px);
+}
+
+.level-button:nth-child(odd):hover {
+    transform: translateX(-30px) scale(1.05);
+    border-image-source: url('assets/brush-border-hover.png');
+}
+
+.level-button:nth-child(even):hover {
+    transform: translateX(30px) scale(1.05);
+    border-image-source: url('assets/brush-border-hover.png');
+}
+
+/* --- Tombol Back --- */
+#back-to-main-button {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-family: 'Marykate', sans-serif;
+    font-size: 2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+#back-to-main-button:hover {
+    color: var(--main-red);
+    transform: scale(1.1);
 }
