@@ -1,0 +1,246 @@
+/* --- FONT LOKAL --- */
+@font-face {
+  font-family: 'Marykate';
+  src: url('fonts/Marykate.woff2') format('woff2'),
+       url('fonts/Marykate.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- VARIABEL GLOBAL --- */
+:root {
+    --splash-blue: #283b49; 
+    --main-red: #D81F26;
+    --text-dark: #2c2c2c;
+    --bg-cream: #F3F1EB;
+}
+
+/* --- RESET & BODY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+}
+
+body {
+    font-family: 'Marykate', 'Noto Sans JP', sans-serif;
+    overflow: hidden;
+    background-color: var(--bg-cream);
+}
+
+/* --- BARU: Logo Kanan Atas --- */
+#top-right-logo-container {
+    position: absolute;
+    top: 40px; /* Jarak dari atas */
+    right: 40px; /* Jarak dari kanan */
+    z-index: 50; /* Pastikan di atas elemen lain, tapi di bawah start-overlay */
+    pointer-events: none; /* Agar tidak menghalangi klik di belakangnya */
+}
+
+#top-right-logo {
+    width: 250px; /* Lebar sesuai permintaan */
+    height: auto;
+    opacity: 0; /* Mulai tersembunyi */
+    transition: opacity 1s ease-out; /* Animasi fade in */
+}
+
+#top-right-logo.visible {
+    opacity: 1; /* Akan ditambahkan via JS setelah splash screen selesai */
+}
+
+/* --- Overlay Tombol Mulai --- */
+#start-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--splash-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+#start-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#start-interactive-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#start-interactive-area:hover {
+  transform: scale(1.05);
+}
+
+#start-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+#click-me-text {
+  font-family: 'Marykate', sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  opacity: 0.9;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* --- Splash Screen --- */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--splash-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 1s ease-in-out;
+    overflow: hidden;
+}
+
+#splash-screen.hidden {
+    transform: translateY(-100%);
+}
+
+#splash-text {
+    font-family: 'Marykate', sans-serif;
+    font-size: 4rem;
+    color: white;
+    font-weight: 900;
+    border-right: 0.1em solid white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.splash-logo {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 250px;
+    height: auto;
+    opacity: 0.9;
+    clip-path: circle(0% at 50% 50%);
+}
+
+.splash-logo.animate {
+    animation: reveal-brush 4s ease-out forwards;
+}
+
+@keyframes reveal-brush {
+    to { clip-path: circle(75% at 50% 50%); }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+/* --- Main Content --- */
+#main-content {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-layers, .bg-noise, .bg-wave, .bg-ornament, .content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-wave, .bg-ornament {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-noise {
+    background-image: url('assets/noise-bg.png');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.bg-wave {
+    background-image: url('assets/wave-bg.png');
+    z-index: 2;
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.bg-ornament {
+    background-image: url('assets/ornament-bg.png');
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.content-overlay {
+    z-index: 4;
+    color: var(--text-dark);
+}
+
+.center-start {
+    position: absolute;
+    top: 65%; /* DIUBAH: Posisi vertikal digeser ke bawah (dari 50%) */
+    left: 60%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0; /* Biarkan ini untuk animasi fade-in Anda */
+}
+
+.center-start:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* BARU: Styling untuk link agar tidak ada garis bawah */
+.start-link {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: inherit; /* Mengambil warna dari elemen induk (var(--text-dark)) */
+    display: inline-block; /* Agar efek hover lebih rapi */
+}
+
+
+.japanese-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.english-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Keyframes & Class Pemicu untuk Animasi Main Content */
+@keyframes fadeIn-scaleUp { to { opacity: 1; transform: scale(1); } }
+@keyframes fadeIn-slideUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { to { opacity: 1; } }
+
+.bg-wave.animate { animation: fadeIn-scaleUp 1.5s ease-out forwards; }
+.bg-ornament.animate { animation: fadeIn-slideUp 1.2s ease-out forwards; }
+.center-start.animate { animation: fadeIn 1s ease-in forwards; }

@@ -1,50 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Chiai・WaifuOTW</title>
-    <base target="_blank">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f4b88b">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Chiai from Waifu On The Web">
-    <meta property="og:site_name" content="Chat with me!">
-    <meta property="og:description" content="Hello world! My name is Chiai, I'm a web-based AI with Natural Language Processing and a Live2D model!">
-    <meta property="twitter:image" content="https://sglkc.github.io/waifu-otw/assets/thumbnail.png">
-    <script src="scripts/live2d.min.js" defer></script>
-    <script src="scripts/live2dcubismcore.min.js" defer></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NihonGo!</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <main id="container">
-      <div id="live">
-        <nav id="menu">
-          <a href="https://github.com/sglkc/waifu-otw">
-            <img src="assets/github.svg" width="40" height="40">
-          </a>
-          <button id="help">
-            <img src="assets/question.svg" width="40" height="40">
-          </button>
-          <button id="recognition">
-            <img width="40" height="40">
-          </button>
-          <button id="recognition-lang">EN</button>
-        </nav>
-        <canvas id="canvas"></canvas>
-        <img id="background" src="assets/background.webp" alt="background" draggable="false">
-      </div>
-      <div id="chat">
-        <main id="messages">
-          <div class="reply">Hi! My name is Chiai, nice to meet you!</div>
-        </main>
-        <form id="form">
-          <input id="message" placeholder="send a message!" autocomplete="off">
-          <button id="send" type="submit">Send</button>
-        </form>
-      </div>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NihonGo!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="top-right-logo-container">
+        <img src="nihongo-logo.png" alt="Nihongo Logo" id="top-right-logo">
+    </div>
+
+    <div id="start-overlay">
+        <div id="start-interactive-area">
+        <img src="favicon.png" alt="Logo" id="start-logo">
+        <span id="click-me-text">Click Me!</span>
+        </div>
+    </div>
+
+    <div id="splash-screen">
+        <h1 id="splash-text"></h1>
+        <img src="favicon.png" alt="NihonGo Logo" class="splash-logo"> 
+    </div>
+
+    <main id="main-content">
+        <div class="background-layers">
+            <div class="bg-noise"></div>
+            <div class="bg-wave"></div>
+            <div class="bg-ornament"></div>
+        </div>
+
+        <div class="content-overlay">
+            <a href="chat.html" class="start-link">
+                <div class="center-start">
+                    <p class="japanese-text">始める</p>
+                    <p class="english-text">Start!</p>
+                </div>
+            </a>
+        </div>
     </main>
-    <div id="loader"></div>
-    <script type="module" src="/src/index.ts"></script>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
