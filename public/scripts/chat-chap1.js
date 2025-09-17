@@ -104,10 +104,10 @@ function sendGreeting() {
                 if (window.live2dModel) {
                     window.playAudioWithMotion(window.live2dModel, '/audio/chapter1/post-intro.mp3');
                 }
-            }, 2500);
+            }, 3000);
 
-        }, 2000);
-    }, 1000); // delay awal sebelum greeting pertama
+        }, 2500);
+    }, 1500); // delay awal sebelum greeting pertama
 }
 
 
