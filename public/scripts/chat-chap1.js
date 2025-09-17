@@ -104,13 +104,20 @@ function sendGreeting() {
                 if (window.live2dModel) {
                     window.playAudioWithMotion(window.live2dModel, '/audio/chapter1/post-intro.mp3');
                 }
-            }, 3000);
+            }, 2500);
 
-        }, 2500);
-    }, 1500); // delay awal sebelum greeting pertama
+        }, 2000);
+    }, 1000); // delay awal sebelum greeting pertama
 }
 
 
-// Jalankan salam otomatis
-sendGreeting();
+// Tampilkan salam saat tombol Oke ditekan
+const okeBtn = document.getElementById('btn-oke');
+if (okeBtn) {
+    okeBtn.addEventListener('click', () => {
+        const overlay = document.getElementById('ready-overlay');
+        if (overlay) overlay.style.display = 'none';
+        sendGreeting();
+    });
+}
 });

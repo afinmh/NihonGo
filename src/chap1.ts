@@ -47,6 +47,9 @@ async function init() {
         });
         app.stage.addChild(model);
         console.log('[Chapter1] Model loaded and added to stage.');
+        // expose model for other scripts
+        // @ts-ignore
+        (window as any).live2dModel = model;
     } catch (err) {
         console.error('[Chapter1] Failed to load model:', err);
         return;
@@ -54,6 +57,8 @@ async function init() {
         try {
             const loaderEl = document.getElementById('loader');
             if (loaderEl) loaderEl.style.display = 'none';
+            const overlay = document.getElementById('ready-overlay');
+            if (overlay && (window as any).live2dModel) overlay.style.display = 'flex';
         } catch {}
     }
 

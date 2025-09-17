@@ -44,6 +44,13 @@
         </div>
     </main>
     <div id="loader"></div>
+        <div id="ready-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1000; display:flex; align-items:center; justify-content:center;">
+            <div style="background:#fff; padding:20px 24px; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.25); text-align:center; max-width:320px;">
+                <h2 style="margin:0 0 8px; font-size:20px;">Model siap!</h2>
+                <p style="margin:0 0 16px; color:#444;">Klik tombol di bawah untuk mulai.</p>
+                <button id="btn-oke" style="padding:10px 16px; background:#f4b88b; color:#222; border:none; border-radius:8px; cursor:pointer; font-weight:600;">Oke</button>
+            </div>
+        </div>
     <script type="module" src="/src/chap1.ts"></script>
     <script src="/scripts/chat-chap1.js" defer></script>
 </body>
