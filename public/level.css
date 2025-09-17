@@ -242,3 +242,125 @@
     transform: scale(1.1);
     border-image-source: url('assets/brush-border-hover.png');
 }
+
+/* ============================================= */
+/* === STYLING BARU UNTUK MODEL SELECTION MODAL === */
+/* ============================================= */
+
+/* --- Lapisan Overlay Modal --- */
+#model-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65); /* Sedikit lebih gelap untuk fokus */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* State saat modal tersembunyi */
+#model-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- Kontainer Konten Modal --- */
+.modal-content {
+    background: var(--bg-cream); /* Menyesuaikan dengan warna background utama */
+    border-radius: 16px;
+    min-width: 400px;
+    max-width: 90vw;
+    padding: 30px 35px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+}
+
+/* --- Judul Modal --- */
+.modal-title {
+    font-family: 'Marykate', sans-serif; /* Menggunakan font tematik */
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    margin: 0 0 20px 0;
+}
+
+/* --- Kontainer untuk Pilihan Model --- */
+.model-options-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* --- Tombol Pilihan Model (Gaya Kuas) --- */
+.model-option {
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.25s ease-out;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    
+    /* Mengadopsi gaya kuas dari level-button */
+    border: 25px solid transparent;
+    padding: 8px 18px;
+    border-image-source: url('assets/brush-border.png');
+    border-image-slice: 40 fill;
+    border-image-repeat: stretch;
+}
+
+.model-option:hover {
+    transform: scale(1.08);
+    border-image-source: url('assets/brush-border-hover.png');
+}
+
+/* Gaya untuk tombol yang sedang aktif/dipilih */
+.model-option.active {
+    border-image-source: url('assets/brush-border-hover.png');
+    transform: scale(1.05);
+}
+
+/* --- Kontainer untuk Tombol Aksi (Batal & Mulai) --- */
+.modal-actions {
+    display: flex;
+    justify-content: center; /* Posisi di tengah agar lebih seimbang */
+    gap: 20px;
+    margin-top: 16px;
+}
+
+/* --- Tombol Aksi Umum --- */
+.modal-action-btn {
+    font-family: 'Marykate', sans-serif; /* Menggunakan font tematik */
+    font-size: 1.5rem;
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* --- Tombol Batal --- */
+#model-cancel {
+    background: transparent;
+    color: var(--text-dark);
+}
+
+#model-cancel:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+
+/* --- Tombol Mulai Chat (Utama) --- */
+#model-continue {
+    background: var(--main-red); /* Menggunakan warna merah utama */
+    color: #fff;
+    box-shadow: 0 4px 15px -5px var(--main-red);
+}
+
+#model-continue:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px -5px var(--main-red);
+}

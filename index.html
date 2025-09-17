@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NihonGo!</title>
+    <title>NihonGo! - Belajar Jepang</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="level.css"> <link rel="stylesheet" href="animation.css">
@@ -85,6 +85,23 @@
             <div id="back-to-main-button">Back</div>
         </div>
     </section>
+    
+    <div id="model-modal" class="hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Pilih Model</h2>
+            <div class="model-options-container">
+                <button class="model-option" data-model="hiyori">Hiyori</button>
+                <button class="model-option" data-model="natori">Natori</button>
+                <button class="model-option" data-model="shizuku">Shizuku</button>
+                <button class="model-option" data-model="haru">Haru</button>
+                <button class="model-option" data-model="chitose">Chitose</button>
+            </div>
+            <div class="modal-actions">
+                <button id="model-cancel" class="modal-action-btn">Batal</button>
+                <button id="model-continue" class="modal-action-btn">Mulai Chat</button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
