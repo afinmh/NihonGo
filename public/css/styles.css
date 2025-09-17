@@ -1,8 +1,8 @@
 /* --- FONT LOKAL --- */
 @font-face {
   font-family: 'Marykate';
-  src: url('fonts/Marykate.woff2') format('woff2'),
-       url('fonts/Marykate.ttf') format('truetype');
+  src: url('./fonts/Marykate.woff2') format('woff2'),
+       url('../fonts/Marykate.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -156,13 +156,13 @@ body {
 }
 
 .bg-noise {
-    background-image: url('assets/noise-bg.png');
+    background-image: url('../assets/noise-bg.png');
     opacity: 0.3;
     z-index: 1;
 }
 
 .bg-wave {
-    background-image: url('assets/wave-bg.png');
+    background-image: url('../assets/wave-bg.png');
     z-index: 2;
     opacity: 0;
     transform: scale(1.1);
@@ -175,7 +175,7 @@ body {
 }
 
 .bg-ornament {
-    background-image: url('assets/ornament-bg.png');
+    background-image: url('../assets/ornament-bg.png');
     z-index: 3;
     /* State awal sebelum animasi */
     opacity: 0;

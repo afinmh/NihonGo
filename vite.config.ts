@@ -8,7 +8,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        chat: resolve(__dirname, 'chat.html')
+        chat: resolve(__dirname, 'chat.html'),
+        tes: resolve(__dirname, 'tes.html'),
+        chapter1: resolve(__dirname, 'chapter1.html'),
       }
     }
   },

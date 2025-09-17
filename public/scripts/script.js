@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('start-button');
     const aboutButton = document.getElementById('about-button');
     const backToMainButton = document.getElementById('back-to-main-button');
-    const backgroundMusic = new Audio('musik-latar.mp3');
+    const backgroundMusic = new Audio('./assets/musik-latar.mp3');
 
     // Fungsi Animasi Awal
     const textToType = "NihonGo!";
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionStorage.setItem('isReturning', 'true');
 
             setTimeout(() => {
-                window.location.href = '/chat';
+                window.location.href = '/chat.html';
             }, 200);
         });
     }

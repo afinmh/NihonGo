@@ -86,7 +86,7 @@
     justify-content: center;
     align-items: center;
 
-    border-image-source: url('assets/brush-border.png');
+    border-image-source: url('../assets/brush-border.png');
     border-image-slice: 40 fill;
     border-image-repeat: stretch;
 }
@@ -133,27 +133,27 @@
 
 .level-button:nth-child(1):hover {
   transform: translateX(25%) scale(1.05);
-  border-image-source: url('assets/brush-border-hover.png');
+  border-image-source: url('../assets/brush-border-hover.png');
 }
 
 .level-button:nth-child(2):hover {
   transform: translateX(-18%) scale(1.05);
-  border-image-source: url('assets/brush-border-hover.png');
+  border-image-source: url('../assets/brush-border-hover.png');
 }
 
 .level-button:nth-child(3):hover {
   transform: translateX(-65%) scale(1.05);
-  border-image-source: url('assets/brush-border-hover.png');
+  border-image-source: url('../assets/brush-border-hover.png');
 }
 
 .level-button:nth-child(4):hover {
   transform: translateX(12%) scale(1.05);
-  border-image-source: url('assets/brush-border-hover.png');
+  border-image-source: url('../assets/brush-border-hover.png');
 }
 
 .level-button:nth-child(5):hover {
   transform: translateX(-23%) scale(1.05);
-  border-image-source: url('assets/brush-border-hover.png');
+  border-image-source: url('../assets/brush-border-hover.png');
 }
 
 /* --- Tombol Back --- */
@@ -181,7 +181,7 @@
     transform: translate(-50%, -50%);
     width: 120px;
     height: 120px;
-    background-image: url('assets/model.png');
+    background-image: url('../assets/model.png');
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -212,7 +212,7 @@
     /* Menggunakan style yang sama dengan .level-button */
     border: 25px solid transparent;
     background-color: transparent;
-    border-image-source: url('assets/brush-border.png');
+    border-image-source: url('../assets/brush-border.png');
     border-image-slice: 40 fill;
     border-image-repeat: stretch;
 
@@ -240,7 +240,7 @@
 #demo-button:hover {
     color: var(--main-red);
     transform: scale(1.1);
-    border-image-source: url('assets/brush-border-hover.png');
+    border-image-source: url('../assets/brush-border-hover.png');
 }
 
 /* ============================================= */
@@ -307,19 +307,19 @@
     /* Mengadopsi gaya kuas dari level-button */
     border: 25px solid transparent;
     padding: 8px 18px;
-    border-image-source: url('assets/brush-border.png');
+    border-image-source: url('../assets/brush-border.png');
     border-image-slice: 40 fill;
     border-image-repeat: stretch;
 }
 
 .model-option:hover {
     transform: scale(1.08);
-    border-image-source: url('assets/brush-border-hover.png');
+    border-image-source: url('../assets/brush-border-hover.png');
 }
 
 /* Gaya untuk tombol yang sedang aktif/dipilih */
 .model-option.active {
-    border-image-source: url('assets/brush-border-hover.png');
+    border-image-source: url('../assets/brush-border-hover.png');
     transform: scale(1.05);
 }
 
