@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // === Flag Dev Mode ===
-    const DEV_MODE = false; // ubah ke true untuk development
+    const DEV_MODE = false; // set true untuk dev
 
-    // Definisi Variabel Global
+    // --- Elemen DOM ---
     const startOverlay = document.getElementById('start-overlay');
     const startInteractiveArea = document.getElementById('start-interactive-area');
     const splashScreen = document.getElementById('splash-screen');
@@ -16,13 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
     const levelSelectScreen = document.getElementById('level-select-screen');
     const startButton = document.getElementById('start-button');
-    const aboutButton = document.getElementById('about-button');
     const backToMainButton = document.getElementById('back-to-main-button');
     const backgroundMusic = new Audio('./assets/musik-latar.mp3');
 
-    // Fungsi Animasi Awal
+    const demoButton = document.getElementById('demo-button');
+    const modelButton = document.getElementById('model-button');
+    const modelModal = document.getElementById('model-modal');
+    const modelCancel = document.getElementById('model-cancel');
+    const modelContinue = document.getElementById('model-continue');
+    const modelOptions = modelModal ? modelModal.querySelectorAll('.model-option') : [];
+
+    const modelLabelMap = { hiyori: 'Hiyori', shizuku: 'Shizuku', natori: 'Natori', haru: 'Haru', chitose: 'Chitose' };
+    let selectedModel = localStorage.getItem('model') || 'hiyori';
+
+    // --- Fungsi Splash ---
     const textToType = "NihonGo!";
     let charIndex = 0;
+
     function startTypingAnimation() {
         if (!splashTextElement) return;
         splashTextElement.style.animation = 'blink-caret .75s step-end infinite';
@@ -58,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { once: true });
     }
 
+    // --- Level Select Screen ---
     const showLevelSelect = () => {
         if (levelSelectScreen) {
             levelSelectScreen.classList.remove('exiting');
@@ -77,20 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- LOGIKA UTAMA ---
-    // Cek apakah pengguna baru kembali dari halaman lain
+    // --- Flow returning ---
     const isReturning = sessionStorage.getItem('isReturning') === 'true';
-
     if (isReturning) {
-        // --- Alur Saat Kembali ke Halaman ---
-        // 1. Hapus flag agar refresh berfungsi normal
         sessionStorage.removeItem('isReturning');
 
-        // 2. Hapus overlay dan splash screen secara langsung
         if (startOverlay) startOverlay.remove();
         if (splashScreen) splashScreen.remove();
         
-        // 3. Tampilkan konten utama dan langsung buka pemilihan level
         document.body.style.overflow = 'auto';
         if (bgWave) bgWave.classList.add('animate');
         if (bgOrnament) bgOrnament.classList.add('animate');
@@ -98,14 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (aboutContent) aboutContent.classList.add('animate');
         if (topRightLogo) topRightLogo.classList.add('visible');
         showLevelSelect();
-
     } else {
-        // --- Alur Normal (Kunjungan Pertama atau Refresh) ---
+        // --- First visit ---
         if (startInteractiveArea && startOverlay) {
             startInteractiveArea.addEventListener('click', () => {
                 startOverlay.classList.add('hidden');
-                
-                // PERUBAHAN 1: Musik hanya jalan jika DEV_MODE false
+
                 if (!DEV_MODE) {
                     backgroundMusic.play().catch(e => console.error("Autoplay music failed:", e));
                 }
@@ -122,40 +124,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Event Listeners yang selalu aktif ---
+    // --- Buttons ---
     if (startButton) startButton.addEventListener('click', showLevelSelect);
     if (backToMainButton) backToMainButton.addEventListener('click', showMainMenu);
 
-    // === Model Selection Modal Logic ===
-    const modelButton = document.getElementById('model-button');
-    const modelModal = document.getElementById('model-modal');
-    const modelCancel = document.getElementById('model-cancel');
-    const modelContinue = document.getElementById('model-continue');
-    const modelOptions = modelModal ? modelModal.querySelectorAll('.model-option') : [];
-
-    const modelLabelMap = { hiyori: 'Hiyori', shizuku: 'Shizuku', natori: 'Natori', haru: 'Haru', chitose: 'Chitose' };
-    let selectedModel = localStorage.getItem('model') || 'hiyori';
-
-    if (modelModal) {
-        modelModal.classList.add('hidden');
-    }
-
+    // --- Model Modal ---
     const updateModelButtonLabel = () => {
         if (!modelButton) return;
         const label = selectedModel ? (modelLabelMap[selectedModel] || selectedModel) : 'Pilih Model';
         modelButton.textContent = label;
-        modelButton.style.cursor = 'pointer';
     };
     updateModelButtonLabel();
 
     const highlightSelection = () => {
         if (!modelOptions) return;
         modelOptions.forEach(btn => {
-            if (selectedModel && btn.dataset.model === selectedModel) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
+            if (btn.dataset.model === selectedModel) btn.classList.add('active');
+            else btn.classList.remove('active');
         });
     };
 
@@ -167,9 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (modelCancel && modelModal) {
-        modelCancel.addEventListener('click', () => {
-            modelModal.classList.add('hidden');
-        });
+        modelCancel.addEventListener('click', () => modelModal.classList.add('hidden'));
     }
 
     if (modelOptions) {
@@ -185,19 +168,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modelContinue && modelModal) {
         modelContinue.addEventListener('click', () => {
-            if (!selectedModel) selectedModel = 'hiyori';
-            localStorage.setItem('model', selectedModel);
+            modelModal.classList.add('hidden'); // hanya tutup modal
             updateModelButtonLabel();
-            modelModal.classList.add('hidden');
-            
-            // PERUBAHAN 2: Set flag sebelum pindah halaman
-            sessionStorage.setItem('isReturning', 'true');
-
-            setTimeout(() => {
-                window.location.href = '/chat.html';
-            }, 200);
         });
     }
 
-    highlightSelection();
+    // --- FreeTalk button --- redirect ke chat.html dengan model yg dipilih
+    if (demoButton) {
+        demoButton.addEventListener('click', () => {
+            localStorage.setItem('model', selectedModel);
+            sessionStorage.setItem('isReturning', 'true');
+            window.location.href = '/chat';
+        });
+    }
 });
