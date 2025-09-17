@@ -1,11 +1,8 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
-// Jika Anda menggunakan plugin lain (seperti react, vue), biarkan saja
-// import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/', // untuk hosting di root (misal Vercel)
   build: {
     target: 'esnext',
     rollupOptions: {
@@ -14,10 +11,8 @@ export default defineConfig({
         chat: resolve(__dirname, 'chat.html')
       }
     }
-  }
-  ,
+  },
   esbuild: {
     target: 'esnext'
   }
-  // plugins: [react()], // contoh jika ada plugin
 })

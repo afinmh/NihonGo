@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Definisi Variabel Global (tetap sama)
+    // === Flag Dev Mode ===
+    const DEV_MODE = true; // ubah ke false kalau mau splash jalan normal
+
+    // Definisi Variabel Global
     const startOverlay = document.getElementById('start-overlay');
     const startInteractiveArea = document.getElementById('start-interactive-area');
     const splashScreen = document.getElementById('splash-screen');
@@ -17,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToMainButton = document.getElementById('back-to-main-button');
     const backgroundMusic = new Audio('musik-latar.mp3');
 
-    // Fungsi Animasi Awal (tetap sama)
+    // Fungsi Animasi Awal
     const textToType = "NihonGo!";
     let charIndex = 0;
     function startTypingAnimation() {
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         type();
     }
+
     function animateMainContent() {
         bgWave.classList.add('animate');
         setTimeout(() => { bgOrnament.classList.add('animate'); }, 400);
@@ -42,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { aboutContent.classList.add('animate'); }, 900);
         setTimeout(() => { topRightLogo.classList.add('visible'); }, 1200);
     }
+
     function hideSplashScreen() {
         splashScreen.classList.add('hidden');
         document.body.style.overflow = 'auto';
@@ -51,28 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { once: true });
     }
 
-    // --- LOGIKA UTAMA DIPERBARUI TOTAL ---
-
     // Fungsi untuk memunculkan Level Select
     const showLevelSelect = () => {
-      // Hapus class 'exiting' untuk memastikan state bersih sebelum tampil
       levelSelectScreen.classList.remove('exiting');
-      // Tambahkan class 'visible' untuk memicu animasi masuk
       levelSelectScreen.classList.add('visible');
     };
 
     // Fungsi untuk menyembunyikan Level Select
     const showMainMenu = () => {
-      // Tambahkan class 'exiting' untuk memicu animasi keluar (jatuh ke bawah)
       levelSelectScreen.classList.add('exiting');
-      // Hapus class 'visible'
       levelSelectScreen.classList.remove('visible');
 
-      // Tambahkan event listener untuk mereset state SETELAH animasi keluar selesai
       const handleTransitionEnd = () => {
-        // Hapus class 'exiting' agar kembali ke posisi awal (di atas layar)
         levelSelectScreen.classList.remove('exiting');
-        // Hapus event listener ini agar tidak berjalan lagi
         levelSelectScreen.removeEventListener('transitionend', handleTransitionEnd);
       };
       
@@ -83,10 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
     startInteractiveArea.addEventListener('click', () => {
         startOverlay.classList.add('hidden');
         backgroundMusic.play();
-        setTimeout(() => {
-            splashLogo.classList.add('animate');
-            setTimeout(startTypingAnimation, 2500); 
-        }, 1000);
+
+        if (DEV_MODE) {
+            // Langsung skip splash screen
+            hideSplashScreen();
+        } else {
+            // Jalan normal dengan animasi
+            setTimeout(() => {
+                splashLogo.classList.add('animate');
+                setTimeout(startTypingAnimation, 2500); 
+            }, 1000);
+        }
     }, { once: true });
 
     startButton.addEventListener('click', showLevelSelect);
