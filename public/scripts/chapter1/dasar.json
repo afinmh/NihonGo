@@ -1,0 +1,54 @@
+{
+  "kata_umum": [
+    {
+      "group": "Ucapan & Sapaan",
+      "words": [
+        {"japan": "こんにちは", "reading": "konnichiwa", "meaning": "Halo / Selamat siang", "audio": "/audio/kata-umum/konnichiwa.mp3"},
+        {"japan": "こんばんは", "reading": "konbanwa", "meaning": "Selamat malam", "audio": "/audio/kata-umum/konbanwa.mp3"},
+        {"japan": "おはよう", "reading": "ohayou", "meaning": "Selamat pagi", "audio": "/audio/kata-umum/ohayou.mp3"},
+        {"japan": "さようなら", "reading": "sayounara", "meaning": "Selamat tinggal", "audio": "/audio/kata-umum/sayounara.mp3"},
+        {"japan": "またね", "reading": "matane", "meaning": "Sampai nanti", "audio": "/audio/kata-umum/matane.mp3"},
+        {"japan": "おやすみ", "reading": "oyasumi", "meaning": "Selamat tidur", "audio": "/audio/kata-umum/oyasumi.mp3"},
+        {"japan": "はじめまして", "reading": "hajimemashite", "meaning": "Senang bertemu denganmu", "audio": "/audio/kata-umum/hajimemashite.mp3"},
+        {"japan": "よろしく", "reading": "yoroshiku", "meaning": "Senang bertemu / Mohon bantuannya", "audio": "/audio/kata-umum/yoroshiku.mp3"}
+      ]
+    },
+    {
+      "group": "Tanggapan / Persetujuan",
+      "words": [
+        {"japan": "はい", "reading": "hai", "meaning": "Ya", "audio": "/audio/kata-umum/hai.mp3"},
+        {"japan": "いいえ", "reading": "iie", "meaning": "Tidak", "audio": "/audio/kata-umum/iie.mp3"},
+        {"japan": "だいじょうぶ", "reading": "daijoubu", "meaning": "Tidak apa-apa", "audio": "/audio/kata-umum/daijoubu.mp3"},
+        {"japan": "そうです", "reading": "soudesu", "meaning": "Benar / Iya", "audio": "/audio/kata-umum/soudesu.mp3"},
+        {"japan": "ちがいます", "reading": "chigaimasu", "meaning": "Tidak benar / Salah", "audio": "/audio/kata-umum/chigaimasu.mp3"},
+        {"japan": "もちろん", "reading": "mochiron", "meaning": "Tentu saja", "audio": "/audio/kata-umum/mochiron.mp3"},
+        {"japan": "たぶん", "reading": "tabun", "meaning": "Mungkin", "audio": "/audio/kata-umum/tabun.mp3"},
+        {"japan": "わかりました", "reading": "wakarimashita", "meaning": "Mengerti", "audio": "/audio/kata-umum/wakarimashita.mp3"}
+      ]
+    },
+    {
+      "group": "Permintaan / Maaf",
+      "words": [
+        {"japan": "お願いします", "reading": "onegaishimasu", "meaning": "Tolong / Mohon", "audio": "/audio/kata-umum/onegaishimasu.mp3"},
+        {"japan": "すみません", "reading": "sumimasen", "meaning": "Permisi / Maaf", "audio": "/audio/kata-umum/sumimasen.mp3"},
+        {"japan": "ごめんなさい", "reading": "gomen nasai", "meaning": "Maaf serius", "audio": "/audio/kata-umum/gomen.mp3"},
+        {"japan": "どうぞ", "reading": "douzo", "meaning": "Silakan", "audio": "/audio/kata-umum/douzo.mp3"},
+        {"japan": "すこし", "reading": "sukoshi", "meaning": "Sedikit", "audio": "/audio/kata-umum/sukoshi.mp3"},
+        {"japan": "もっと", "reading": "motto", "meaning": "Lebih", "audio": "/audio/kata-umum/motto.mp3"},
+        {"japan": "やめてください", "reading": "yamete kudasai", "meaning": "Tolong berhenti", "audio": "/audio/kata-umum/yamete.mp3"}
+      ]
+    },
+    {
+      "group": "Ekspresi Umum",
+      "words": [
+        {"japan": "おめでとう", "reading": "omedetou", "meaning": "Selamat / Congratulations", "audio": "/audio/kata-umum/omedetou.mp3"},
+        {"japan": "がんばって", "reading": "ganbatte", "meaning": "Semangat!", "audio": "/audio/kata-umum/ganbatte.mp3"},
+        {"japan": "たいへん", "reading": "taihen", "meaning": "Susah / Berat", "audio": "/audio/kata-umum/taihen.mp3"},
+        {"japan": "すごい", "reading": "sugoi", "meaning": "Hebat / Luar biasa", "audio": "/audio/kata-umum/sugoi.mp3"},
+        {"japan": "まあまあ", "reading": "maamaa", "meaning": "Biasa saja / Lumayan", "audio": "/audio/kata-umum/maamaa.mp3"},
+        {"japan": "やった", "reading": "yatta", "meaning": "Berhasil! / Hore!", "audio": "/audio/kata-umum/yatta.mp3"},
+        {"japan": "ほんとう", "reading": "hontou", "meaning": "Benar-benar / Sungguh", "audio": "/audio/kata-umum/hontou.mp3"}
+      ]
+    }
+  ]
+}

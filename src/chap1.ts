@@ -18,6 +18,7 @@ const app = new Application({
 console.log('[Chapter1] Initializing Live2D scene...');
 
 const modelUrl = 'live2d/shizuku/shizuku.model.json';
+let currentAudio: HTMLAudioElement | null = null; // track audio yang sedang dimainkan
 
 async function loadModelDefinition(url: string) {
     const res = await fetch(url);
@@ -62,7 +63,7 @@ async function init() {
         } catch {}
     }
 
-    // ============ FIT & RESIZE ============
+    // ================= FIT & RESIZE =================
     const BASE_SIZE = { width: model.width, height: model.height };
 
     function fitModel() {
@@ -78,16 +79,16 @@ async function init() {
         model.scale.set(scale);
         model.anchor.set(layout.anchorX ?? 0.5, layout.anchorY ?? 0);
         model.x = w * (layout.xFrac ?? 0.5);
-
-        // posisi Y di tengah layar
         model.y = h * 0.5;
     }
     fitModel();
     setTimeout(() => fitModel(), 250);
     window.addEventListener('resize', fitModel);
 
-    // ============ INTERAKSI ============
-    canvas.addEventListener('pointerdown', (event) => model.tap(event.clientX, event.clientY));
+    // ================= INTERAKSI =================
+    canvas.addEventListener('pointerdown', (event) => {
+        model.tap(event.clientX, event.clientY);
+    });
     canvas.addEventListener('pointerenter', () => (mousestate = true));
     canvas.addEventListener('pointerleave', () => {
         model.internalModel.focusController.focus(0, 0);
@@ -97,34 +98,82 @@ async function init() {
         if (mousestate) model.focus(clientX, clientY);
     });
 
+    // ================= HIT AREA AUDIO =================
     model.on('hit', (hitAreas) => {
         if (hitAreas.includes('head')) {
-            // motion default
-            model.motion('shake', 1);
+            if (currentAudio && !currentAudio.paused) return; // audio sedang dimainkan, ignore
 
-            // === NEW: play audio touch ===
-            const audio = new Audio('/audio/chapter1/touch.mp3');
-            audio.play().catch(err => console.warn("Audio gagal diputar:", err));
+            // jalankan motion shake index 1
+            model.motion('shake', 1);
+            currentAudio = new Audio('/audio/chapter1/touch.mp3');
+            currentAudio.play().catch(err => console.warn("Audio gagal diputar:", err));
+            currentAudio.onended = () => { currentAudio = null; };
         }
     });
 
-    // ============ EXPRESSIONS ============
+    // =================== FUNGSI AUDIO KHUSUS (INTERRUPTIBLE) ===================
+    function stopAllMotionsImmediately(m: Live2DModel) {
+        try {
+            // @ts-ignore: access underlying Cubism MotionManager
+            m.internalModel.motionManager.stopAllMotions();
+        } catch {}
+    }
+
+    function stopCurrentAudio() {
+        if (currentAudio) {
+            try {
+                currentAudio.onended = null;
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            } catch {}
+            currentAudio = null;
+        }
+    }
+
+    function startAudioWithMotion(m: Live2DModel, motionGroup: string, motionIndex: number, src: string) {
+        // interrupt anything running
+        stopCurrentAudio();
+        stopAllMotionsImmediately(m);
+
+        try { m.motion(motionGroup, motionIndex); } catch {}
+
+        const audio = new Audio(src);
+        currentAudio = audio;
+        audio.play().catch(err => console.warn('Audio gagal diputar:', err));
+        audio.onended = () => {
+            currentAudio = null;
+            // ensure lingering motion is stopped when audio ends
+            stopAllMotionsImmediately(m);
+        };
+    }
+
+    function playAudioWithMotion(model: Live2DModel, src: string) {
+        startAudioWithMotion(model, 'flick_head', 1, src);
+    }
+
+    function playAudio2(model: Live2DModel, src: string) {
+        startAudioWithMotion(model, 'pinch_out', 2, src);
+    }
+
+    function playAudioHappy(model: Live2DModel, src: string) {
+        startAudioWithMotion(model, 'tap_body', 1, src);
+    }
+
+    // expose ke global
+    // @ts-ignore
+    window.playAudioWithMotion = playAudioWithMotion;
+    // @ts-ignore
+    window.playAudio2 = playAudio2;
+    // @ts-ignore
+    window.playAudioHappy = playAudioHappy;
+
+    // =================== EXPRESSIONS ===================
     const expressions = (modelDef.expressions || modelDef.FileReferences?.Expressions || [])
         .map((exp: { name?: string, Name?: string }) => {
             const rawName = exp.Name || exp.name || '';
             return rawName.replace('.exp3.json', '');
         })
         .filter((name: string) => name);
-
-    // ============ MOTIONS ============
-    const availableMotions: Record<string, number> = (() => {
-        const motions = (modelDef?.FileReferences?.Motions) || (modelDef?.motions) || {};
-        const out: Record<string, number> = {};
-        for (const key of Object.keys(motions)) {
-            out[key] = Array.isArray(motions[key]) ? motions[key].length : 0;
-        }
-        return out;
-    })();
 
     const motions = {
         talk: [['tap_body', 0], ['tap_body', 2], ['pinch_out', 0], ['flick_head', 1]],
@@ -135,56 +184,14 @@ async function init() {
         laugh: [['shake', 1]]
     };
 
-    // ============ RANDOM MOTIONS ============
-    let isPlayingSpecialMotion = false;
-    const livelyMotions: Array<[string, number]> = [];
-    for (const group in availableMotions) {
-        if (group.toLowerCase() !== 'idle') {
-            const count = availableMotions[group] || 0;
-            for (let i = 0; i < count; i++) {
-                livelyMotions.push([group, i]);
-            }
-        }
-    }
-    model.on('motionStart', (group) => {
-        if (group.toLowerCase() !== 'idle') { isPlayingSpecialMotion = true; }
-    });
-    model.on('motionFinish', () => { isPlayingSpecialMotion = false; });
-
-    function playRandomMotion() {
-        if (isPlayingSpecialMotion || livelyMotions.length === 0) { return; }
-        const randomIndex = Math.floor(Math.random() * livelyMotions.length);
-        const [group, index] = livelyMotions[randomIndex];
-        if (group) { model.motion(group, index); }
-    }
-    setInterval(playRandomMotion, 5000 + Math.random() * 4000);
-
-    // kalau butuh ekspor keluar
     return { app, expressions, model, motions };
 }
 
-// mulai
+// =================== INIT ===================
 init().then((res) => {
-    if (!res) return; // kalau gagal load, keluar
-    const { model } = res;
-
-    // simpan ke global biar bisa diakses dari chat-chap1.js
+    if (!res) return;
     // @ts-ignore
-    window.live2dModel = model;
+    window.live2dModel = res.model;
 });
-
-function playAudioWithMotion(model: Live2DModel, src: string) {
-    const audio = new Audio(src);
-
-    // Mainkan motion bicara (misalnya flick_head index ke-1)
-    model.motion("flick_head", 1);
-
-    // Mainkan audio
-    audio.play().catch(err => console.warn("Audio gagal diputar:", err));
-}
-
-// === Tambahkan ini ===
-// @ts-ignore
-window.playAudioWithMotion = playAudioWithMotion;
 
 export default { app };
