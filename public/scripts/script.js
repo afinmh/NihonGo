@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const DEV_MODE = true; // set true untuk dev
+    const DEV_MODE = false; // set true untuk dev
 
     // --- Elemen DOM ---
     const startOverlay = document.getElementById('start-overlay');
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         demoButton.addEventListener('click', () => {
             localStorage.setItem('model', selectedModel);
             sessionStorage.setItem('isReturning', 'true');
-            window.location.href = '/chat.html';
+            window.location.href = '/chat';
         });
     }
 });
