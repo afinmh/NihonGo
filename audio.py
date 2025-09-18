@@ -6,11 +6,11 @@ import os
 # --------------------------
 # Load JSON kata-kata
 # --------------------------
-with open("dasar.json", "r", encoding="utf-8") as f:
+with open("perkenalan.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Folder untuk menyimpan audio
-output_folder = "audio_kata_umum"
+output_folder = "perkenalan"
 os.makedirs(output_folder, exist_ok=True)
 
 SPEAKER_ID = 24  # VOICEVOX speaker
@@ -20,7 +20,7 @@ failed_words = []
 # --------------------------
 # Loop semua kata
 # --------------------------
-for group in data["kata_umum"]:
+for group in data["perkenalan_chika"]:
     group_name = group.get("group", "unknown")
     print(f"Processing group: {group_name}")
 
@@ -28,6 +28,15 @@ for group in data["kata_umum"]:
         japan = word["japan"]
         reading = word["reading"]
         meaning = word.get("meaning", "")
+        audio_path = word.get("audio", "")
+
+        # Nama file dari JSON (ambil basename)
+        if audio_path:
+            filename = os.path.basename(audio_path)
+        else:
+            filename = f"{reading}.mp3"
+
+        file_path = os.path.join(output_folder, filename)
 
         print(f"Generating audio for: {japan} ({reading}) - {meaning}")
 
@@ -44,7 +53,6 @@ for group in data["kata_umum"]:
                     raise ValueError("MP3 URL tidak tersedia")
                 
                 # Download file MP3
-                file_path = os.path.join(output_folder, f"{reading}.mp3")
                 with requests.get(mp3_url, stream=True) as r:
                     r.raise_for_status()
                     with open(file_path, "wb") as f:

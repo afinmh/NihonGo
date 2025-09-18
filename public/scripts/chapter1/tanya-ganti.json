@@ -1,0 +1,32 @@
+{
+  "tanya_ganti": [
+    {
+      "group": "Kata Tanya",
+      "words": [
+        {"japan": "なに", "reading": "nani", "meaning": "Apa", "audio": "/audio/tanya-ganti/nani.mp3"},
+        {"japan": "どこ", "reading": "doko", "meaning": "Di mana", "audio": "/audio/tanya-ganti/doko.mp3"},
+        {"japan": "だれ", "reading": "dare", "meaning": "Siapa", "audio": "/audio/tanya-ganti/dare.mp3"},
+        {"japan": "いつ", "reading": "itsu", "meaning": "Kapan", "audio": "/audio/tanya-ganti/itsu.mp3"},
+        {"japan": "どうして", "reading": "doushite", "meaning": "Kenapa / Mengapa", "audio": "/audio/tanya-ganti/doushite.mp3"},
+        {"japan": "どう", "reading": "dou", "meaning": "Bagaimana", "audio": "/audio/tanya-ganti/dou.mp3"},
+        {"japan": "いくら", "reading": "ikura", "meaning": "Berapa (harga)", "audio": "/audio/tanya-ganti/ikura.mp3"},
+        {"japan": "どれ", "reading": "dore", "meaning": "Yang mana", "audio": "/audio/tanya-ganti/dore.mp3"}
+      ]
+    },
+    {
+      "group": "Kata Ganti",
+      "words": [
+        {"japan": "わたし", "reading": "watashi", "meaning": "Saya (umum / netral)", "audio": "/audio/tanya-ganti/watashi.mp3"},
+        {"japan": "ぼく", "reading": "boku", "meaning": "Saya (pria, sopan)", "audio": "/audio/tanya-ganti/boku.mp3"},
+        {"japan": "おれ", "reading": "ore", "meaning": "Saya (pria, kasual)", "audio": "/audio/tanya-ganti/ore.mp3"},
+        {"japan": "あたし", "reading": "atashi", "meaning": "Saya (wanita, kasual)", "audio": "/audio/tanya-ganti/atashi.mp3"},
+        {"japan": "きみ", "reading": "kimi", "meaning": "Kamu (akrab, ke bawahan/teman)", "audio": "/audio/tanya-ganti/kimi.mp3"},
+        {"japan": "あなた", "reading": "anata", "meaning": "Anda / Kamu (sopan)", "audio": "/audio/tanya-ganti/anata.mp3"},
+        {"japan": "かれ", "reading": "kare", "meaning": "Dia (laki-laki)", "audio": "/audio/tanya-ganti/kare.mp3"},
+        {"japan": "かのじょ", "reading": "kanojo", "meaning": "Dia (perempuan)", "audio": "/audio/tanya-ganti/kanojo.mp3"},
+        {"japan": "わたしたち", "reading": "watashitachi", "meaning": "Kami / Kita", "audio": "/audio/tanya-ganti/watashitachi.mp3"},
+        {"japan": "みんな", "reading": "minna", "meaning": "Semua orang", "audio": "/audio/tanya-ganti/minna.mp3"}
+      ]
+    }
+  ]
+}

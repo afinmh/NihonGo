@@ -1,0 +1,44 @@
+{
+  "kata_kerja": [
+    {
+      "group": "Aktivitas Sehari-hari",
+      "words": [
+        {"japan": "する", "reading": "suru", "meaning": "Melakukan", "audio": "/audio/kata-kerja/suru.mp3"},
+        {"japan": "いく", "reading": "iku", "meaning": "Pergi", "audio": "/audio/kata-kerja/iku.mp3"},
+        {"japan": "くる", "reading": "kuru", "meaning": "Datang", "audio": "/audio/kata-kerja/kuru.mp3"},
+        {"japan": "かえる", "reading": "kaeru", "meaning": "Pulang", "audio": "/audio/kata-kerja/kaeru.mp3"},
+        {"japan": "あるく", "reading": "aruku", "meaning": "Berjalan", "audio": "/audio/kata-kerja/aruku.mp3"}
+      ]
+    },
+    {
+      "group": "Gerakan / Pergerakan",
+      "words": [
+        {"japan": "はしる", "reading": "hashiru", "meaning": "Berlari", "audio": "/audio/kata-kerja/hashiru.mp3"},
+        {"japan": "すわる", "reading": "suwaru", "meaning": "Duduk", "audio": "/audio/kata-kerja/suwaru.mp3"},
+        {"japan": "たつ", "reading": "tatsu", "meaning": "Berdiri", "audio": "/audio/kata-kerja/tatsu.mp3"},
+        {"japan": "はいる", "reading": "hairu", "meaning": "Masuk", "audio": "/audio/kata-kerja/hairu.mp3"},
+        {"japan": "でる", "reading": "deru", "meaning": "Keluar", "audio": "/audio/kata-kerja/deru.mp3"}
+      ]
+    },
+    {
+      "group": "Kebutuhan Dasar",
+      "words": [
+        {"japan": "たべる", "reading": "taberu", "meaning": "Makan", "audio": "/audio/kata-kerja/taberu.mp3"},
+        {"japan": "のむ", "reading": "nomu", "meaning": "Minum", "audio": "/audio/kata-kerja/nomu.mp3"},
+        {"japan": "ねる", "reading": "neru", "meaning": "Tidur", "audio": "/audio/kata-kerja/neru.mp3"},
+        {"japan": "おきる", "reading": "okiru", "meaning": "Bangun", "audio": "/audio/kata-kerja/okiru.mp3"},
+        {"japan": "あらう", "reading": "arau", "meaning": "Mencuci", "audio": "/audio/kata-kerja/arau.mp3"}
+      ]
+    },
+    {
+      "group": "Belajar & Pekerjaan",
+      "words": [
+        {"japan": "みる", "reading": "miru", "meaning": "Melihat / Menonton", "audio": "/audio/kata-kerja/miru.mp3"},
+        {"japan": "きく", "reading": "kiku", "meaning": "Mendengar / Bertanya", "audio": "/audio/kata-kerja/kiku.mp3"},
+        {"japan": "よむ", "reading": "yomu", "meaning": "Membaca", "audio": "/audio/kata-kerja/yomu.mp3"},
+        {"japan": "かく", "reading": "kaku", "meaning": "Menulis", "audio": "/audio/kata-kerja/kaku.mp3"},
+        {"japan": "べんきょうする", "reading": "benkyou suru", "meaning": "Belajar", "audio": "/audio/kata-kerja/benkyousuru.mp3"}
+      ]
+    }
+  ]
+}

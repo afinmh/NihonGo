@@ -1,0 +1,43 @@
+{
+  "sifat_emosi": [
+    {
+      "group": "Sifat Positif",
+      "words": [
+        {"japan": "たのしい", "reading": "tanoshii", "meaning": "Menyenangkan", "audio": "/audio/sifat-emosi/tanoshii.mp3"},
+        {"japan": "うれしい", "reading": "ureshii", "meaning": "Senang", "audio": "/audio/sifat-emosi/ureshii.mp3"},
+        {"japan": "やさしい", "reading": "yasashii", "meaning": "Baik hati / Lembut", "audio": "/audio/sifat-emosi/yasashii.mp3"},
+        {"japan": "きれい", "reading": "kirei", "meaning": "Cantik / Bersih", "audio": "/audio/sifat-emosi/kirei.mp3"},
+        {"japan": "かっこいい", "reading": "kakkoii", "meaning": "Keren / Ganteng", "audio": "/audio/sifat-emosi/kakkoii.mp3"}
+      ]
+    },
+    {
+      "group": "Sifat Negatif",
+      "words": [
+        {"japan": "わるい", "reading": "warui", "meaning": "Buruk / Jahat", "audio": "/audio/sifat-emosi/warui.mp3"},
+        {"japan": "きたない", "reading": "kitanai", "meaning": "Kotor", "audio": "/audio/sifat-emosi/kitanai.mp3"},
+        {"japan": "こわい", "reading": "kowai", "meaning": "Menakutkan", "audio": "/audio/sifat-emosi/kowai.mp3"},
+        {"japan": "つまらない", "reading": "tsumaranai", "meaning": "Membosankan", "audio": "/audio/sifat-emosi/tsumaranai.mp3"},
+        {"japan": "うるさい", "reading": "urusai", "meaning": "Berisik / Menyebalkan", "audio": "/audio/sifat-emosi/urusai.mp3"}
+      ]
+    },
+    {
+      "group": "Emosi Senang / Bahagia",
+      "words": [
+        {"japan": "しあわせ", "reading": "shiawase", "meaning": "Bahagia", "audio": "/audio/sifat-emosi/shiawase.mp3"},
+        {"japan": "たのしみ", "reading": "tanoshimi", "meaning": "Tidak sabar menunggu / Excited", "audio": "/audio/sifat-emosi/tanoshimi.mp3"},
+        {"japan": "ほっとする", "reading": "hotto suru", "meaning": "Legaaa / Plong", "audio": "/audio/sifat-emosi/hottosuru.mp3"},
+        {"japan": "わくわく", "reading": "wakuwaku", "meaning": "Deg-degan senang / Antusias", "audio": "/audio/sifat-emosi/wakuwaku.mp3"}
+      ]
+    },
+    {
+      "group": "Emosi Sedih / Marah / Takut",
+      "words": [
+        {"japan": "かなしい", "reading": "kanashii", "meaning": "Sedih", "audio": "/audio/sifat-emosi/kanashii.mp3"},
+        {"japan": "さびしい", "reading": "sabishii", "meaning": "Kesepian", "audio": "/audio/sifat-emosi/sabishii.mp3"},
+        {"japan": "おこる", "reading": "okoru", "meaning": "Marah", "audio": "/audio/sifat-emosi/okoru.mp3"},
+        {"japan": "はずかしい", "reading": "hazukashii", "meaning": "Malu", "audio": "/audio/sifat-emosi/hazukashii.mp3"},
+        {"japan": "びっくり", "reading": "bikkuri", "meaning": "Kaget", "audio": "/audio/sifat-emosi/bikkuri.mp3"}
+      ]
+    }
+  ]
+}
