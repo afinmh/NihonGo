@@ -1,0 +1,34 @@
+{
+  "benda_sekolah": [
+    {
+      "group": "Alat Tulis",
+      "words": [
+        { "japan": "えんぴつ", "reading": "enpitsu", "meaning": "Pensil", "audio": "enpitsu.mp3" },
+        { "japan": "ペン", "reading": "pen", "meaning": "Pulpen", "audio": "pen.mp3" },
+        { "japan": "けしごむ", "reading": "keshigomu", "meaning": "Penghapus", "audio": "keshigomu.mp3" },
+        { "japan": "ものさし", "reading": "monosashi", "meaning": "Penggaris", "audio": "monosashi.mp3" },
+        { "japan": "ノート", "reading": "nooto", "meaning": "Buku tulis", "audio": "nooto.mp3" }
+      ]
+    },
+    {
+      "group": "Peralatan Sekolah",
+      "words": [
+        { "japan": "つくえ", "reading": "tsukue", "meaning": "Meja", "audio": "tsukue.mp3" },
+        { "japan": "いす", "reading": "isu", "meaning": "Kursi", "audio": "isu.mp3" },
+        { "japan": "かばん", "reading": "kaban", "meaning": "Tas", "audio": "kaban.mp3" },
+        { "japan": "チョーク", "reading": "chooku", "meaning": "Kapur tulis", "audio": "chooku.mp3" },
+        { "japan": "こくばん", "reading": "kokuban", "meaning": "Papan tulis", "audio": "kokuban.mp3" }
+      ]
+    },
+    {
+      "group": "Lain-lain",
+      "words": [
+        { "japan": "じしょ", "reading": "jisho", "meaning": "Kamus", "audio": "jisho.mp3" },
+        { "japan": "プリント", "reading": "purinto", "meaning": "Lembar fotokopi / print", "audio": "purinto.mp3" },
+        { "japan": "かみ", "reading": "kami", "meaning": "Kertas", "audio": "kami.mp3" },
+        { "japan": "え", "reading": "e", "meaning": "Gambar", "audio": "e.mp3" },
+        { "japan": "じゅぎょう", "reading": "jugyou", "meaning": "Pelajaran / Kelas", "audio": "jugyou.mp3" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "kalimat_sederhana_sekolah": [
+    {
+      "group": "Percakapan Dasar",
+      "words": [
+        { "japan": "きょうはなんのじゅぎょうですか？", "reading": "kyou wa nan no jugyou desu ka?", "meaning": "Hari ini pelajaran apa?", "audio": "kyouwa_nannojugyou.mp3" },
+        { "japan": "しゅくだいはなんですか？", "reading": "shukudai wa nan desu ka?", "meaning": "Apa PR-nya?", "audio": "shukudaiwanan.mp3" },
+        { "japan": "せんせい、しつもんがあります", "reading": "sensei, shitsumon ga arimasu", "meaning": "Sensei, saya ada pertanyaan", "audio": "sensei_shitsumon.mp3" },
+        { "japan": "わかりません", "reading": "wakarimasen", "meaning": "Saya tidak mengerti", "audio": "wakarimasen.mp3" },
+        { "japan": "もういちどおねがいします", "reading": "mou ichido onegaishimasu", "meaning": "Tolong ulangi sekali lagi", "audio": "mouichido.mp3" }
+      ]
+    },
+    {
+      "group": "Kegiatan Kelas",
+      "words": [
+        { "japan": "いっしょにべんきょうしましょう", "reading": "issho ni benkyou shimashou", "meaning": "Mari belajar bersama", "audio": "issho_benkyou.mp3" },
+        { "japan": "ページをあけてください", "reading": "peeji o akete kudasai", "meaning": "Silakan buka halamannya", "audio": "peeji_akete.mp3" },
+        { "japan": "ノートにかいてください", "reading": "nooto ni kaite kudasai", "meaning": "Silakan tulis di buku catatan", "audio": "nooto_kaite.mp3" },
+        { "japan": "しずかにしてください", "reading": "shizuka ni shite kudasai", "meaning": "Tolong tenang", "audio": "shizuka.mp3" },
+        { "japan": "いっしょにとけいをみましょう", "reading": "issho ni tokei o mimashou", "meaning": "Mari lihat jam bersama", "audio": "issho_tokei.mp3" }
+      ]
+    },
+    {
+      "group": "Interaksi dengan Teman",
+      "words": [
+        { "japan": "ノートをかしてくれる？", "reading": "nooto o kashite kureru?", "meaning": "Boleh pinjam catatanmu?", "audio": "nooto_kashite.mp3" },
+        { "japan": "いっしょにたべよう", "reading": "issho ni tabeyou", "meaning": "Ayo makan bersama", "audio": "issho_tabeyou.mp3" },
+        { "japan": "あしたもがんばろう", "reading": "ashita mo ganbarou", "meaning": "Besok semangat lagi!", "audio": "ashita_ganbarou.mp3" },
+        { "japan": "いっしょにかえろう", "reading": "issho ni kaerou", "meaning": "Pulang bareng yuk", "audio": "issho_kaerou.mp3" },
+        { "japan": "ありがとう、たすかったよ", "reading": "arigatou, tasukatta yo", "meaning": "Terima kasih, kamu sangat membantu", "audio": "arigatou_tasukatta.mp3" }
+      ]
+    }
+  ]
+}

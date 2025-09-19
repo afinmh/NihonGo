@@ -6,21 +6,21 @@ import os
 # --------------------------
 # Load JSON kata-kata
 # --------------------------
-with open("kalimat.json", "r", encoding="utf-8") as f:
+with open("public/scripts/chapter3/teman.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Folder untuk menyimpan audio
-output_folder = "kalimat"
+output_folder = "teman"
 os.makedirs(output_folder, exist_ok=True)
 
-SPEAKER_ID = 4  # VOICEVOX speaker
+SPEAKER_ID = 21 # VOICEVOX speaker
 
 failed_words = []
 
 # --------------------------
 # Loop semua kata
 # --------------------------
-for group in data["ekspresi_hana"]:
+for group in data["teman"]:
     group_name = group.get("group", "unknown")
     print(f"Processing group: {group_name}")
 

@@ -1,0 +1,35 @@
+{
+  "teman": [
+    {
+      "group": "Panggilan Teman",
+      "words": [
+        { "japan": "ともだち", "reading": "tomodachi", "meaning": "Teman", "audio": "tomodachi.mp3" },
+        { "japan": "ゆうじん", "reading": "yuujin", "meaning": "Sahabat / Teman dekat", "audio": "yuujin.mp3" },
+        { "japan": "なかま", "reading": "nakama", "meaning": "Kawan / Rekan", "audio": "nakama.mp3" },
+        { "japan": "クラスメート", "reading": "kurasumeeto", "meaning": "Teman sekelas", "audio": "kurasumeeto.mp3" },
+        { "japan": "せんぱい", "reading": "senpai", "meaning": "Kakak kelas / Senior", "audio": "senpai.mp3" },
+        { "japan": "こうはい", "reading": "kouhai", "meaning": "Adik kelas / Junior", "audio": "kouhai.mp3" }
+      ]
+    },
+    {
+      "group": "Sifat Teman",
+      "words": [
+        { "japan": "やさしい", "reading": "yasashii", "meaning": "Baik hati", "audio": "yasashii.mp3" },
+        { "japan": "たのしい", "reading": "tanoshii", "meaning": "Menyenangkan", "audio": "tanoshii.mp3" },
+        { "japan": "まじめ", "reading": "majime", "meaning": "Rajin / Serius", "audio": "majime.mp3" },
+        { "japan": "おもしろい", "reading": "omoshiroi", "meaning": "Lucu / Menarik", "audio": "omoshiroi.mp3" },
+        { "japan": "しんせつ", "reading": "shinsetsu", "meaning": "Ramah / Baik hati", "audio": "shinsetsu.mp3" }
+      ]
+    },
+    {
+      "group": "Interaksi dengan Teman",
+      "words": [
+        { "japan": "あそぶ", "reading": "asobu", "meaning": "Bermain", "audio": "asobu.mp3" },
+        { "japan": "はなす", "reading": "hanasu", "meaning": "Berbicara", "audio": "hanasu.mp3" },
+        { "japan": "てつだう", "reading": "tetsudau", "meaning": "Membantu", "audio": "tetsudau.mp3" },
+        { "japan": "まつ", "reading": "matsu", "meaning": "Menunggu", "audio": "matsu.mp3" },
+        { "japan": "いっしょに", "reading": "issho ni", "meaning": "Bersama-sama", "audio": "isshoni.mp3" }
+      ]
+    }
+  ]
+}

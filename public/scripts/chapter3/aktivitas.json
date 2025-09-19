@@ -1,0 +1,46 @@
+{
+  "aktivitas_sekolah": [
+    {
+      "group": "Aktivitas Belajar",
+      "words": [
+        { "japan": "べんきょうする", "reading": "benkyou suru", "meaning": "Belajar", "audio": "benkyousuru.mp3" },
+        { "japan": "よむ", "reading": "yomu", "meaning": "Membaca", "audio": "yomu.mp3" },
+        { "japan": "かく", "reading": "kaku", "meaning": "Menulis", "audio": "kaku.mp3" },
+        { "japan": "きく", "reading": "kiku", "meaning": "Mendengarkan", "audio": "kiku.mp3" },
+        { "japan": "はなす", "reading": "hanasu", "meaning": "Berbicara", "audio": "hanasu.mp3" },
+        { "japan": "ならう", "reading": "narau", "meaning": "Belajar dari guru", "audio": "narau.mp3" },
+        { "japan": "おぼえる", "reading": "oboeru", "meaning": "Menghafal / Mengingat", "audio": "oboeru.mp3" },
+        { "japan": "しらべる", "reading": "shiraberu", "meaning": "Mencari / Meneliti", "audio": "shiraberu.mp3" },
+        { "japan": "まとめる", "reading": "matomeru", "meaning": "Meringkas / Merangkum", "audio": "matomeru.mp3" }
+      ]
+    },
+    {
+      "group": "Kegiatan Sekolah",
+      "words": [
+        { "japan": "じゅぎょう", "reading": "jugyou", "meaning": "Pelajaran / Kelas", "audio": "jugyou.mp3" },
+        { "japan": "テスト", "reading": "tesuto", "meaning": "Ujian / Tes", "audio": "tesuto.mp3" },
+        { "japan": "しゅくだい", "reading": "shukudai", "meaning": "Pekerjaan rumah (PR)", "audio": "shukudai.mp3" },
+        { "japan": "かいわ", "reading": "kaiwa", "meaning": "Percakapan", "audio": "kaiwa.mp3" },
+        { "japan": "れんしゅう", "reading": "renshuu", "meaning": "Latihan", "audio": "renshuu.mp3" },
+        { "japan": "はっぴょう", "reading": "happyou", "meaning": "Presentasi", "audio": "happyou.mp3" },
+        { "japan": "じっけん", "reading": "jikken", "meaning": "Percobaan / Eksperimen", "audio": "jikken.mp3" },
+        { "japan": "せいせき", "reading": "seiseki", "meaning": "Nilai / Prestasi", "audio": "seiseki.mp3" },
+        { "japan": "そつぎょう", "reading": "sotsugyou", "meaning": "Kelulusan", "audio": "sotsugyou.mp3" }
+      ]
+    },
+    {
+      "group": "Aktivitas Sosial",
+      "words": [
+        { "japan": "あそぶ", "reading": "asobu", "meaning": "Bermain", "audio": "asobu.mp3" },
+        { "japan": "しゅうかい", "reading": "shuukai", "meaning": "Rapat / Perkumpulan", "audio": "shuukai.mp3" },
+        { "japan": "ぶかつ", "reading": "bukatsu", "meaning": "Klub sekolah", "audio": "bukatsu.mp3" },
+        { "japan": "スポーツ", "reading": "supootsu", "meaning": "Olahraga", "audio": "supootsu.mp3" },
+        { "japan": "うたう", "reading": "utau", "meaning": "Menyanyi", "audio": "utau.mp3" },
+        { "japan": "ダンス", "reading": "dansu", "meaning": "Menari", "audio": "dansu.mp3" },
+        { "japan": "えんそう", "reading": "ensou", "meaning": "Bermain musik / Pertunjukan musik", "audio": "ensou.mp3" },
+        { "japan": "ともだちとはなす", "reading": "tomodachi to hanasu", "meaning": "Mengobrol dengan teman", "audio": "tomodachitohanasu.mp3" },
+        { "japan": "イベント", "reading": "ibento", "meaning": "Acara / Event", "audio": "ibento.mp3" }
+      ]
+    }
+  ]
+}

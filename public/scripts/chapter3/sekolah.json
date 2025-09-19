@@ -1,0 +1,35 @@
+{
+  "kosakata_sekolah": [
+    {
+      "group": "Tempat Sekolah",
+      "words": [
+        { "japan": "がっこう", "reading": "gakkou", "meaning": "Sekolah", "audio": "gakkou.mp3" },
+        { "japan": "きょうしつ", "reading": "kyoushitsu", "meaning": "Ruang kelas", "audio": "kyoushitsu.mp3" },
+        { "japan": "としょかん", "reading": "toshokan", "meaning": "Perpustakaan", "audio": "toshokan.mp3" },
+        { "japan": "こうてい", "reading": "koutei", "meaning": "Halaman sekolah", "audio": "koutei.mp3" },
+        { "japan": "じむしつ", "reading": "jimushitsu", "meaning": "Ruang administrasi", "audio": "jimushitsu.mp3" }
+      ]
+    },
+    {
+      "group": "Orang di Sekolah",
+      "words": [
+        { "japan": "せんせい", "reading": "sensei", "meaning": "Guru", "audio": "sensei.mp3" },
+        { "japan": "がくせい", "reading": "gakusei", "meaning": "Siswa / Mahasiswa", "audio": "gakusei.mp3" },
+        { "japan": "ともだち", "reading": "tomodachi", "meaning": "Teman", "audio": "tomodachi.mp3" },
+        { "japan": "こうはい", "reading": "kouhai", "meaning": "Adik kelas", "audio": "kouhai.mp3" },
+        { "japan": "せんぱい", "reading": "senpai", "meaning": "Kakak kelas", "audio": "senpai.mp3" }
+      ]
+    },
+    {
+      "group": "Pelajaran / Studi",
+      "words": [
+        { "japan": "べんきょう", "reading": "benkyou", "meaning": "Belajar", "audio": "benkyou.mp3" },
+        { "japan": "にほんご", "reading": "nihongo", "meaning": "Bahasa Jepang", "audio": "nihongo.mp3" },
+        { "japan": "えいご", "reading": "eigo", "meaning": "Bahasa Inggris", "audio": "eigo.mp3" },
+        { "japan": "すうがく", "reading": "suugaku", "meaning": "Matematika", "audio": "suugaku.mp3" },
+        { "japan": "かがく", "reading": "kagaku", "meaning": "Ilmu Pengetahuan / Sains", "audio": "kagaku.mp3" },
+        { "japan": "れきし", "reading": "rekishi", "meaning": "Sejarah", "audio": "rekishi.mp3" }
+      ]
+    }
+  ]
+}

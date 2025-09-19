@@ -6,39 +6,39 @@ import os
 # --------------------------
 # Load JSON kata-kata
 # --------------------------
-with open("ucapan.json", "r", encoding="utf-8") as f:
+with open("basic/ekspresi.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Folder untuk menyimpan audio
-output_folder = "perkenalan"
+output_folder = "ekspresi"
 os.makedirs(output_folder, exist_ok=True)
 
-SPEAKER_ID = 4  # VOICEVOX speaker
+SPEAKER_ID = 21 # VOICEVOX speaker
 
 failed_words = []
 
 # --------------------------
 # Loop semua kata
 # --------------------------
-for group in data["dialogues"]:
+for group in data["ekspresi_akira"]:
     group_name = group.get("group", "unknown")
     print(f"Processing group: {group_name}")
 
     for word in group["words"]:
         japan = word["japan"]
-        reading = word.get("reading", "")
+        reading = word["reading"]
         meaning = word.get("meaning", "")
-        nama = word.get("nama", "")  # ambil nama dari JSON
+        audio_path = word.get("audio", "")
 
-        # Nama file dari field 'nama'
-        if nama:
-            filename = f"{nama}.mp3"
+        # Nama file dari JSON (ambil basename)
+        if audio_path:
+            filename = os.path.basename(audio_path)
         else:
-            filename = f"{reading or 'unknown'}.mp3"
+            filename = f"{reading}.mp3"
 
         file_path = os.path.join(output_folder, filename)
 
-        print(f"Generating audio for: {japan} ({reading}) - {meaning} -> {filename}")
+        print(f"Generating audio for: {japan} ({reading}) - {meaning}")
 
         success = False
         retries = 3
