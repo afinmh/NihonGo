@@ -1,45 +1,81 @@
 import json
+import requests
+import time
 import os
 
-# Path JSON dan folder audio
-json_file = 'dasar.json'
-audio_folder = 'audio_kata_umum'  # sesuaikan folder tempat audio disimpan
-
-# Load JSON
-with open(json_file, 'r', encoding='utf-8') as f:
+# --------------------------
+# Load JSON kata-kata
+# --------------------------
+with open("ucapan.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-total_kata = 0
-total_audio_field = 0
-total_audio_file = 0
-missing_audio_field = []
-missing_audio_file = []
+# Folder untuk menyimpan audio
+output_folder = "perkenalan"
+os.makedirs(output_folder, exist_ok=True)
 
-# Iterasi per grup
-for group in data.get("kata_umum", []):
-    words = group.get("words", [])
-    total_kata += len(words)
-    
-    for word in words:
-        audio_path = word.get("audio", "").strip()
-        if audio_path:
-            total_audio_field += 1
-            # Ambil nama file saja
-            filename = os.path.basename(audio_path)
-            full_path = os.path.join(audio_folder, filename)
-            if os.path.isfile(full_path):
-                total_audio_file += 1
-            else:
-                missing_audio_file.append(word.get("japan", "Unknown"))
+SPEAKER_ID = 4  # VOICEVOX speaker
+
+failed_words = []
+
+# --------------------------
+# Loop semua kata
+# --------------------------
+for group in data["dialogues"]:
+    group_name = group.get("group", "unknown")
+    print(f"Processing group: {group_name}")
+
+    for word in group["words"]:
+        japan = word["japan"]
+        reading = word.get("reading", "")
+        meaning = word.get("meaning", "")
+        nama = word.get("nama", "")  # ambil nama dari JSON
+
+        # Nama file dari field 'nama'
+        if nama:
+            filename = f"{nama}.mp3"
         else:
-            missing_audio_field.append(word.get("japan", "Unknown"))
+            filename = f"{reading or 'unknown'}.mp3"
 
-print(f"Total kata: {total_kata}")
-print(f"Total audio di field JSON: {total_audio_field}")
-print(f"Total audio file benar-benar ada: {total_audio_file}")
-print(f"Jumlah kata tanpa audio di field JSON: {len(missing_audio_field)}")
-if missing_audio_field:
-    print("Kata tanpa audio di JSON:", missing_audio_field)
-print(f"Jumlah kata file audio tidak ditemukan: {len(missing_audio_file)}")
-if missing_audio_file:
-    print("Kata file audio hilang:", missing_audio_file)
+        file_path = os.path.join(output_folder, filename)
+
+        print(f"Generating audio for: {japan} ({reading}) - {meaning} -> {filename}")
+
+        success = False
+        retries = 3
+        while not success and retries > 0:
+            try:
+                api_url = f"https://api.tts.quest/v3/voicevox/synthesis?text={japan}&speaker={SPEAKER_ID}"
+                res = requests.get(api_url)
+                res.raise_for_status()
+                tts_data = res.json()
+                mp3_url = tts_data.get("mp3DownloadUrl")
+                if not mp3_url:
+                    raise ValueError("MP3 URL tidak tersedia")
+                
+                # Download file MP3
+                with requests.get(mp3_url, stream=True) as r:
+                    r.raise_for_status()
+                    with open(file_path, "wb") as f:
+                        for chunk in r.iter_content(chunk_size=8192):
+                            f.write(chunk)
+
+                print(f"✅ Audio saved: {file_path}")
+                success = True
+
+            except requests.exceptions.HTTPError as e:
+                print(f"⚠️ HTTP Error: {e} - retrying in 5s...")
+                retries -= 1
+                time.sleep(5)
+            except Exception as e:
+                print(f"❌ Error generating audio for {japan}: {e}")
+                retries = 0
+                failed_words.append(japan)
+
+        # Delay minimal 5 detik antar kata
+        time.sleep(5)
+
+print("\n🎉 Selesai semua kata!")
+if failed_words:
+    print("❌ Kata-kata gagal di-generate:")
+    for w in failed_words:
+        print(" -", w)

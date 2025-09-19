@@ -1,0 +1,55 @@
+{
+  "perlengkapan_rumah": [
+    {
+      "group": "Perabot Dasar",
+      "words": [
+        { "japan": "いす", "reading": "isu", "meaning": "Kursi", "audio": "isu.mp3" },
+        { "japan": "テーブル", "reading": "teeburu", "meaning": "Meja", "audio": "teeburu.mp3" },
+        { "japan": "ソファ", "reading": "sofa", "meaning": "Sofa", "audio": "sofa.mp3" },
+        { "japan": "たな", "reading": "tana", "meaning": "Rak", "audio": "tana.mp3" },
+        { "japan": "つくえ", "reading": "tsukue", "meaning": "Meja belajar / Meja kerja", "audio": "tsukue.mp3" }
+      ]
+    },
+    {
+      "group": "Peralatan Tidur",
+      "words": [
+        { "japan": "ベッド", "reading": "beddo", "meaning": "Tempat tidur", "audio": "beddo.mp3" },
+        { "japan": "ふとん", "reading": "futon", "meaning": "Futon (kasur lipat Jepang)", "audio": "futon.mp3" },
+        { "japan": "まくら", "reading": "makura", "meaning": "Bantal", "audio": "makura.mp3" },
+        { "japan": "もうふ", "reading": "moufu", "meaning": "Selimut", "audio": "moufu.mp3" }
+      ]
+    },
+    {
+      "group": "Peralatan Dapur",
+      "words": [
+        { "japan": "れいぞうこ", "reading": "reizouko", "meaning": "Kulkas", "audio": "reizouko.mp3" },
+        { "japan": "でんしレンジ", "reading": "denshi renji", "meaning": "Microwave", "audio": "denshirenji.mp3" },
+        { "japan": "なべ", "reading": "nabe", "meaning": "Panci", "audio": "nabe.mp3" },
+        { "japan": "フライパン", "reading": "furaipan", "meaning": "Wajan", "audio": "furaipan.mp3" },
+        { "japan": "さら", "reading": "sara", "meaning": "Piring", "audio": "sara.mp3" },
+        { "japan": "コップ", "reading": "koppu", "meaning": "Gelas", "audio": "koppu.mp3" }
+      ]
+    },
+    {
+      "group": "Peralatan Elektronik",
+      "words": [
+        { "japan": "テレビ", "reading": "terebi", "meaning": "Televisi", "audio": "terebi.mp3" },
+        { "japan": "コンピューター", "reading": "konpyuutaa", "meaning": "Komputer", "audio": "konpyuutaa.mp3" },
+        { "japan": "エアコン", "reading": "eakon", "meaning": "AC", "audio": "eakon.mp3" },
+        { "japan": "せんぷうき", "reading": "senpuuki", "meaning": "Kipas angin", "audio": "senpuuki.mp3" },
+        { "japan": "そうじき", "reading": "soujiki", "meaning": "Vacuum cleaner", "audio": "soujiki.mp3" },
+        { "japan": "でんき", "reading": "denki", "meaning": "Lampu / Listrik", "audio": "denki.mp3" }
+      ]
+    },
+    {
+      "group": "Lain-lain",
+      "words": [
+        { "japan": "カーテン", "reading": "kaaten", "meaning": "Gorden", "audio": "kaaten.mp3" },
+        { "japan": "じゅうたん", "reading": "juutan", "meaning": "Karpet", "audio": "juutan.mp3" },
+        { "japan": "かがみ", "reading": "kagami", "meaning": "Cermin", "audio": "kagami.mp3" },
+        { "japan": "とけい", "reading": "tokei", "meaning": "Jam", "audio": "tokei.mp3" },
+        { "japan": "ごみばこ", "reading": "gomibako", "meaning": "Tempat sampah", "audio": "gomibako.mp3" }
+      ]
+    }
+  ]
+}

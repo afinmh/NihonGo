@@ -569,7 +569,7 @@ function startChapter1() {
                     showMateriButtons();
                 }, 1000);
 
-            }, 3200);
+            }, 3500);
 
         }, 2500);
 

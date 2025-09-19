@@ -1,0 +1,49 @@
+{
+  "keluarga": [
+    {
+      "group": "Orang Tua",
+      "words": [
+        { "japan": "ちち", "reading": "chichi", "meaning": "Ayah (sendiri)", "audio": "chichi.mp3" },
+        { "japan": "はは", "reading": "haha", "meaning": "Ibu (sendiri)", "audio": "haha.mp3" },
+        { "japan": "おとうさん", "reading": "otousan", "meaning": "Ayah (orang lain / sopan)", "audio": "otousan.mp3" },
+        { "japan": "おかあさん", "reading": "okaasan", "meaning": "Ibu (orang lain / sopan)", "audio": "okaasan.mp3" }
+      ]
+    },
+    {
+      "group": "Saudara",
+      "words": [
+        { "japan": "あに", "reading": "ani", "meaning": "Kakak laki-laki (sendiri)", "audio": "ani.mp3" },
+        { "japan": "あね", "reading": "ane", "meaning": "Kakak perempuan (sendiri)", "audio": "ane.mp3" },
+        { "japan": "おにいさん", "reading": "oniisan", "meaning": "Kakak laki-laki (orang lain / sopan)", "audio": "oniisan.mp3" },
+        { "japan": "おねえさん", "reading": "oneesan", "meaning": "Kakak perempuan (orang lain / sopan)", "audio": "oneesan.mp3" },
+        { "japan": "おとうと", "reading": "otouto", "meaning": "Adik laki-laki", "audio": "otouto.mp3" },
+        { "japan": "いもうと", "reading": "imouto", "meaning": "Adik perempuan", "audio": "imouto.mp3" }
+      ]
+    },
+    {
+      "group": "Kakek & Nenek",
+      "words": [
+        { "japan": "そふ", "reading": "sofu", "meaning": "Kakek (sendiri)", "audio": "sofu.mp3" },
+        { "japan": "そぼ", "reading": "sobo", "meaning": "Nenek (sendiri)", "audio": "sobo.mp3" },
+        { "japan": "おじいさん", "reading": "ojiisan", "meaning": "Kakek (orang lain / sopan)", "audio": "ojiisan.mp3" },
+        { "japan": "おばあさん", "reading": "obaasan", "meaning": "Nenek (orang lain / sopan)", "audio": "obaasan.mp3" }
+      ]
+    },
+    {
+      "group": "Keluarga Lain",
+      "words": [
+        { "japan": "おじ", "reading": "oji", "meaning": "Paman", "audio": "oji.mp3" },
+        { "japan": "おば", "reading": "oba", "meaning": "Bibi", "audio": "oba.mp3" },
+        { "japan": "いとこ", "reading": "itoko", "meaning": "Sepupu", "audio": "itoko.mp3" }
+      ]
+    },
+    {
+      "group": "Keluarga Inti",
+      "words": [
+        { "japan": "りょうしん", "reading": "ryoushin", "meaning": "Orang tua (ayah & ibu)", "audio": "ryoushin.mp3" },
+        { "japan": "きょうだい", "reading": "kyoudai", "meaning": "Saudara kandung (adik/kakak)", "audio": "kyoudai.mp3" },
+        { "japan": "かぞく", "reading": "kazoku", "meaning": "Keluarga", "audio": "kazoku.mp3" }
+      ]
+    }
+  ]
+}

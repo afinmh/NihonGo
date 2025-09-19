@@ -79,13 +79,13 @@ function playAudioHappy(src) {
         messagesContainer.appendChild(container);
     }
 
-    // Fungsi untuk menampilkan materi pilihan
+    // Materi Chapter 2
     const materiList = [
-        {id:1, title:'Kata Umum', audio:'/audio/chapter1/materi1.mp3'},
-        {id:2, title:'Kata Tanya & Ganti', audio:'/audio/chapter1/materi2.mp3'},
-        {id:3, title:'Kata Sifat / Emosi', audio:'/audio/chapter1/materi3.mp3'},
-        {id:4, title:'Kata Kerja Dasar', audio:'/audio/chapter1/materi4.mp3'},
-        {id:5, title:'Perkenalan', audio:'/audio/chapter1/materi5.mp3'},
+        { id: 1, key: 'rumah', title: 'Tentang Rumah', jsonUrl: '/scripts/chapter2/rumah.json', rootKey: 'kata_rumah', audioBase: 'rumah' },
+        { id: 2, key: 'perlengkapan', title: 'Benda-benda di Rumah', jsonUrl: '/scripts/chapter2/perlengkapan.json', rootKey: 'perlengkapan_rumah', audioBase: 'perlengkapan' },
+        { id: 3, key: 'keluarga', title: 'Keluarga', jsonUrl: '/scripts/chapter2/keluarga.json', rootKey: 'keluarga', audioBase: 'keluarga' },
+        { id: 4, key: 'aktivitas', title: 'Aktivitas Sehari-hari', jsonUrl: '/scripts/chapter2/aktivitas.json', rootKey: 'aktivitas_rumah', audioBase: 'aktivitas' },
+        { id: 5, key: 'kalimat', title: 'Kalimat Sederhana', jsonUrl: '/scripts/chapter2/kalimat.json', rootKey: 'kalimat_sederhana_hana', audioBase: 'kalimat' },
     ];
 
     let progress = 0; 
@@ -94,12 +94,13 @@ function playAudioHappy(src) {
     const materi2Played = new Set(); 
     const materi3Played = new Set(); 
     const materi4Played = new Set(); 
+    const materi5Played = new Set();
     const testsPassed = [false, false, false, false, false]; // status tes lulus per materi
     let testState = null; // state ujian materi (jika aktif)
 
-    // Load saved state from localStorage
+    // Load saved state from localStorage (Chapter 2)
     try {
-        const saved = JSON.parse(localStorage.getItem('chap1Progress') || 'null');
+        const saved = JSON.parse(localStorage.getItem('chap2Progress') || 'null');
         if (saved && typeof saved === 'object') {
             if (Array.isArray(saved.materiProgress) && saved.materiProgress.length === 5) {
                 for (let i = 0; i < 5; i++) materiProgress[i] = Math.max(0, Math.min(1, Number(saved.materiProgress[i]) || 0));
@@ -109,6 +110,7 @@ function playAudioHappy(src) {
             if (Array.isArray(saved.materi2Played)) saved.materi2Played.forEach(k => materi2Played.add(k));
             if (Array.isArray(saved.materi3Played)) saved.materi3Played.forEach(k => materi3Played.add(k));
             if (Array.isArray(saved.materi4Played)) saved.materi4Played.forEach(k => materi4Played.add(k));
+            if (Array.isArray(saved.materi5Played)) saved.materi5Played.forEach(k => materi5Played.add(k));
             if (Array.isArray(saved.testsPassed) && saved.testsPassed.length === 5) {
                 for (let i = 0; i < 5; i++) testsPassed[i] = !!saved.testsPassed[i];
             }
@@ -123,9 +125,10 @@ function playAudioHappy(src) {
             materi2Played: Array.from(materi2Played),
             materi3Played: Array.from(materi3Played),
             materi4Played: Array.from(materi4Played),
+            materi5Played: Array.from(materi5Played),
             testsPassed,
         };
-        try { localStorage.setItem('chap1Progress', JSON.stringify(payload)); } catch {}
+        try { localStorage.setItem('chap2Progress', JSON.stringify(payload)); } catch {}
     }
 
     function formatPercent(v) { return Math.round(v * 100); }
@@ -134,143 +137,16 @@ function playAudioHappy(src) {
         const sum = materiProgress.reduce((a, b) => a + b, 0);
         return (sum / materiProgress.length);
     }
-    function mapAudioPath(src) {
-        let out = src || '';
-        // dasar.json gunakan /audio/kata-umum/, padahal file ada di /audio/chapter1/dasar/
-        if (out.startsWith('/audio/kata-umum/')) out = out.replace('/audio/kata-umum/', '/audio/chapter1/dasar/');
-        // tanya-ganti -> folder tanya_ganti
-        if (out.startsWith('/audio/tanya-ganti/')) out = out.replace('/audio/tanya-ganti/', '/audio/chapter1/tanya_ganti/');
-        // sifat-emosi -> folder emosi
-        if (out.startsWith('/audio/sifat-emosi/')) out = out.replace('/audio/sifat-emosi/', '/audio/chapter1/emosi/');
-        // kata-kerja -> folder kerja
-        if (out.startsWith('/audio/kata-kerja/')) out = out.replace('/audio/kata-kerja/', '/audio/chapter1/kerja/');
-        // filename normalizations
-        out = out.replace('hottosuru.mp3', 'hotto suru.mp3');
-        out = out.replace('benkyousuru.mp3', 'benkyou suru.mp3');
-        return out;
+    // Mapper audio untuk Chapter 2 per materi
+    function makeAudioMapper(audioBase) {
+        return function(src) {
+            const name = String(src || '').trim();
+            if (!name) return '';
+            if (name.startsWith('/audio/')) return name;
+            return `/audio/chapter2/${audioBase}/${name}`;
+        };
     }
-
-    async function startKataDasar() {
-        clearChat();
-        // Pastikan input chat tetap disembunyikan
-        if (formEl) formEl.style.display = 'none';
-
-        // Ambil data kata dasar
-        let data;
-        try {
-            const res = await fetch('/scripts/chapter1/dasar.json');
-            data = await res.json();
-        } catch (e) {
-            addMessage('Gagal memuat data kata dasar.', 'reply');
-            return;
-        }
-
-        const groups = (data && data.kata_umum) ? data.kata_umum : [];
-
-        // Header panel + tombol back
-        const header = document.createElement('div');
-        header.className = 'panel-header';
-        header.innerHTML = '<div><h3>Kata Dasar: Kata Umum</h3><p>Tekan sebuah kata untuk mendengarkan audio.</p></div>';
-        const backBtn = document.createElement('button');
-        backBtn.className = 'btn-back';
-        backBtn.textContent = '← Kembali';
-        backBtn.addEventListener('click', () => {
-            clearChat();
-            addMessage('Pilih materi:', 'reply');
-            showMateriButtons();
-            renderOverallProgress();
-        });
-        header.appendChild(backBtn);
-        messagesContainer.appendChild(header);
-
-        // Progress materi 1
-        const totalWords = groups.reduce((acc, g) => acc + (g.words?.length || 0), 0);
-        const progressRow = document.createElement('div');
-        progressRow.className = 'progress-row';
-        const progressWrap = document.createElement('div');
-        progressWrap.className = 'progress-wrap';
-        const progressBar = document.createElement('div');
-        progressBar.className = 'progress-bar';
-        const progressText = document.createElement('div');
-        progressText.className = 'progress-text';
-        const testBtn = document.createElement('button');
-        testBtn.className = 'btn-test';
-        testBtn.textContent = 'Tes';
-        testBtn.disabled = true;
-    testBtn.addEventListener('click', () => startMateriTest(groups, 0));
-        function updateMateri1Progress() {
-            const pct = materi1Played.size / Math.max(1, totalWords);
-            materiProgress[0] = pct;
-            progressBar.style.width = `${formatPercent(pct)}%`;
-            progressText.textContent = `${materi1Played.size}/${totalWords} (${formatPercent(pct)}%)`;
-            // saat 100%, bar jadi kuning; jika sudah lulus tes, jadi hijau
-            progressBar.classList.remove('ready');
-            progressBar.classList.remove('passed');
-            if (pct >= 1) {
-                if (testsPassed[0]) {
-                    progressBar.classList.add('passed');
-                } else {
-                    progressBar.classList.add('ready');
-                }
-                testBtn.disabled = false;
-            } else {
-                testBtn.disabled = true;
-            }
-            saveState();
-        }
-        updateMateri1Progress();
-        progressWrap.appendChild(progressBar);
-        progressRow.appendChild(progressWrap);
-        progressRow.appendChild(testBtn);
-        messagesContainer.appendChild(progressRow);
-        messagesContainer.appendChild(progressText);
-
-        // Render group + kata
-        groups.forEach(group => {
-            const section = document.createElement('section');
-            section.className = 'word-group';
-            const title = document.createElement('h4');
-            title.textContent = group.group || 'Tanpa Nama';
-            section.appendChild(title);
-
-            const grid = document.createElement('div');
-            grid.className = 'word-grid';
-
-            (group.words || []).forEach(w => {
-                const btn = document.createElement('button');
-                btn.className = 'btn-word';
-                btn.innerHTML = `<span class="jp">${w.japan}</span><span class="rd">${w.reading}</span><span class="mn">${w.meaning}</span>`;
-
-                const key = `${w.japan}|${w.reading}`;
-                if (materi1Played.has(key)) btn.classList.add('played');
-
-                btn.addEventListener('click', () => {
-                    // mainkan audio
-                    const audioSrc = mapAudioPath(w.audio || '');
-                    playAudio(audioSrc);
-                    // progress
-                    if (!materi1Played.has(key)) {
-                        materi1Played.add(key);
-                        btn.classList.add('played');
-                        updateMateri1Progress();
-                        // Jangan tampilkan progress keseluruhan di view materi
-                        // refresh materi menu gating jika sudah penuh
-                        if (materiProgress[0] >= 1) {
-                            // no immediate rerender here; back shows updated state
-                        }
-                    }
-                });
-
-                grid.appendChild(btn);
-            });
-
-            section.appendChild(grid);
-            messagesContainer.appendChild(section);
-        });
-
-        // Auto-scroll ke bawah
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }
+    // startRumah akan menggunakan renderer generik di bawah
 
     function shuffle(arr) {
         const a = arr.slice();
@@ -368,21 +244,22 @@ function playAudioHappy(src) {
         // Sembunyikan input lagi saat kembali ke menu
         if (formEl) formEl.style.display = 'none';
 
-        if (percent >= 80) {
+    if (percent >= 80) {
             // Lulus: unlock materi berikutnya
             const mi = Math.max(0, Math.min(4, Number(testState.materiIndex)));
             testsPassed[mi] = true;
             progress = Math.max(progress, mi + 1);
             saveState();
             setTimeout(() => {
-                addMessage('Selamat! (Omedetou)', 'reply');
-                playAudio('/audio/chapter1/dasar/omedetou.mp3');
+                addMessage('Selamat!', 'reply');
+                playAudio('/audio/chapter2/hebat.mp3');
                 setTimeout(() => {
                     addMessage('Kamu berhasil menyelesaikan satu materi.', 'reply');
                     setTimeout(() => {
                         addMessage('Ayo teruskan!', 'reply');
                         if (percent === 100) {
-                            addMessage('Hebat! (Sugoi)', 'reply');
+                            addMessage('Hebat!', 'reply');
+                            playAudioHappy('/audio/chapter2/hebat.mp3');
                         }
                         // Kembali ke menu materi
                         clearChat();
@@ -394,6 +271,7 @@ function playAudioHappy(src) {
         } else {
             setTimeout(() => {
                 addMessage('Belum lulus. Coba lagi ya!', 'reply');
+                playAudio('/audio/chapter2/salah.mp3');
                 // Kembali ke menu materi
                 setTimeout(() => {
                     clearChat();
@@ -419,7 +297,7 @@ function playAudioHappy(src) {
             <div class="overall-text">${formatPercent(pct)}%</div>`;
         messagesContainer.appendChild(wrap);
 
-        // If all materi 100%, add a congratulatory chat-like message once
+        // Jika semua materi 100%, tampilkan pesan selamat satu kali
         const allComplete = materiProgress.every(p => Math.round(p * 100) >= 100);
         const already = document.getElementById('all-done-note');
         if (allComplete && !already) {
@@ -430,11 +308,7 @@ function playAudioHappy(src) {
             messagesContainer.appendChild(note);
             // Putar audio selesai saat semua materi tuntas
             try {
-                if (typeof playAudioHappy === 'function') {
-                    playAudioHappy('/audio/chapter1/finish.mp3');
-                } else {
-                    playAudio('/audio/chapter1/finish.mp3');
-                }
+                playAudioHappy('/audio/chapter2/hebat.mp3');
             } catch {}
         }
     }
@@ -460,13 +334,11 @@ function playAudioHappy(src) {
             if (index > progress) btn.disabled = true;
 
             btn.addEventListener('click', () => {
-                if (index === 0) return startKataDasar();
-                if (index === 1) return startKataTanyaGanti();
-                if (index === 2) return startKataSifatEmosi();
-                if (index === 3) return startKataKerjaDasar();
-                if (index === 4 && window.startPerkenalanMateri) return window.startPerkenalanMateri();
-                playAudio(m.audio);
-                addMessage(`Mulai materi: ${m.title}`, 'reply');
+                if (index === 0) return startRumah();
+                if (index === 1) return startPerlengkapan();
+                if (index === 2) return startKeluarga();
+                if (index === 3) return startAktivitas();
+                if (index === 4) return startKalimat();
             });
 
             container.appendChild(btn);
@@ -490,7 +362,7 @@ function playAudioHappy(src) {
     };
     window.reloadChap1State = function() {
         try {
-            const saved = JSON.parse(localStorage.getItem('chap1Progress') || 'null');
+            const saved = JSON.parse(localStorage.getItem('chap2Progress') || 'null');
             if (saved && typeof saved === 'object') {
                 if (Array.isArray(saved.materiProgress) && saved.materiProgress.length === 5) {
                     for (let i = 0; i < 5; i++) materiProgress[i] = Math.max(0, Math.min(1, Number(saved.materiProgress[i]) || 0));
@@ -528,13 +400,13 @@ function playAudioHappy(src) {
             if (correct) {
                 testState.correct += 1;
                 addMessage('Benar!', 'reply');
-                playAudioHappy('/audio/chapter1/benar.mp3');
+                playAudioHappy('/audio/chapter2/benar.mp3');
             } else {
                 const rightText = q.type === 'meaning'
                     ? (Array.isArray(q.answersRaw) && q.answersRaw.length ? q.answersRaw.join(' / ') : (q.readingRaw || ''))
                     : (q.readingRaw || (q.w && q.w.reading) || '');
                 addMessage(`Salah. Jawaban: ${rightText}`, 'reply');
-                playAudio('/audio/chapter1/dasar/chigaimasu.mp3');
+                playAudio('/audio/chapter2/salah.mp3');
             }
 
             testState.index += 1;
@@ -547,29 +419,29 @@ function startChapter1() {
     clearChat();
     if (readyOverlay) readyOverlay.style.display = 'none';
 
-    addMessage('Oke, kenalin aku Chika!', 'reply');
-    playAudioHappy('/audio/chapter1/intro.mp3');
+    addMessage('Oke, kenalin aku Hana!', 'reply');
+    playAudioHappy('/audio/chapter2/intro.mp3');
 
     // jeda 2 detik
     setTimeout(() => {
         addMessage('Senang berkenalan denganmu!', 'reply');
-        playAudio('/audio/chapter1/post-intro.mp3');
+        playAudio('/audio/chapter2/post-intro.mp3');
 
         // jeda 2 detik
         setTimeout(() => {
-            addMessage('Chika bakal nemenin kamu belajar bahasa Jepang.', 'reply');
-            playAudio2('/audio/chapter1/learn.mp3');
+            addMessage('Hana bakal nemenin kamu belajar di rumah.', 'reply');
+            playAudio2('/audio/chapter2/learn.mp3');
 
             // jeda 1.5 detik
             setTimeout(() => {
                 addMessage('Jadi, Ayo kita mulai!', 'reply');
-                playAudioHappy('/audio/chapter1/lets-start.mp3');
+                playAudioHappy('/audio/chapter2/lets-start.mp3');
                 // tampilkan button materi
                 setTimeout(() => {
                     showMateriButtons();
                 }, 1000);
 
-            }, 3200);
+            }, 3500);
 
         }, 2500);
 
@@ -577,7 +449,7 @@ function startChapter1() {
 }
 
 // Generic materi renderer
-async function startMateriCommon({ materiIndex, title, jsonUrl, rootKey, playedSet }) {
+async function startMateriCommon({ materiIndex, title, jsonUrl, rootKey, playedSet, audioBase }) {
     clearChat();
     if (formEl) formEl.style.display = 'none';
 
@@ -621,6 +493,7 @@ async function startMateriCommon({ materiIndex, title, jsonUrl, rootKey, playedS
     testBtn.textContent = 'Tes';
     testBtn.disabled = true;
     testBtn.addEventListener('click', () => startMateriTest(groups, materiIndex));
+    const mapAudioPath = makeAudioMapper(audioBase || '');
 
     function updateMateriProgress() {
         const pct = playedSet.size / Math.max(1, totalWords);
@@ -680,33 +553,58 @@ async function startMateriCommon({ materiIndex, title, jsonUrl, rootKey, playedS
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-function startKataTanyaGanti() {
+function startRumah() {
+    return startMateriCommon({
+        materiIndex: 0,
+        title: 'Tentang Rumah',
+        jsonUrl: '/scripts/chapter2/rumah.json',
+        rootKey: 'kata_rumah',
+        playedSet: materi1Played,
+        audioBase: 'rumah',
+    });
+}
+
+function startPerlengkapan() {
     return startMateriCommon({
         materiIndex: 1,
-        title: 'Kata Dasar: Tanya & Ganti',
-        jsonUrl: '/scripts/chapter1/tanya-ganti.json',
-        rootKey: 'tanya_ganti',
+        title: 'Benda-benda di Rumah',
+        jsonUrl: '/scripts/chapter2/perlengkapan.json',
+        rootKey: 'perlengkapan_rumah',
         playedSet: materi2Played,
+        audioBase: 'perlengkapan',
     });
 }
 
-function startKataSifatEmosi() {
+function startKeluarga() {
     return startMateriCommon({
         materiIndex: 2,
-        title: 'Kata Dasar: Sifat / Emosi',
-        jsonUrl: '/scripts/chapter1/emosi.json',
-        rootKey: 'sifat_emosi',
+        title: 'Keluarga',
+        jsonUrl: '/scripts/chapter2/keluarga.json',
+        rootKey: 'keluarga',
         playedSet: materi3Played,
+        audioBase: 'keluarga',
     });
 }
 
-function startKataKerjaDasar() {
+function startAktivitas() {
     return startMateriCommon({
         materiIndex: 3,
-        title: 'Kata Dasar: Kata Kerja',
-        jsonUrl: '/scripts/chapter1/kerja.json',
-        rootKey: 'kata_kerja',
+        title: 'Aktivitas Sehari-hari',
+        jsonUrl: '/scripts/chapter2/aktivitas.json',
+        rootKey: 'aktivitas_rumah',
         playedSet: materi4Played,
+        audioBase: 'aktivitas',
+    });
+}
+
+function startKalimat() {
+    return startMateriCommon({
+        materiIndex: 4,
+        title: 'Kalimat Sederhana',
+        jsonUrl: '/scripts/chapter2/kalimat.json',
+        rootKey: 'kalimat_sederhana_hana',
+        playedSet: materi5Played,
+        audioBase: 'kalimat',
     });
 }
 
@@ -716,17 +614,17 @@ function startKataKerjaDasar() {
         let greetingAudio = '';
         let greetingText = '';
 
-        if (hour >=5 && hour <11) { greetingText='Selamat pagi!'; greetingAudio='/audio/chapter1/pagi.mp3'; }
-        else if (hour >=11 && hour <15) { greetingText='Selamat siang!'; greetingAudio='/audio/chapter1/siang.mp3'; }
-        else if (hour >=15 && hour <18) { greetingText='Selamat sore!'; greetingAudio='/audio/chapter1/siang.mp3'; }
-        else { greetingText='Selamat malam!'; greetingAudio='/audio/chapter1/malam.mp3'; }
+        if (hour >=5 && hour <11) { greetingText='Selamat pagi!'; greetingAudio='/audio/chapter2/pagi.mp3'; }
+        else if (hour >=11 && hour <15) { greetingText='Selamat siang!'; greetingAudio='/audio/chapter2/siang.mp3'; }
+        else if (hour >=15 && hour <18) { greetingText='Selamat sore!'; greetingAudio='/audio/chapter2/siang.mp3'; }
+        else { greetingText='Selamat malam!'; greetingAudio='/audio/chapter2/malam.mp3'; }
 
         addMessage(greetingText, 'reply');
         playAudio(greetingAudio);
 
         setTimeout(() => {
-            addMessage('Di Chapter 1 kita akan belajar dasar-dasar bahasa Jepang. Kamu siap?', 'reply');
-            playAudio2('/audio/chapter1/ready.mp3');
+            addMessage('Di Chapter 2 kita akan belajar kosakata dirumah. Kamu siap?', 'reply');
+            playAudio2('/audio/chapter2/ready.mp3');
             showReadyButtons();
         }, 2500);
     }
@@ -753,10 +651,9 @@ function startKataKerjaDasar() {
     const resetBtn = document.getElementById('reset-progress');
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
-            const yakin = confirm('Yakin reset semua progres Chapter 1?');
+            const yakin = confirm('Yakin reset semua progres Chapter 2?');
             if (!yakin) return;
-            try { localStorage.removeItem('chap1Progress'); } catch {}
-            try { localStorage.removeItem('chap1_materi5_played'); } catch {}
+            try { localStorage.removeItem('chap2Progress'); } catch {}
             // reset in-memory
             for (let i = 0; i < 5; i++) materiProgress[i] = 0;
             progress = 0;
@@ -764,6 +661,7 @@ function startKataKerjaDasar() {
             materi2Played.clear();
             materi3Played.clear();
             materi4Played.clear();
+            materi5Played.clear();
             for (let i = 0; i < 5; i++) testsPassed[i] = false;
             saveState();
             // Kembali ke menu materi

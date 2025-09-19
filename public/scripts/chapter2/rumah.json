@@ -1,0 +1,48 @@
+{
+  "kata_rumah": [
+    {
+      "group": "Bagian Rumah",
+      "words": [
+        { "japan": "いえ", "reading": "ie", "meaning": "Rumah", "audio": "ie.mp3" },
+        { "japan": "うち", "reading": "uchi", "meaning": "Rumah / Tempat tinggal", "audio": "uchi.mp3" },
+        { "japan": "へや", "reading": "heya", "meaning": "Kamar", "audio": "heya.mp3" },
+        { "japan": "いま", "reading": "ima", "meaning": "Ruang tamu", "audio": "ima.mp3" },
+        { "japan": "げんかん", "reading": "genkan", "meaning": "Pintu masuk / Foyer", "audio": "genkan.mp3" },
+        { "japan": "かいだん", "reading": "kaidan", "meaning": "Tangga", "audio": "kaidan.mp3" },
+        { "japan": "やね", "reading": "yane", "meaning": "Atap", "audio": "yane.mp3" },
+        { "japan": "かべ", "reading": "kabe", "meaning": "Dinding", "audio": "kabe.mp3" }
+      ]
+    },
+    {
+      "group": "Ruang Utama",
+      "words": [
+        { "japan": "しんしつ", "reading": "shinshitsu", "meaning": "Kamar tidur", "audio": "shinshitsu.mp3" },
+        { "japan": "だいどころ", "reading": "daidokoro", "meaning": "Dapur", "audio": "daidokoro.mp3" },
+        { "japan": "おふろ", "reading": "ofuro", "meaning": "Kamar mandi / Bak mandi", "audio": "ofuro.mp3" },
+        { "japan": "トイレ", "reading": "toire", "meaning": "Toilet", "audio": "toire.mp3" },
+        { "japan": "しょくどう", "reading": "shokudou", "meaning": "Ruang makan", "audio": "shokudou.mp3" },
+        { "japan": "べらんだ", "reading": "beranda", "meaning": "Beranda / Balkon", "audio": "beranda.mp3" }
+      ]
+    },
+    {
+      "group": "Pintu & Jendela",
+      "words": [
+        { "japan": "ドア", "reading": "doa", "meaning": "Pintu", "audio": "doa.mp3" },
+        { "japan": "まど", "reading": "mado", "meaning": "Jendela", "audio": "mado.mp3" },
+        { "japan": "かぎ", "reading": "kagi", "meaning": "Kunci", "audio": "kagi.mp3" },
+        { "japan": "カーテン", "reading": "kaaten", "meaning": "Gorden", "audio": "kaaten.mp3" },
+        { "japan": "しょうじ", "reading": "shouji", "meaning": "Pintu geser kertas (tradisional)", "audio": "shouji.mp3" }
+      ]
+    },
+    {
+      "group": "Halaman & Sekitar Rumah",
+      "words": [
+        { "japan": "にわ", "reading": "niwa", "meaning": "Taman / Halaman", "audio": "niwa.mp3" },
+        { "japan": "バルコニー", "reading": "barukonii", "meaning": "Balkon", "audio": "barukonii.mp3" },
+        { "japan": "ガレージ", "reading": "gareeji", "meaning": "Garasi", "audio": "gareeji.mp3" },
+        { "japan": "もん", "reading": "mon", "meaning": "Gerbang", "audio": "mon.mp3" },
+        { "japan": "へい", "reading": "hei", "meaning": "Pagar / Tembok", "audio": "hei.mp3" }
+      ]
+    }
+  ]
+}

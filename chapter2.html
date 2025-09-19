@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f4b88b">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Hiyori on NihonGo - Chapter 1">
-    <meta property="og:site_name" content="Chat with Haru!">
-    <meta property="og:description" content="Hello! I'm Hiyori, a web-based AI with NLP and a Live2D model.">
+    <meta property="og:title" content="Hana on NihonGo - Chapter 2">
+    <meta property="og:site_name" content="Chat with Hana!">
+    <meta property="og:description" content="Hello! I'm Hana, a web-based AI with NLP and a Live2D model.">
     <meta property="twitter:image" content="https://sglkc.github.io/waifu-otw/assets/thumbnail.png">
     <script src="scripts/live2d.min.js" defer></script>
     <script src="scripts/live2dcubismcore.min.js" defer></script>
@@ -34,7 +34,7 @@
                 <button id="reset-progress" title="Reset progres" aria-label="Reset progres">↺</button>
             </nav>
             <canvas id="canvas"></canvas>
-            <img id="background" src="assets/rumah.jpg" alt="background" draggable="false">
+            <img id="background" src="assets/bg/rumah.jpg" alt="background" draggable="false">
         </div>
         <div id="chat">
             <main id="messages">
@@ -45,27 +45,27 @@
             </form>
         </div>
     </main>
-        <div id="loader"></div>
-                <div id="ready-overlay">
-                        <div class="overlay-card">
-                                <h2 class="overlay-title">Apa yang dipelajari?</h2>
-                                <p class="overlay-desc">Di Chapter 1 kamu akan mempelajari:</p>
-                                <ul class="overlay-list">
-                  <li>Kata Umum</li>
-                  <li>Kata Tanya & Ganti</li>
-                  <li>Kata Sifat / Emosi</li>
-                  <li>Kata Kerja Dasar</li>
-                  <li>Perkenalan</li>
-                </ul>
-                <button id="btn-oke" class="overlay-button">Oke, mulai</button>
-                <div class="overlay-credits">
-                    Real-time illustration animation by
-                    <a href="https://www.live2d.com/en/learn/sample/" target="_blank" rel="noopener noreferrer">Live2D</a> ·
-                    Voice by
-                    <a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener noreferrer">VOICEVOX</a>
-                </div>
-            </div>
+    <div id="loader"></div>
+    <div id="ready-overlay">
+    <div class="overlay-card">
+        <h2 class="overlay-title">Apa yang dipelajari?</h2>
+        <p class="overlay-desc">Di Chapter 2 kamu akan mempelajari:</p>
+        <ul class="overlay-list">
+        <li>Kosakata tentang Rumah</li>
+        <li>Benda-benda di Rumah</li>
+        <li>Keluarga (Family)</li>
+        <li>Aktivitas Sehari-hari</li>
+        <li>Kalimat Sederhana</li>
+        </ul>
+        <button id="btn-oke" class="overlay-button">Oke, mulai</button>
+        <div class="overlay-credits">
+        Real-time illustration animation by
+        <a href="https://www.live2d.com/en/learn/sample/" target="_blank" rel="noopener noreferrer">Live2D</a> ·
+        Voice by
+        <a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener noreferrer">VOICEVOX</a>
         </div>
+    </div>
+    </div>
     <script type="module" src="/src/chap2.ts"></script>
     <script src="/scripts/chat-chap2.js" defer></script>
 </body>

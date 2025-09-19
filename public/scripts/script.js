@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modelContinue = document.getElementById('model-continue');
     const modelOptions = modelModal ? modelModal.querySelectorAll('.model-option') : [];
 
-    const modelLabelMap = { hiyori: 'Hiyori', shizuku: 'Chika', natori: 'Natori', haru: 'Hana', chitose: 'Chitose' };
-    let selectedModel = localStorage.getItem('model') || 'hiyori';
+    const modelLabelMap = { hiyori: 'Hana', shizuku: 'Chika', natori: 'Natori', haru: 'Haru', chitose: 'Chitose' };
+    let selectedModel = localStorage.getItem('model') || 'Chika';
 
     // --- Fungsi Splash ---
     const textToType = "NihonGo!";

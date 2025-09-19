@@ -4,7 +4,7 @@ import { Ticker, TickerPlugin } from '@pixi/ticker';
 import { InteractionManager } from '@pixi/interaction';
 import { Live2DModel, MotionPreloadStrategy } from 'pixi-live2d-display';
 import type { ModelConfig } from './model/model-config';
-import { haruConfig } from './model/haru';
+import { hiyoriConfig } from './model/hiyori';
 
 // Register PIXI plugins
 // @ts-ignore
@@ -15,7 +15,7 @@ Renderer.registerPlugin('interaction', InteractionManager);
 const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 const app = new Application({ backgroundAlpha: 0, view: canvas });
 
-console.log('[Chapter2] Initializing Live2D scene (Haru)...');
+console.log('[Chapter2] Initializing Live2D scene (Hiyori)...');
 
 let currentAudio: HTMLAudioElement | null = null;
 
@@ -24,9 +24,9 @@ function ensureLayoutDefaults(cfg: ModelConfig) {
   const layout = cfg.layout || {};
   return {
     xFrac: layout.xFrac ?? 0.22,
-    yFrac: layout.yFrac ?? 0.15,
+    yFrac: layout.yFrac ?? 0.5,
     anchorX: layout.anchorX ?? 0.5,
-    anchorY: layout.anchorY ?? 0.1,
+    anchorY: layout.anchorY ?? 0.5,
     targetWidthFrac: layout.targetWidthFrac ?? 0.65,
     targetHeightFrac: layout.targetHeightFrac ?? 2.5,
   };
@@ -64,15 +64,15 @@ function startAudioWithMotion(m: Live2DModel, motionGroup: string, motionIndex: 
 }
 
 function bindGlobalAudioHelpers(motionGroups: Record<string, string> | undefined) {
-  const talk = motionGroups?.talk || 'flick_head';
-  const alt = motionGroups?.disagree || 'pinch_out';
-  const happy = motionGroups?.cheer || 'tap_body';
+  const talk = motionGroups?.talk || 'Tap@Body';
+  const alt = motionGroups?.disagree || 'Flick';
+  const happy = motionGroups?.cheer || 'FlickUp';
 
   function playAudioWithMotion(m: Live2DModel, src: string) {
-    startAudioWithMotion(m, talk, 4, src);
+    startAudioWithMotion(m, talk, 0, src);
   }
   function playAudio2(m: Live2DModel, src: string) {
-    startAudioWithMotion(m, alt, 2, src);
+    startAudioWithMotion(m, alt, 0, src);
   }
   function playAudioHappy(m: Live2DModel, src: string) {
     startAudioWithMotion(m, happy, 0, src);
@@ -88,7 +88,7 @@ function bindGlobalAudioHelpers(motionGroups: Record<string, string> | undefined
 }
 
 async function init() {
-  const cfg = haruConfig; // gunakan Haru untuk Chapter 2
+  const cfg = hiyoriConfig; // gunakan Hiyori untuk Chapter 2
   let model: Live2DModel;
 
   try {
@@ -97,12 +97,12 @@ async function init() {
       motionPreload: MotionPreloadStrategy.IDLE,
     });
     app.stage.addChild(model);
-    console.log('[Chapter2] Haru model loaded and added to stage.');
+  console.log('[Chapter2] Hiyori model loaded and added to stage.');
     // expose model untuk skrip lain
     // @ts-ignore
     (window as any).live2dModel = model;
   } catch (err) {
-    console.error('[Chapter2] Failed to load Haru model:', err);
+  console.error('[Chapter2] Failed to load Hiyori model:', err);
     return;
   } finally {
     try {
@@ -152,12 +152,32 @@ async function init() {
   });
 
   // ================= HIT AREA (optional) =================
-  if (cfg.hitHandler) {
-    model.on('hit', () => cfg.hitHandler!(model));
-  }
+  // --- PERUBAHAN DIMULAI ---
+  // Logika hit area ditambahkan langsung di sini
+  model.on('hit', (hitAreas) => {
+      // Cek apakah area yang diklik adalah 'Body'
+      if (hitAreas.includes('Body')) {
+          console.log('[Hiyori] Hit on Body area.');
+          // Mainkan animasi saat tubuhnya disentuh
+          model.motion('Tap@Body');
+      }
+  });
+  // --- PERUBAHAN SELESAI ---
 
   // ================= AUDIO HELPERS (NO HARU VOICE) =================
-  bindGlobalAudioHelpers(cfg.motionGroups);
+  // --- PERUBAHAN DIMULAI ---
+  // Definisikan grup animasi secara langsung
+  const motionGroups = {
+      talk: 'Tap@Body',      // Animasi utama saat berbicara
+      cheer: 'FlickUp',      // Animasi saat senang
+      disagree: 'Flick',     // Animasi saat tidak setuju
+      mouthcover: 'Tap',     // Animasi tap biasa
+      surprised: 'Flick@Body', // Animasi saat terkejut
+      laugh: 'FlickUp'       // Bisa gunakan animasi senang untuk tertawa
+  };
+  // Kirimkan grup animasi ke fungsi helper
+  bindGlobalAudioHelpers(motionGroups);
+  // --- PERUBAHAN SELESAI ---
 
   return { app, model };
 }

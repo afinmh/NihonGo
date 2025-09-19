@@ -1,0 +1,40 @@
+{
+  "aktivitas_rumah": [
+    {
+      "group": "Kegiatan Dasar",
+      "words": [
+        { "japan": "ねます", "reading": "nemasu", "meaning": "Tidur", "audio": "nemasu.mp3" },
+        { "japan": "おきます", "reading": "okimasu", "meaning": "Bangun tidur", "audio": "okimasu.mp3" },
+        { "japan": "べんきょうします", "reading": "benkyou shimasu", "meaning": "Belajar", "audio": "benkyou_shimasu.mp3" },
+        { "japan": "しごとをします", "reading": "shigoto o shimasu", "meaning": "Bekerja", "audio": "shigoto_shimasu.mp3" }
+      ]
+    },
+    {
+      "group": "Bersih-bersih",
+      "words": [
+        { "japan": "そうじします", "reading": "souji shimasu", "meaning": "Membersihkan / menyapu", "audio": "souji_shimasu.mp3" },
+        { "japan": "せんたくします", "reading": "sentaku shimasu", "meaning": "Mencuci pakaian", "audio": "sentaku_shimasu.mp3" },
+        { "japan": "さらをあらいます", "reading": "sara o araimasu", "meaning": "Mencuci piring", "audio": "sara_araimasu.mp3" },
+        { "japan": "ごみをだします", "reading": "gomi o dashimasu", "meaning": "Membuang sampah", "audio": "gomi_dashimasu.mp3" }
+      ]
+    },
+    {
+      "group": "Makan & Minum",
+      "words": [
+        { "japan": "たべます", "reading": "tabemasu", "meaning": "Makan", "audio": "tabemasu.mp3" },
+        { "japan": "のみます", "reading": "nomimasu", "meaning": "Minum", "audio": "nomimasu.mp3" },
+        { "japan": "りょうりします", "reading": "ryouri shimasu", "meaning": "Memasak", "audio": "ryouri_shimasu.mp3" },
+        { "japan": "おちゃをのみます", "reading": "ocha o nomimasu", "meaning": "Minum teh", "audio": "ocha_nomimasu.mp3" }
+      ]
+    },
+    {
+      "group": "Aktivitas Santai",
+      "words": [
+        { "japan": "テレビをみます", "reading": "terebi o mimasu", "meaning": "Menonton TV", "audio": "terebi_mimasu.mp3" },
+        { "japan": "ほんをよみます", "reading": "hon o yomimasu", "meaning": "Membaca buku", "audio": "hon_yomimasu.mp3" },
+        { "japan": "おんがくをききます", "reading": "ongaku o kikimasu", "meaning": "Mendengarkan musik", "audio": "ongaku_kikimasu.mp3" },
+        { "japan": "ゲームをします", "reading": "geemu o shimasu", "meaning": "Bermain game", "audio": "geemu_shimasu.mp3" }
+      ]
+    }
+  ]
+}
