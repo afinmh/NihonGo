@@ -20,3 +20,6 @@ function resolveSelectedName(): string {
   const loader = modelToLoader[selectedName] || modelToLoader['Chika'];
   loader().catch((e) => console.error('Failed to load chapter entry for', selectedName, e));
 })();
+
+// Make this file a module for --isolatedModules compatibility
+export {};
