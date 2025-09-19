@@ -5,6 +5,7 @@
     { "source": "/chapter1", "destination": "/chapter1.html" },
     { "source": "/chapter2", "destination": "/chapter2.html" },
     { "source": "/chapter3", "destination": "/chapter3.html" },
-    { "source": "/chapter4", "destination": "/chapter4.html" }
+    { "source": "/chapter4", "destination": "/chapter4.html" },
+    {"source": "/chapter5", "destination": "/chapter5.html" }
   ]
 }

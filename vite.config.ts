@@ -13,6 +13,7 @@ export default defineConfig({
         chapter2: resolve(__dirname, 'chapter2.html'),
         chapter3: resolve(__dirname, 'chapter3.html'),
         chapter4: resolve(__dirname, 'chapter4.html'),
+        chapter5: resolve(__dirname, 'chapter5.html'),
       }
     }
   },
