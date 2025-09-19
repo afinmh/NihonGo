@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/bg/list.ts": {
+      "includeFiles": "public/assets/bg/**"
+    }
+  },
   "rewrites": [
     { "source": "/chat", "destination": "/chat.html" },
     { "source": "/tes", "destination": "/tes.html" },
