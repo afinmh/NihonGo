@@ -1,0 +1,37 @@
+{
+  "kosakata_kantor": [
+    {
+      "group": "Umum",
+      "words": [
+        { "japan": "会社", "reading": "kaisha", "meaning": "Perusahaan / Kantor", "audio": "kaisha.mp3" },
+        { "japan": "仕事", "reading": "shigoto", "meaning": "Pekerjaan", "audio": "shigoto.mp3" },
+        { "japan": "会社員", "reading": "kaishain", "meaning": "Pegawai kantor", "audio": "kaishain.mp3" },
+        { "japan": "店員", "reading": "tenin", "meaning": "Pegawai toko", "audio": "tenin.mp3" },
+        { "japan": "先生", "reading": "sensei", "meaning": "Guru / Dosen", "audio": "sensei.mp3" },
+        { "japan": "医者", "reading": "isha", "meaning": "Dokter", "audio": "isha.mp3" }
+      ]
+    },
+    {
+      "group": "Jabatan",
+      "words": [
+        { "japan": "上司", "reading": "joushi", "meaning": "Atasan / Bos", "audio": "joushi.mp3" },
+        { "japan": "部長", "reading": "buchou", "meaning": "Kepala divisi", "audio": "buchou.mp3" },
+        { "japan": "課長", "reading": "kachou", "meaning": "Kepala seksi / Manajer bagian", "audio": "kachou.mp3" },
+        { "japan": "同僚", "reading": "douryou", "meaning": "Rekan kerja", "audio": "douryou.mp3" },
+        { "japan": "後輩", "reading": "kouhai", "meaning": "Junior (bawahan)", "audio": "kouhai.mp3" },
+        { "japan": "先輩", "reading": "senpai", "meaning": "Senior", "audio": "senpai.mp3" }
+      ]
+    },
+    {
+      "group": "Kegiatan Kantor",
+      "words": [
+        { "japan": "会議", "reading": "kaigi", "meaning": "Rapat / Meeting", "audio": "kaigi.mp3" },
+        { "japan": "報告", "reading": "houkoku", "meaning": "Laporan", "audio": "houkoku.mp3" },
+        { "japan": "予定", "reading": "yotei", "meaning": "Jadwal / Rencana", "audio": "yotei.mp3" },
+        { "japan": "締め切り", "reading": "shimekiri", "meaning": "Tenggat waktu / Deadline", "audio": "shimekiri.mp3" },
+        { "japan": "残業", "reading": "zangyou", "meaning": "Lembur", "audio": "zangyou.mp3" },
+        { "japan": "休憩", "reading": "kyuukei", "meaning": "Istirahat", "audio": "kyuukei.mp3" }
+      ]
+    }
+  ]
+}

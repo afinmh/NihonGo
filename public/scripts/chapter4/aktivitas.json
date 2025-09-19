@@ -1,0 +1,40 @@
+{
+  "aktivitas_taman": [
+    {
+      "group": "Aktivitas Santai",
+      "words": [
+        { "japan": "さんぽする", "reading": "sanpo suru", "meaning": "Jalan-jalan", "audio": "sanpo_suru.mp3" },
+        { "japan": "すわる", "reading": "suwaru", "meaning": "Duduk", "audio": "suwaru.mp3" },
+        { "japan": "ほんをよむ", "reading": "hon o yomu", "meaning": "Membaca buku", "audio": "hon_o_yomu.mp3" },
+        { "japan": "やすむ", "reading": "yasumu", "meaning": "Beristirahat", "audio": "yasumu.mp3" }
+      ]
+    },
+    {
+      "group": "Aktivitas Fisik",
+      "words": [
+        { "japan": "あそぶ", "reading": "asobu", "meaning": "Bermain", "audio": "asobu.mp3" },
+        { "japan": "はしる", "reading": "hashiru", "meaning": "Berlari", "audio": "hashiru.mp3" },
+        { "japan": "サイクリングする", "reading": "saikuringu suru", "meaning": "Bersepeda", "audio": "saikuringu_suru.mp3" },
+        { "japan": "うんどうする", "reading": "undou suru", "meaning": "Berolahraga", "audio": "undou_suru.mp3" }
+      ]
+    },
+    {
+      "group": "Aktivitas Sosial",
+      "words": [
+        { "japan": "ピクニックする", "reading": "pikunikku suru", "meaning": "Piknik", "audio": "pikunikku_suru.mp3" },
+        { "japan": "しゃべる", "reading": "shaberu", "meaning": "Mengobrol", "audio": "shaberu.mp3" },
+        { "japan": "ともだちにあう", "reading": "tomodachi ni au", "meaning": "Bertemu teman", "audio": "tomodachi_ni_au.mp3" },
+        { "japan": "あいさつする", "reading": "aisatsu suru", "meaning": "Memberi salam", "audio": "aisatsu_suru.mp3" }
+      ]
+    },
+    {
+      "group": "Aktivitas Khusus",
+      "words": [
+        { "japan": "とりにえさをやる", "reading": "tori ni esa o yaru", "meaning": "Memberi makan burung", "audio": "tori_ni_esa_o_yaru.mp3" },
+        { "japan": "しゃしんをとる", "reading": "shashin o toru", "meaning": "Mengambil foto", "audio": "shashin_o_toru.mp3" },
+        { "japan": "はなをみる", "reading": "hana o miru", "meaning": "Melihat bunga", "audio": "hana_o_miru.mp3" },
+        { "japan": "そらをながめる", "reading": "sora o nagameru", "meaning": "Menatap langit", "audio": "sora_o_nagameru.mp3" }
+      ]
+    }
+  ]
+}

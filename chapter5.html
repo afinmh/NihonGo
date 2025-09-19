@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NihonGo - Chapter 5</title>
+    <base target="_blank">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4b88b">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tatsuya on NihonGo - Chapter 5">
+    <meta property="og:site_name" content="Chat with Tatsuya!">
+    <meta property="og:description" content="Hello! I'm Tatsuya, a web-based AI with NLP and a Live2D model.">
+    <meta property="twitter:image" content="https://sglkc.github.io/waifu-otw/assets/thumbnail.png">
+    <script src="scripts/live2d.min.js" defer></script>
+    <script src="scripts/live2dcubismcore.min.js" defer></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/chapter1.css">
+</head>
+<body>
+    <main id="container">
+        <div id="live">
+            <nav id="menu">
+                <button id="back-to-index" title="Kembali ke Menu" aria-label="Kembali ke Menu">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15.5 19.5a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.4 1.4L9.9 12l6.3 6.3a1 1 0 0 1-.7 1.7z"/>
+                    </svg>
+                </button>
+                <a href="https://github.com/sglkc/waifu-otw">
+                    <img src="assets/github.svg" width="40" height="40">
+                </a>
+                <button id="help">
+                    <img src="assets/question.svg" width="40" height="40">
+                </button>
+                <button id="reset-progress" title="Reset progres" aria-label="Reset progres">↺</button>
+            </nav>
+            <canvas id="canvas"></canvas>
+            <img id="background" src="assets/bg/kantor.jpg" alt="background" draggable="false">
+        </div>
+        <div id="chat">
+            <main id="messages">
+            </main>
+            <form id="form">
+                <input id="message" placeholder="kirim pesan ke Shizuku..." autocomplete="off">
+                <button id="send" type="submit">Send</button>
+            </form>
+        </div>
+    </main>
+    <div id="loader"></div>
+    <div id="ready-overlay">
+    <div class="overlay-card">
+        <h2 class="overlay-title">Apa yang dipelajari?</h2>
+        <p class="overlay-desc">Di Chapter 5 kamu akan mempelajari:</p>
+        <ul class="overlay-list">
+        <li>Kosakata tentang Kantor</li>
+        <li>Benda-benda di Kantor</li>
+        <li>Aktivitas di Kantor</li>
+        <li>Ungkapan Formal</li>
+        <li>Rekan Kerja</li>
+        </ul>
+        <button id="btn-oke" class="overlay-button">Oke, mulai</button>
+        <div class="overlay-credits">
+        Real-time illustration animation by
+        <a href="https://www.live2d.com/en/learn/sample/" target="_blank" rel="noopener noreferrer">Live2D</a> ·
+        Voice by
+        <a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener noreferrer">VOICEVOX</a>
+        </div>
+    </div>
+    </div>
+    <script type="module" src="/src/chap5.ts"></script>
+    <script src="/scripts/chapter5/chat-chap5.js" defer></script>
+</body>
+</html>

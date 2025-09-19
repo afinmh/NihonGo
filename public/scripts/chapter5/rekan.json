@@ -1,0 +1,35 @@
+{
+  "rekan_kerja": [
+    {
+      "group": "Jabatan",
+      "words": [
+        { "japan": "社長", "reading": "shachou", "meaning": "Presiden Direktur", "audio": "shachou.mp3" },
+        { "japan": "部長", "reading": "buchou", "meaning": "Kepala Departemen", "audio": "buchou.mp3" },
+        { "japan": "課長", "reading": "kachou", "meaning": "Manajer Bagian", "audio": "kachou.mp3" },
+        { "japan": "主任", "reading": "shunin", "meaning": "Supervisor", "audio": "shunin.mp3" },
+        { "japan": "社員", "reading": "shain", "meaning": "Karyawan", "audio": "shain.mp3" },
+        { "japan": "インターン", "reading": "intaan", "meaning": "Magang", "audio": "intaan.mp3" }
+      ]
+    },
+    {
+      "group": "Hubungan Kerja",
+      "words": [
+        { "japan": "同僚", "reading": "douryou", "meaning": "Rekan kerja", "audio": "douryou.mp3" },
+        { "japan": "上司", "reading": "joushi", "meaning": "Atasan", "audio": "joushi.mp3" },
+        { "japan": "部下", "reading": "buka", "meaning": "Bawahan", "audio": "buka.mp3" },
+        { "japan": "同部署", "reading": "doubusho", "meaning": "Satu departemen", "audio": "doubusho.mp3" },
+        { "japan": "取引先", "reading": "torihikisaki", "meaning": "Klien / Partner bisnis", "audio": "torihikisaki.mp3" }
+      ]
+    },
+    {
+      "group": "Situasi di Kantor",
+      "words": [
+        { "japan": "会議", "reading": "kaigi", "meaning": "Rapat / Meeting", "audio": "kaigi.mp3" },
+        { "japan": "出張", "reading": "shucchou", "meaning": "Dinas luar kota", "audio": "shucchou.mp3" },
+        { "japan": "残業", "reading": "zangyou", "meaning": "Lembur", "audio": "zangyou.mp3" },
+        { "japan": "休憩", "reading": "kyuukei", "meaning": "Istirahat", "audio": "kyuukei.mp3" },
+        { "japan": "昼休み", "reading": "hiruyasumi", "meaning": "Istirahat siang", "audio": "hiruyasumi.mp3" }
+      ]
+    }
+  ]
+}

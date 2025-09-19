@@ -10,10 +10,10 @@ with open("basic/ekspresi.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Folder untuk menyimpan audio
-output_folder = "ekspresi"
+output_folder = "chapter5"
 os.makedirs(output_folder, exist_ok=True)
 
-SPEAKER_ID = 21 # VOICEVOX speaker
+SPEAKER_ID = 13 # VOICEVOX speaker
 
 failed_words = []
 

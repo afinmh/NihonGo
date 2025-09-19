@@ -1,0 +1,36 @@
+{
+  "ungkapan_cinta_taman": [
+    {
+      "group": "Mengungkapkan perasaan",
+      "examples": [
+        { "japan": "すきです", "reading": "Suki desu", "meaning": "Aku suka kamu", "audio": "suki.mp3" },
+        { "japan": "だいすきだよ", "reading": "Daisuki da yo", "meaning": "Aku sangat mencintaimu", "audio": "daisuki.mp3" },
+        { "japan": "きみがだいじだよ", "reading": "Kimi ga daiji da yo", "meaning": "Kamu penting bagiku", "audio": "kimi_daiji.mp3" }
+      ]
+    },
+    {
+      "group": "Ingin selalu bersama",
+      "examples": [
+        { "japan": "ずっといっしょにいたい", "reading": "Zutto issho ni itai", "meaning": "Aku ingin selalu bersamamu", "audio": "zutto_issho.mp3" },
+        { "japan": "そばにいてほしい", "reading": "Soba ni ite hoshii", "meaning": "Aku ingin kamu ada di sisiku", "audio": "soba_ite.mp3" },
+        { "japan": "きみといるとしあわせです", "reading": "Kimi to iru to shiawase desu", "meaning": "Aku bahagia saat bersamamu", "audio": "kimi_shiawase.mp3" }
+      ]
+    },
+    {
+      "group": "Romantis di taman",
+      "examples": [
+        { "japan": "はながきれいだけど、きみのほうがもっときれいだよ", "reading": "Hana ga kirei dakedo, kimi no hou ga motto kirei da yo", "meaning": "Bunganya indah, tapi kamu lebih indah", "audio": "hana_kimi_kirei.mp3" },
+        { "japan": "このこうえんでのじかんはとてもたのしい", "reading": "Kono kouen de no jikan wa totemo tanoshii", "meaning": "Waktu di taman ini sangat menyenangkan", "audio": "kouen_tanoshii.mp3" },
+        { "japan": "きょうもいっしょにさんぽできてうれしい", "reading": "Kyou mo issho ni sanpo dekite ureshii", "meaning": "Aku senang bisa jalan bersama lagi hari ini", "audio": "issho_sanpo_ureshii.mp3" }
+      ]
+    },
+    {
+      "group": "Janji manis",
+      "examples": [
+        { "japan": "これからもずっとまもるよ", "reading": "Kore kara mo zutto mamoru yo", "meaning": "Aku akan selalu menjagamu mulai sekarang", "audio": "mamoru.mp3" },
+        { "japan": "なにがおきてもきみのそばにいる", "reading": "Nani ga okite mo kimi no soba ni iru", "meaning": "Apapun yang terjadi, aku akan tetap di sisimu", "audio": "soba_iru.mp3" },
+        { "japan": "いっしょにみらいをあるこう", "reading": "Issho ni mirai o arukou", "meaning": "Mari kita jalani masa depan bersama", "audio": "mirai_arukou.mp3" }
+      ]
+    }
+  ]
+}

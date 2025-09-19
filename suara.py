@@ -5,16 +5,16 @@ import os
 # --------------------------
 # Pengaturan
 # --------------------------
-TEXT = "さて、私の名前はアキラです"   # teks yang dibacakan
+TEXT = "これで日本語の旅が一つの区切りに達しました。でも、学びはまだ続きますよ！"   # teks yang dibacakan
 OUTPUT_FOLDER = "akira_speakers"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 failed_speakers = []
 
 # --------------------------
-# Loop semua speaker 21-40
+# Loop semua speaker 13-40
 # --------------------------
-for speaker_id in range(21, 22):
+for speaker_id in range(13, 14):
     filename = f"akira_speaker_{speaker_id}.mp3"
     file_path = os.path.join(OUTPUT_FOLDER, filename)
 

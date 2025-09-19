@@ -1,0 +1,34 @@
+{
+  "benda_taman": [
+    {
+      "group": "Permainan Anak",
+      "words": [
+        { "japan": "すべりだい", "reading": "suberidai", "meaning": "Perosotan", "audio": "suberidai.mp3" },
+        { "japan": "ぶらんこ", "reading": "buranko", "meaning": "Ayunan", "audio": "buranko.mp3" },
+        { "japan": "シーソー", "reading": "shiisoo", "meaning": "Jungkat-jungkit", "audio": "shiisoo.mp3" },
+        { "japan": "ジャングルジム", "reading": "janguru jimu", "meaning": "Jungle gym / panjatan", "audio": "jungle_jimu.mp3" },
+        { "japan": "すなば", "reading": "sunaba", "meaning": "Kotak pasir", "audio": "sunaba.mp3" }
+      ]
+    },
+    {
+      "group": "Fasilitas Umum",
+      "words": [
+        { "japan": "トイレ", "reading": "toire", "meaning": "Toilet umum", "audio": "toire.mp3" },
+        { "japan": "じどうはんばいき", "reading": "jidouhanbaiki", "meaning": "Mesin penjual otomatis", "audio": "jidouhanbaiki.mp3" },
+        { "japan": "ごみばこ", "reading": "gomibako", "meaning": "Tempat sampah", "audio": "gomibako.mp3" },
+        { "japan": "のみみず", "reading": "nomimizu", "meaning": "Keran air minum", "audio": "nomimizu.mp3" },
+        { "japan": "けいじばん", "reading": "keijiban", "meaning": "Papan pengumuman", "audio": "keijiban.mp3" }
+      ]
+    },
+    {
+      "group": "Penerangan & Dekorasi",
+      "words": [
+        { "japan": "ランプ", "reading": "ranpu", "meaning": "Lampu taman", "audio": "ranpu.mp3" },
+        { "japan": "イルミネーション", "reading": "irumineeshon", "meaning": "Lampu hias / iluminasi", "audio": "irumineeshon.mp3" },
+        { "japan": "おはなばたけ", "reading": "ohanabatake", "meaning": "Taman bunga", "audio": "ohanabatake.mp3" },
+        { "japan": "すいどう", "reading": "suidou", "meaning": "Air mancur", "audio": "suidou.mp3" },
+        { "japan": "しきい", "reading": "shikii", "meaning": "Pagar kecil / pembatas", "audio": "shikii.mp3" }
+      ]
+    }
+  ]
+}

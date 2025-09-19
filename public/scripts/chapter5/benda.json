@@ -1,0 +1,36 @@
+{
+  "benda_kantor": [
+    {
+      "group": "Perabot Kantor",
+      "words": [
+        { "japan": "机", "reading": "tsukue", "meaning": "Meja", "audio": "tsukue.mp3" },
+        { "japan": "椅子", "reading": "isu", "meaning": "Kursi", "audio": "isu.mp3" },
+        { "japan": "本棚", "reading": "hondana", "meaning": "Rak buku", "audio": "hondana.mp3" },
+        { "japan": "会議室", "reading": "kaigishitsu", "meaning": "Ruang rapat", "audio": "kaigishitsu.mp3" },
+        { "japan": "受付", "reading": "uketsuke", "meaning": "Resepsi", "audio": "uketsuke.mp3" }
+      ]
+    },
+    {
+      "group": "Alat Tulis",
+      "words": [
+        { "japan": "ペン", "reading": "pen", "meaning": "Pulpen", "audio": "pen.mp3" },
+        { "japan": "鉛筆", "reading": "enpitsu", "meaning": "Pensil", "audio": "enpitsu.mp3" },
+        { "japan": "消しゴム", "reading": "keshigomu", "meaning": "Penghapus", "audio": "keshigomu.mp3" },
+        { "japan": "ノート", "reading": "nooto", "meaning": "Buku catatan", "audio": "nooto.mp3" },
+        { "japan": "書類", "reading": "shorui", "meaning": "Dokumen", "audio": "shorui.mp3" },
+        { "japan": "資料", "reading": "shiryou", "meaning": "Data / Bahan presentasi", "audio": "shiryou.mp3" }
+      ]
+    },
+    {
+      "group": "Peralatan Elektronik",
+      "words": [
+        { "japan": "コンピューター", "reading": "konpyuutaa", "meaning": "Komputer", "audio": "konpyuutaa.mp3" },
+        { "japan": "パソコン", "reading": "pasokon", "meaning": "Laptop / PC", "audio": "pasokon.mp3" },
+        { "japan": "電話", "reading": "denwa", "meaning": "Telepon", "audio": "denwa.mp3" },
+        { "japan": "コピー機", "reading": "kopiiki", "meaning": "Mesin fotokopi", "audio": "kopiiki.mp3" },
+        { "japan": "プリンター", "reading": "purintaa", "meaning": "Printer", "audio": "purintaa.mp3" },
+        { "japan": "プロジェクター", "reading": "purojekutaa", "meaning": "Proyektor", "audio": "purojekutaa.mp3" }
+      ]
+    }
+  ]
+}

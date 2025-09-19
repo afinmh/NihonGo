@@ -1,0 +1,47 @@
+{
+  "kalimat_sederhana_taman": [
+    {
+      "situation": "Mengajak jalan-jalan",
+      "examples": [
+        { "japan": "いっしょにさんぽしませんか？", "reading": "Issho ni sanpo shimasen ka?", "meaning": "Mau jalan-jalan bersama?", "audio": "sanpo_shimasen.mp3" },
+        { "japan": "こうえんをあるきましょう。", "reading": "Kouen o arukimashou.", "meaning": "Mari kita jalan di taman.", "audio": "kouen_arukimashou.mp3" },
+        { "japan": "すずしいので、さんぽしましょう。", "reading": "Suzushii node, sanpo shimashou.", "meaning": "Udaranya sejuk, ayo jalan-jalan.", "audio": "suzushii_sanpo.mp3" }
+      ]
+    },
+    {
+      "situation": "Menikmati suasana",
+      "examples": [
+        { "japan": "はながとてもきれいです。", "reading": "Hana ga totemo kirei desu.", "meaning": "Bunganya indah sekali.", "audio": "hana_kirei.mp3" },
+        { "japan": "そらがあおくてすてきです。", "reading": "Sora ga aokute suteki desu.", "meaning": "Langit biru dan indah.", "audio": "sora_suteki.mp3" },
+        { "japan": "みどりがいっぱいですね。", "reading": "Midori ga ippai desu ne.", "meaning": "Banyak sekali pepohonan ya.", "audio": "midori_ippai.mp3" },
+        { "japan": "かぜがきもちいいです。", "reading": "Kaze ga kimochi ii desu.", "meaning": "Anginnya terasa enak.", "audio": "kaze_kimochi.mp3" }
+      ]
+    },
+    {
+      "situation": "Saat beristirahat",
+      "examples": [
+        { "japan": "ここでやすみましょう。", "reading": "Koko de yasumimashou.", "meaning": "Mari kita istirahat di sini.", "audio": "koko_de_yasumimashou.mp3" },
+        { "japan": "ベンチにすわりませんか？", "reading": "Benchi ni suwarimasen ka?", "meaning": "Mau duduk di bangku taman?", "audio": "benchi_suwari.mp3" },
+        { "japan": "すこしやすみましょう。", "reading": "Sukoshi yasumimashou.", "meaning": "Ayo istirahat sebentar.", "audio": "sukoshi_yasumi.mp3" },
+        { "japan": "みずをのみたいです。", "reading": "Mizu o nomitai desu.", "meaning": "Aku ingin minum air.", "audio": "mizu_nomitai.mp3" }
+      ]
+    },
+    {
+      "situation": "Bermain / Aktivitas",
+      "examples": [
+        { "japan": "いっしょにあそびましょう。", "reading": "Issho ni asobimashou.", "meaning": "Ayo bermain bersama.", "audio": "issho_asobimashou.mp3" },
+        { "japan": "しゃしんをとりましょう。", "reading": "Shashin o torimashou.", "meaning": "Ayo ambil foto.", "audio": "shashin_torimashou.mp3" },
+        { "japan": "ボールであそびませんか？", "reading": "Bo-ru de asobimasen ka?", "meaning": "Mau main bola?", "audio": "ball_asobi.mp3" },
+        { "japan": "すべりだいにのりたいです。", "reading": "Suberidai ni noritai desu.", "meaning": "Aku ingin main perosotan.", "audio": "suberidai_noritai.mp3" }
+      ]
+    },
+    {
+      "situation": "Berpisah",
+      "examples": [
+        { "japan": "またここであいましょう。", "reading": "Mata koko de aimashou.", "meaning": "Mari bertemu lagi di sini.", "audio": "mata_koko.mp3" },
+        { "japan": "きょうはたのしかったです。", "reading": "Kyou wa tanoshikatta desu.", "meaning": "Hari ini menyenangkan.", "audio": "kyou_tanoshikatta.mp3" },
+        { "japan": "きをつけてかえってね。", "reading": "Ki o tsukete kaette ne.", "meaning": "Hati-hati pulang ya.", "audio": "kiotsukete_kaette.mp3" }
+      ]
+    }
+  ]
+}

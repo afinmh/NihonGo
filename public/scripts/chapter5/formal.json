@@ -1,0 +1,55 @@
+{
+  "frasa_kantor": [
+    {
+      "group": "Salam & Sapaan",
+      "words": [
+        { "japan": "おはようございます", "reading": "ohayou gozaimasu", "meaning": "Selamat pagi", "audio": "ohayou.mp3" },
+        { "japan": "こんにちは", "reading": "konnichiwa", "meaning": "Selamat siang", "audio": "konnichiwa.mp3" },
+        { "japan": "こんばんは", "reading": "konbanwa", "meaning": "Selamat malam", "audio": "konbanwa.mp3" },
+        { "japan": "お疲れ様です", "reading": "otsukaresama desu", "meaning": "Terima kasih atas kerja kerasnya", "audio": "otsukaresama.mp3" },
+        { "japan": "いってきます", "reading": "ittekimasu", "meaning": "Saya pergi dulu (ke kantor)", "audio": "ittekimasu.mp3" },
+        { "japan": "ただいま戻りました", "reading": "tadaima modorimashita", "meaning": "Saya sudah kembali", "audio": "tadaima.mp3" }
+      ]
+    },
+    {
+      "group": "Meminta Bantuan & Kerja Sama",
+      "words": [
+        { "japan": "手伝っていただけますか？", "reading": "tetsudatte itadakemasu ka?", "meaning": "Bisakah Anda membantu saya?", "audio": "tetsudatte.mp3" },
+        { "japan": "確認していただけますか？", "reading": "kakunin shite itadakemasu ka?", "meaning": "Bisakah Anda memeriksa ini?", "audio": "kakunin.mp3" },
+        { "japan": "お願いします", "reading": "onegaishimasu", "meaning": "Tolong / Mohon bantuannya", "audio": "onegai.mp3" },
+        { "japan": "一緒にやりましょう", "reading": "issho ni yarimashou", "meaning": "Mari kita kerjakan bersama", "audio": "issho.mp3" },
+        { "japan": "助かります", "reading": "tasukarimasu", "meaning": "Itu sangat membantu", "audio": "tasukarimasu.mp3" }
+      ]
+    },
+    {
+      "group": "Situasi Meeting",
+      "words": [
+        { "japan": "会議を始めましょう", "reading": "kaigi o hajimemashou", "meaning": "Mari kita mulai rapatnya", "audio": "kaigi_start.mp3" },
+        { "japan": "意見があります", "reading": "iken ga arimasu", "meaning": "Saya punya pendapat", "audio": "iken.mp3" },
+        { "japan": "質問があります", "reading": "shitsumon ga arimasu", "meaning": "Saya punya pertanyaan", "audio": "shitsumon.mp3" },
+        { "japan": "もう一度説明していただけますか？", "reading": "mou ichido setsumei shite itadakemasu ka?", "meaning": "Bisakah dijelaskan sekali lagi?", "audio": "setsumei.mp3" },
+        { "japan": "結論としては…", "reading": "ketsuron to shite wa...", "meaning": "Kesimpulannya adalah...", "audio": "ketsuron.mp3" }
+      ]
+    },
+    {
+      "group": "Telepon & Email",
+      "words": [
+        { "japan": "お電話ありがとうございます", "reading": "odenwa arigatou gozaimasu", "meaning": "Terima kasih sudah menelpon", "audio": "odenwa.mp3" },
+        { "japan": "少々お待ちください", "reading": "shoushou omachi kudasai", "meaning": "Mohon tunggu sebentar", "audio": "omachi.mp3" },
+        { "japan": "折り返しご連絡いたします", "reading": "orikaeshi go-renraku itashimasu", "meaning": "Saya akan menghubungi kembali", "audio": "orikaeshi.mp3" },
+        { "japan": "メールを送りました", "reading": "meeru o okurimashita", "meaning": "Saya sudah mengirim email", "audio": "mail_send.mp3" },
+        { "japan": "ご確認ください", "reading": "go kakunin kudasai", "meaning": "Mohon dicek / konfirmasi", "audio": "gokakunin.mp3" }
+      ]
+    },
+    {
+      "group": "Akhir Hari",
+      "words": [
+        { "japan": "今日はお疲れ様でした", "reading": "kyou wa otsukaresama deshita", "meaning": "Terima kasih atas kerja keras hari ini", "audio": "otsukaresama_hari.mp3" },
+        { "japan": "また明日", "reading": "mata ashita", "meaning": "Sampai besok", "audio": "mataashita.mp3" },
+        { "japan": "先に失礼します", "reading": "saki ni shitsurei shimasu", "meaning": "Permisi, saya pulang lebih dulu", "audio": "shitsurei.mp3" },
+        { "japan": "お先にどうぞ", "reading": "osaki ni douzo", "meaning": "Silakan duluan", "audio": "osaki.mp3" },
+        { "japan": "おやすみなさい", "reading": "oyasuminasai", "meaning": "Selamat malam", "audio": "oyasumi.mp3" }
+      ]
+    }
+  ]
+}

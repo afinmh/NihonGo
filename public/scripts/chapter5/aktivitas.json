@@ -1,0 +1,34 @@
+{
+  "aktivitas_kantor": [
+    {
+      "group": "Aktivitas Umum",
+      "words": [
+        { "japan": "しごとをする", "reading": "shigoto o suru", "meaning": "Bekerja", "audio": "shigoto_suru.mp3" },
+        { "japan": "かいぎにでる", "reading": "kaigi ni deru", "meaning": "Menghadiri rapat", "audio": "kaigi_deru.mp3" },
+        { "japan": "メールをおくる", "reading": "meeru o okuru", "meaning": "Mengirim email", "audio": "mail_okuru.mp3" },
+        { "japan": "でんわをかける", "reading": "denwa o kakeru", "meaning": "Menelepon", "audio": "denwa_kakeru.mp3" },
+        { "japan": "メモをとる", "reading": "memo o toru", "meaning": "Mencatat / mengambil catatan", "audio": "memo_toru.mp3" }
+      ]
+    },
+    {
+      "group": "Kerja Tim",
+      "words": [
+        { "japan": "いけんをいう", "reading": "iken o iu", "meaning": "Mengutarakan pendapat", "audio": "iken_iu.mp3" },
+        { "japan": "アイディアをだす", "reading": "aidia o dasu", "meaning": "Mengeluarkan ide", "audio": "idea_dasu.mp3" },
+        { "japan": "チームではたらく", "reading": "chiimu de hataraku", "meaning": "Bekerja dalam tim", "audio": "team_hataraku.mp3" },
+        { "japan": "そうだんする", "reading": "soudan suru", "meaning": "Berdiskusi / berkonsultasi", "audio": "soudan_suru.mp3" },
+        { "japan": "れんらくする", "reading": "renraku suru", "meaning": "Menghubungi / berkoordinasi", "audio": "renraku_suru.mp3" }
+      ]
+    },
+    {
+      "group": "Administrasi",
+      "words": [
+        { "japan": "しりょうをつくる", "reading": "shiryou o tsukuru", "meaning": "Membuat dokumen", "audio": "shiryou_tsukuru.mp3" },
+        { "japan": "ファイルをせいりする", "reading": "fairu o seiri suru", "meaning": "Mengatur / merapikan file", "audio": "file_seiri.mp3" },
+        { "japan": "レポートを書く", "reading": "repooto o kaku", "meaning": "Menulis laporan", "audio": "report_kaku.mp3" },
+        { "japan": "けいさんする", "reading": "keisan suru", "meaning": "Menghitung", "audio": "keisan_suru.mp3" },
+        { "japan": "じゅんびする", "reading": "junbi suru", "meaning": "Mempersiapkan", "audio": "junbi_suru.mp3" }
+      ]
+    }
+  ]
+}

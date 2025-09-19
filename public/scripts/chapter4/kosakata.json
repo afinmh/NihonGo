@@ -1,0 +1,48 @@
+{
+  "kosakata_taman": [
+    {
+      "group": "Alam & Tanaman",
+      "words": [
+        { "japan": "こうえん", "reading": "kouen", "meaning": "Taman", "audio": "kouen.mp3" },
+        { "japan": "き", "reading": "ki", "meaning": "Pohon", "audio": "ki.mp3" },
+        { "japan": "はな", "reading": "hana", "meaning": "Bunga", "audio": "hana.mp3" },
+        { "japan": "くさ", "reading": "kusa", "meaning": "Rumput", "audio": "kusa.mp3" },
+        { "japan": "いけ", "reading": "ike", "meaning": "Kolam", "audio": "ike.mp3" },
+        { "japan": "やま", "reading": "yama", "meaning": "Gunung (kadang terlihat dari taman)", "audio": "yama.mp3" },
+        { "japan": "かわ", "reading": "kawa", "meaning": "Sungai", "audio": "kawa.mp3" }
+      ]
+    },
+    {
+      "group": "Tempat Duduk & Jalan",
+      "words": [
+        { "japan": "ベンチ", "reading": "benchi", "meaning": "Bangku taman", "audio": "benchi.mp3" },
+        { "japan": "みち", "reading": "michi", "meaning": "Jalan / Jalan setapak", "audio": "michi.mp3" },
+        { "japan": "はし", "reading": "hashi", "meaning": "Jembatan kecil", "audio": "hashi.mp3" },
+        { "japan": "もん", "reading": "mon", "meaning": "Gerbang taman", "audio": "mon.mp3" },
+        { "japan": "ひろば", "reading": "hiroba", "meaning": "Lapangan terbuka / plaza", "audio": "hiroba.mp3" }
+      ]
+    },
+    {
+      "group": "Langit & Cuaca",
+      "words": [
+        { "japan": "そら", "reading": "sora", "meaning": "Langit", "audio": "sora.mp3" },
+        { "japan": "たいよう", "reading": "taiyou", "meaning": "Matahari", "audio": "taiyou.mp3" },
+        { "japan": "つき", "reading": "tsuki", "meaning": "Bulan", "audio": "tsuki.mp3" },
+        { "japan": "くも", "reading": "kumo", "meaning": "Awan", "audio": "kumo.mp3" },
+        { "japan": "あめ", "reading": "ame", "meaning": "Hujan", "audio": "ame.mp3" },
+        { "japan": "かぜ", "reading": "kaze", "meaning": "Angin", "audio": "kaze.mp3" }
+      ]
+    },
+    {
+      "group": "Hewan di Taman",
+      "words": [
+        { "japan": "とり", "reading": "tori", "meaning": "Burung", "audio": "tori.mp3" },
+        { "japan": "ねこ", "reading": "neko", "meaning": "Kucing", "audio": "neko.mp3" },
+        { "japan": "いぬ", "reading": "inu", "meaning": "Anjing", "audio": "inu.mp3" },
+        { "japan": "むし", "reading": "mushi", "meaning": "Serangga", "audio": "mushi.mp3" },
+        { "japan": "ちょう", "reading": "chou", "meaning": "Kupu-kupu", "audio": "chou.mp3" },
+        { "japan": "あり", "reading": "ari", "meaning": "Semut", "audio": "ari.mp3" }
+      ]
+    }
+  ]
+}

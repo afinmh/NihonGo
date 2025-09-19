@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modelContinue = document.getElementById('model-continue');
     const modelOptions = modelModal ? modelModal.querySelectorAll('.model-option') : [];
 
-    const modelLabelMap = { hiyori: 'Hana', shizuku: 'Chika', natori: 'Natori', haru: 'Haru', chitose: 'Chitose' };
+    const modelLabelMap = { hiyori: 'Hana', shizuku: 'Chika', natori: 'Tatsuya', haru: 'Rin', chitose: 'Akira' };
     let selectedModel = localStorage.getItem('model') || 'Chika';
 
     // --- Fungsi Splash ---
