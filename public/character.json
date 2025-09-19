@@ -1,0 +1,49 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Chika",
+      "image_url": "/assets/model/chika.png",
+      "role": "Teman sekelas yang selalu ceria",
+      "characteristics": "Gadis yang baik, ramah, dan sangat positif. Dia adalah penceria suasana di kelas yang mudah bergaul dan bisa diandalkan oleh siapa saja.",
+      "hobbies": "Menghias buku catatan, mencoba resep kue baru, dan mengobrol dengan teman-temannya saat istirahat.",
+      "quote": "Semangat ya! Kalau butuh bantuan, panggil aku saja!"
+    },
+    {
+      "id": 2,
+      "name": "Hana",
+      "image_url": "/assets/model/hana.png",
+      "role": "Adik kelas yang polos dan sedikit pemalu",
+      "characteristics": "Gadis yang polos, jujur, dan terkadang sedikit ceroboh. Sifatnya yang tulus membuatnya disayangi oleh semua orang di sekitarnya.",
+      "hobbies": "Mengurus tanaman di klub berkebun, memberi makan kucing liar di sekitar sekolah, dan membaca novel fantasi.",
+      "quote": "Eh? Benarkah begitu, senpai?"
+    },
+    {
+      "id": 3,
+      "name": "Akira",
+      "image_url": "/assets/model/akira.png",
+      "role": "Ketua OSIS yang populer dan karismatik",
+      "characteristics": "Cerdas, tenang, dan berwibawa. Di balik sikapnya yang keren, dia sangat peduli dan bertanggung jawab, membuatnya dihormati oleh seluruh sekolah.",
+      "hobbies": "Bermain catur, membaca buku-buku sejarah, dan merencanakan acara sekolah hingga detail terkecil.",
+      "quote": "Serahkan saja padaku. Semuanya akan berjalan sesuai rencana."
+    },
+    {
+      "id": 4,
+      "name": "Rin",
+      "image_url": "/assets/model/rin.png",
+      "role": "Pacar yang energik tapi suka bete (tsundere)",
+      "characteristics": "Gadis yang aktif dan blak-blakan dengan emosi yang meledak-ledak. Meski sering terlihat kesal, di balik sikap galaknya dia sangat setia dan peduli.",
+      "hobbies": "Berlari pagi, dan diam-diam mencoba memasak untuk orang yang disayanginya (meskipun sering gagal).",
+      "quote": "B-Bukan berarti aku mengkhawatirkanmu, lho! Jangan salah paham!"
+    },
+    {
+      "id": 5,
+      "name": "Tatsuya",
+      "image_url": "/assets/model/tatsuya.png",
+      "role": "Eksekutif muda yang mapan dan misterius",
+      "characteristics": "Seorang profesional yang elegan, cerdas, dan berkelas. Dia memancarkan aura percaya diri dan kekuasaan, serta selalu tenang dalam menghadapi situasi apa pun.",
+      "hobbies": "Mengoleksi jam tangan antik, menikmati kopi di kafe yang tenang, dan bermain piano klasik.",
+      "quote": "Fufu, menarik sekali. Coba tunjukkan apa yang bisa kau lakukan."
+    }
+  ]
+}

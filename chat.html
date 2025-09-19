@@ -20,17 +20,16 @@
     <main id="container">
       <div id="live">
         <nav id="menu">
-          <a href="https://github.com/sglkc/waifu-otw">
-            <img src="assets/github.svg" width="40" height="40">
+          <button id="back-to-index" title="Kembali" aria-label="Back">
+            &#8592;
+          </button>
+          <a href="https://github.com/sglkc/waifu-otw" title="GitHub">
+            <img src="assets/github.svg" width="40" height="40" alt="GitHub">
           </a>
-          <button id="help">
-            <img src="assets/question.svg" width="40" height="40">
+          <button id="help" title="Bantuan">
+            <img src="assets/question.svg" width="40" height="40" alt="Help">
           </button>
-          <button id="recognition">
-            <img width="40" height="40">
-          </button>
-          <button id="recognition-lang">EN</button>
-          
+          <button id="change-bg" title="Change Background">BG</button>
         </nav>
         <canvas id="canvas"></canvas>
         <img id="background" src="assets/bg/sekolah.jpg" alt="background" draggable="false">
@@ -46,6 +45,14 @@
       </div>
     </main>
     <div id="loader"></div>
-    <script type="module" src="/src/index.ts"></script>
+    <div id="bg-modal" class="hidden">
+      <div class="bg-modal-content">
+        <h3>Pilih Background</h3>
+        <div id="bg-grid"></div>
+        <button id="bg-close">Tutup</button>
+      </div>
+    </div>
+    <script type="module" src="/src/chat.ts"></script>
+    <script type="module" src="/scripts/chat.js"></script>
   </body>
 </html>

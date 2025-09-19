@@ -6,7 +6,9 @@
     <title>NihonGo! - Belajar Jepang</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/level.css"> <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/level.css">
+    <link rel="stylesheet" href="/css/animation.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -86,19 +88,71 @@
         </div>
     </section>
     
+    <section id="about-screen" class="hidden">
+        <div class="background-layers">
+            <div class="bg-noise"></div>
+            <div class="bg-about"></div>
+        </div>
+        <div class="about-content-overlay">
+            <img src="nihongo-logo.png" alt="Logo" id="about-logo-left">
+
+            <div class="about-body">
+                <h1 class="about-title">Ini tuh Apasih?</h1>
+                <p class="about-desc">
+                    <strong>Nihongo</strong> adalah platform belajar bahasa Jepang bergaya game.  
+                    Tiap chapter penuh kosakata dan latihan seru yang bikin belajar jadi ringan dan menyenangkan.
+                </p>
+                <p class="about-desc2">
+                    Kamu akan ditemani waifu interaktif yang siap mendukung dan memberi semangat.  
+                    Belajar bahasa Jepang jadi terasa seperti petualangan seru!
+                </p>
+            </div>
+            <div id="developers">Developers:</div>
+            <div class="about-devs">
+                <a class="dev-button" id="dev-cklgs" href="https://github.com/cklgs" target="_blank" rel="noopener" aria-label="cklgs"></a>
+                <a class="dev-button" id="dev-afinmh" href="https://github.com/afinmh" target="_blank" rel="noopener" aria-label="afinmh"></a>
+            </div>
+
+            <div class="about-credit">Credit: Live2D, VOICEVOX</div>
+            <div id="about-back-button">Back</div>
+        </div>
+    </section>
+    
     <div id="model-modal" class="hidden">
         <div class="modal-content">
-            <h2 class="modal-title">Pilih Model</h2>
-            <div class="model-options-container">
-                <button class="model-option" data-model="hiyori">Hana</button>
-                <button class="model-option" data-model="natori">Tatsuya</button>
-                <button class="model-option" data-model="shizuku">Chika</button>
-                <button class="model-option" data-model="haru">Rin</button>
-                <button class="model-option" data-model="chitose">Akira</button>
+            <h2 class="modal-title">Select Model</h2>
+            <div class="model-carousel">
+                <button class="carousel-nav prev" aria-label="Sebelumnya">&#10094;</button>
+                <div class="model-card">
+                    <div class="model-card-left">
+                        <img id="model-img" src="" alt="Model" />
+                    </div>
+                    <div class="model-card-right">
+                        <h3 id="model-name">-</h3>
+                        <p class="model-field"><strong>Peran:</strong> <span id="model-role">-</span></p>
+                        <p class="model-field"><strong>Karakter:</strong> <span id="model-characteristics">-</span></p>
+                        <p class="model-field"><strong>Hobi:</strong> <span id="model-hobbies">-</span></p>
+                        <p class="model-field"><strong>Kutipan:</strong> <span id="model-quote">-</span></p>
+                    </div>
+                </div>
+                <button class="carousel-nav next" aria-label="Berikutnya">&#10095;</button>
             </div>
+            <div class="modal-footer-note">Credit Live2D · Credit VOICEVOX</div>
             <div class="modal-actions">
                 <button id="model-cancel" class="modal-action-btn">Batal</button>
                 <button id="model-continue" class="modal-action-btn">Pilih Model</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">FreeTalk</h2>
+            <p id="confirm-selected" style="margin-bottom:10px; font-weight:600;">Model yang dipilih: -</p>
+            <p class="modal-note">Jika ingin ganti model silakan tekan tombol model berbentuk lingkaran.</p>
+            <div class="modal-actions">
+                <button id="confirm-cancel" class="modal-action-btn">Batal</button>
+                <button id="confirm-ok" class="modal-action-btn">Oke</button>
             </div>
         </div>
     </div>
