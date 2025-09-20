@@ -421,51 +421,57 @@ html, body {
 .overall-fill { height: 100%; background: linear-gradient(90deg, #2563eb, #22d3ee); width: 0%; transition: width .2s ease; }
 .overall-text { margin-top: 0.35rem; font-size: 0.85rem; color: #cbd5e1; }
 
+/* ======================== */
+/* === RESPONSIVE CHAT === */
+/* ======================== */
+
 @media (max-width: 1000px) {
-  #background {
-    width: 450px;
-  }
+    #background {
+        width: 450px;
+    }
 
-  #form {
-    margin: 0.75rem;
-  }
+    #form {
+        margin: 0.75rem;
+    }
 
-  #messages {
-    padding: 1rem;
-    gap: 0.75rem;
-  }
+    #messages {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
 }
 
 @media (max-width: 720px) {
-  #container {
-    flex-direction: column;
-  }
+    #container {
+        flex-direction: column;
+    }
 
-  #menu {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+    /* PERUBAHAN: Menu diubah menjadi horizontal */
+    #menu {
+        flex-direction: row; /* Dibuat ke samping */
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+        box-sizing: border-box;
+    }
+    
+    #canvas {
+        top: 0;
+    }
 
-  #menu img {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
+    /* PERUBAHAN: Area karakter/gambar diperkecil */
+    #background {
+        width: 100%;
+        height: 300px; /* Tinggi dikurangi untuk memberi ruang ke chat */
+    }
 
-  #canvas {
-    top: 0;
-  }
-
-  #background {
-    width: 100%;
-    height: 400px;
-  }
-
-  #chat {
-    max-height: 50vh;
-    overflow-y: hidden;
-  }
+    /* PERUBAHAN: Area chat dibuat mengisi sisa ruang (jadi lebih tinggi) */
+    #chat {
+        flex-grow: 1; /* Otomatis mengisi ruang yang tersisa */
+        max-height: none; /* Hapus batas tinggi lama */
+        overflow-y: hidden; /* Biarkan #messages yang scroll, bukan #chat */
+    }
 }
-
 /* Overlay (moved from inline) */
 #ready-overlay {
   display: none;

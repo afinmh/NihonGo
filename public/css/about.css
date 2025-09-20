@@ -134,3 +134,161 @@
 }
 
 #about-back-button:hover { color: var(--main-red); transform: scale(1.1); }
+
+/* ======================== */
+/* === RESPONSIVE ABOUT === */
+/* ======================== */
+
+/* --- Tablet & Smaller Desktops (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* PERUBAHAN: Logo dipindahkan ke kiri atas */
+    #about-logo-left {
+        left: 40px;
+        top: 40px;
+        transform: none;
+        width: 300px;
+    }
+
+    .about-body {
+        left: 50%;
+        top: 25%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+    }
+    
+    .about-title, .about-desc, .about-desc2 {
+        position: static;
+        left: auto;
+    }
+    .about-desc2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #developers {
+        top: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        right: auto;
+    }
+
+    .about-devs {
+        top: 72%;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+    .dev-button {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about-credit {
+        text-align: center;
+        width: 100%;
+        left: 0;
+        bottom: 40px;
+    }
+    
+    /* PERUBAHAN: Tombol Back dipindahkan ke kanan bawah */
+    #about-back-button {
+        position: absolute;
+        right: 40px;
+        bottom: 40px;
+    }
+}
+
+
+/* --- Mobile Devices (Portrait) (max-width: 768px) --- */
+/* --- Mobile Devices (Portrait) (max-width: 768px) --- */
+@media (max-width: 768px) {
+    #about-screen {
+        overflow-y: auto;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #about-logo-left {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        transform: none;
+        width: 200px;
+    }
+
+    .about-body, #developers, .about-devs, .about-credit {
+        position: relative;
+        top: auto; left: auto; right: auto; bottom: auto;
+        transform: none;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .about-body, .about-credit {
+        text-align: center;
+    }
+
+    .about-body { margin-top: 0; max-width: 90%; }
+    .about-title { font-size: 2.8rem; margin-bottom: 25px; }
+    .about-desc, .about-desc2 { font-size: 1.6rem; margin-bottom: 20px; }
+    .about-desc2 { margin-top: 0; }
+    
+    /* PERUBAHAN: Judul "Developers" dibuat rata kiri */
+    #developers { 
+        margin-top: 40px; 
+        font-size: 1.8rem;
+        text-align: left;
+    }
+    
+    /* PERUBAHAN: Ikon developer dibuat mulai dari kiri */
+    .about-devs { 
+        margin-top: 20px; 
+        justify-content: flex-start; /* Mengatur ikon mulai dari kiri */
+        width: 90%; /* Lebar disamakan agar rapi */
+    }
+
+    .about-credit { text-align: left; margin-top: 50px; font-size: 1.3rem; }
+    
+    #about-back-button {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 250;
+    }
+}
+
+
+/* --- Smaller Mobile Devices (max-width: 480px) --- */
+@media (max-width: 480px) {
+    #about-screen {
+        padding-top: 65px;
+    }
+
+    #about-logo-left {
+        display: none;
+    }
+
+    .about-title { font-size: 2.2rem; }
+    .about-desc, .about-desc2 { font-size: 1.4rem; }
+    
+    #developers { 
+        font-size: 1.5rem;
+    }
+    .dev-button { 
+        width: 70px; 
+        height: 70px; 
+    }
+
+    #about-back-button {
+        font-size: 1.5rem;
+        padding: 8px 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+    
+    .about-credit { font-size: 1.2rem; }
+}

@@ -18,7 +18,7 @@ const app = new Application({
 console.log('[Chapter1] Initializing Live2D scene...');
 
 const modelUrl = 'live2d/shizuku/shizuku.model.json';
-let currentAudio: HTMLAudioElement | null = null; // track audio yang sedang dimainkan
+let currentAudio: HTMLAudioElement | null = null;
 
 async function loadModelDefinition(url: string) {
     const res = await fetch(url);
@@ -26,13 +26,23 @@ async function loadModelDefinition(url: string) {
     return res.json();
 }
 
-const layout = {
+// BARU: Pisahkan layout untuk desktop dan mobile
+const desktopLayout = {
     xFrac: 0.20,
     anchorX: 0.40,
     anchorY: 0.32,
     targetWidthFrac: 0.5,
     targetHeightFrac: 1,
 };
+
+const mobileLayout = {
+    xFrac: 0.5,          // Pusatkan model secara horizontal
+    anchorX: 0.5,        // Anchor juga di tengah
+    anchorY: 0.8,       // Anchor vertikal bisa tetap sama atau disesuaikan
+    targetWidthFrac: 0.9,// Buat model lebih lebar di layar mobile
+    targetHeightFrac: 0.8,// Beri sedikit ruang di atas dan bawah
+};
+
 
 let mousestate = false;
 
@@ -48,7 +58,6 @@ async function init() {
         });
         app.stage.addChild(model);
         console.log('[Chapter1] Model loaded and added to stage.');
-        // expose model for other scripts
         // @ts-ignore
         (window as any).live2dModel = model;
     } catch (err) {
@@ -69,13 +78,21 @@ async function init() {
     function fitModel() {
         const w = window.innerWidth;
         const h = window.innerHeight;
+
+        // DIUBAH: Logika untuk memilih layout berdasarkan lebar layar
+        const isMobile = w <= 768; // Tentukan breakpoint mobile di 768px
+        const layout = isMobile ? mobileLayout : desktopLayout;
+
         canvas.width = w;
         canvas.height = h;
         app.renderer.screen.width = w;
         app.renderer.screen.height = h;
+        
+        // Gunakan layout yang sudah dipilih
         const scaleX = (w * (layout.targetWidthFrac ?? 0.5)) / BASE_SIZE.width;
         const scaleY = (h * (layout.targetHeightFrac ?? 0.9)) / BASE_SIZE.height;
         const scale = Math.min(scaleX, scaleY);
+        
         model.scale.set(scale);
         model.anchor.set(layout.anchorX ?? 0.5, layout.anchorY ?? 0);
         model.x = w * (layout.xFrac ?? 0.5);
@@ -101,9 +118,8 @@ async function init() {
     // ================= HIT AREA AUDIO =================
     model.on('hit', (hitAreas) => {
         if (hitAreas.includes('head')) {
-            if (currentAudio && !currentAudio.paused) return; // audio sedang dimainkan, ignore
+            if (currentAudio && !currentAudio.paused) return;
 
-            // jalankan motion shake index 1
             model.motion('shake', 1);
             currentAudio = new Audio('/audio/chapter1/touch.mp3');
             currentAudio.play().catch(err => console.warn("Audio gagal diputar:", err));
@@ -131,7 +147,6 @@ async function init() {
     }
 
     function startAudioWithMotion(m: Live2DModel, motionGroup: string, motionIndex: number, src: string) {
-        // interrupt anything running
         stopCurrentAudio();
         stopAllMotionsImmediately(m);
 
@@ -142,7 +157,6 @@ async function init() {
         audio.play().catch(err => console.warn('Audio gagal diputar:', err));
         audio.onended = () => {
             currentAudio = null;
-            // ensure lingering motion is stopped when audio ends
             stopAllMotionsImmediately(m);
         };
     }

@@ -227,3 +227,125 @@ body {
     font-weight: 700;
     margin-top: 10px;
 }
+
+/* ======================== */
+/* === RESPONSIVE DESIGN === */
+/* ======================== */
+
+/* --- Tablet & Smaller Desktops (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    #top-right-logo {
+        width: 250px;
+        top: 30px;
+        right: 30px;
+    }
+
+    #splash-text {
+        font-size: 3.5rem;
+    }
+
+    .splash-logo {
+        width: 200px;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .japanese-text {
+        font-size: 3.5rem;
+    }
+
+    .english-text {
+        font-size: 1.3rem;
+    }
+}
+
+/* --- Mobile Devices (Portrait) (max-width: 768px) --- */
+@media (max-width: 768px) {
+    #top-right-logo-container {
+        top: 20px;
+        right: 20px;
+    }
+
+    #top-right-logo {
+        width: 180px;
+    }
+
+    #start-logo {
+        width: 150px;
+    }
+
+    #click-me-text {
+        font-size: 2rem;
+    }
+
+    #splash-text {
+        font-size: 2.5rem; /* Ensure text doesn't wrap */
+        border-right-width: 0.08em;
+    }
+
+    .splash-logo {
+        width: 150px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Adjust main content positioning */
+    .center-start {
+        top: 60%;
+        width: 90%; /* Ensure it doesn't overflow */
+    }
+
+    .about {
+        top: 75%; /* PERUBAHAN: Dibuat lebih dekat dari 80% */
+        left: 50%; /* Center it horizontally */
+    }
+
+    .japanese-text {
+        font-size: 3rem;
+    }
+
+    .english-text {
+        font-size: 1.2rem;
+        margin-top: 8px; /* PERUBAHAN: Jarak dari teks Jepang dikurangi */
+    }
+}
+
+/* --- Smaller Mobile Devices (max-width: 480px) --- */
+@media (max-width: 480px) {
+    #top-right-logo {
+        width: 150px;
+    }
+
+    #start-logo {
+        width: 120px;
+    }
+    
+    #click-me-text {
+        font-size: 1.8rem;
+    }
+
+    #splash-text {
+        font-size: 1.8rem;
+    }
+
+    .splash-logo {
+        width: 120px;
+    }
+
+    .center-start {
+        top: 60%;
+    }
+    
+    .about {
+        top: 75%; /* PERUBAHAN: Dibuat lebih dekat dari 78% */
+    }
+    
+    .japanese-text {
+        font-size: 2.2rem;
+    }
+
+    .english-text {
+        font-size: 1rem;
+        margin-top: 4px; /* PERUBAHAN: Jarak dari teks Jepang dibuat sangat rapat */
+    }
+}

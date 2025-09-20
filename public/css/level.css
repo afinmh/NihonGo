@@ -414,3 +414,221 @@
 #confirm-modal { position: fixed; inset: 0; z-index: 500; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.65); opacity: 1; transition: opacity .3s ease-in-out; }
 #confirm-modal.hidden { opacity: 0; pointer-events: none; }
 .modal-note { font-size: .95rem; opacity: .9; }
+
+/* ======================== */
+/* === RESPONSIVE DESIGN === */
+/* ======================== */
+
+/* --- Tablet & Smaller Desktops (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    #level-select-logo-left {
+        width: 250px;
+        left: 30px;
+        top: 30px;
+    }
+
+    .level-buttons-container {
+        left: 48%;
+        width: 320px;
+    }
+
+    #demo-button {
+        right: 18%;
+        bottom: 5%;
+    }
+
+    /* Modal Carousel adjustments */
+    .model-card {
+        grid-template-columns: 280px 1fr;
+        width: min(750px, 90vw);
+    }
+    
+    .model-card-left img {
+        max-height: 450px;
+    }
+}
+
+
+/* --- Mobile Devices (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Logo */
+    #level-select-logo-left {
+        width: 180px;
+        left: 20px;
+        top: 20px;
+    }
+
+    /* Level Button Layout */
+    .level-buttons-container {
+        width: 80%;
+        max-width: 300px;
+        left: 50%;
+        top: 50%;
+        gap: 12px;
+    }
+    .level-button:nth-child(n) { transform: translateX(0); }
+    .level-button:nth-child(n):hover { transform: scale(1.05); }
+    .japanese-level-text { font-size: 1.4rem; }
+    .arc-text { font-size: 1rem; }
+
+    /* Tombol Bawah (Model, Demo, Back) */
+    #model-button { display: block; width: 80px; height: 80px; top: auto; right: auto; bottom: 20px; left: 20px; transform: none; }
+    #model-button:hover { transform: scale(1.1); }
+    #back-to-main-button { font-size: 1.5rem; bottom: 20px; right: 20px; padding: 8px 15px; }
+    #demo-button { position: absolute; bottom: 20px; left: 50%; right: auto; transform: translateX(-50%); border-width: 20px; padding: 2px 8px; border-image-slice: 35 fill; }
+    #demo-button:hover { transform: translateX(-50%) scale(1.1); }
+    .japanese-demo-text { font-size: 1rem; }
+    .demo-text { font-size: 0.7rem; }
+
+    /* Pengaturan Modal */
+    .modal-content {
+        padding: 20px 15px 80px;
+        width: 90vw;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .modal-title { font-size: 2.2rem; }
+    .model-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* Kartu Model */
+    .model-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        margin: 0;
+        background: rgba(255,255,255,0.4);
+        order: 2;
+    }
+    .model-card-left {
+        width: 100%;
+        padding: 8px;
+    }
+    .model-card-left img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .model-card-right {
+        padding: 4px 12px 12px;
+        text-align: center;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+    .model-card-right h3 { font-size: 1.5rem; }
+    .model-field { -webkit-line-clamp: unset; line-clamp: unset; }
+    .model-field-quote { display: none; }
+    
+    /* Scrollbar Minimalis */
+    .model-card-right::-webkit-scrollbar { width: 6px; }
+    .model-card-right::-webkit-scrollbar-track { background: transparent; }
+    .model-card-right::-webkit-scrollbar-thumb { background-color: #cccccc; border-radius: 20px; border: 1px solid transparent; }
+    .model-card-right::-webkit-scrollbar-thumb:hover { background-color: #a8a8a8; }
+    
+    /* Tombol Navigasi Carousel (< >) */
+    .carousel-nav {
+        background: rgba(40, 40, 40, 0.6);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        position: static;
+        transform: none;
+        flex-shrink: 0;
+    }
+    #prev-model { order: 1; }
+    #next-model { order: 3; }
+    
+    /* Tombol Aksi Modal (Batal, Pilih) */
+    .modal-actions {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        z-index: 10;
+    }
+    .modal-action-btn { font-size: 1.3rem; padding: 10px 15px; }
+}
+
+
+/* --- Smaller Mobile Devices (max-width: 480px) --- */
+@media (max-width: 480px) {
+    /* Logo & Level Buttons tidak berubah */
+    #level-select-logo-left { width: 150px; left: 15px; top: 15px; }
+    .level-buttons-container { gap: 10px; }
+    .japanese-level-text { font-size: 1.2rem; }
+    .arc-text { font-size: 0.9rem; }
+    .level-button { padding: 2px 10px; border-width: 20px; }
+    #model-button { width: 60px; height: 60px; left: 15px; bottom: 15px; }
+    #demo-button { bottom: 15px; }
+    #back-to-main-button { font-size: 1.3rem; bottom: 15px; right: 15px; }
+    
+    /* PERUBAHAN UTAMA: Modal menjadi full screen */
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 20px 15px 80px; /* Padding atas dan bawah untuk konten & tombol */
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-title { font-size: 2rem; flex-shrink: 0; }
+    .model-carousel { display: block; flex-grow: 1; overflow: hidden; }
+
+    .model-card {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border: none;
+        background: transparent;
+    }
+    .model-card-left { width: 100%; max-width: 280px; }
+    .model-card-left img { aspect-ratio: 1 / 1; }
+    .model-card-right {
+        max-height: none;
+        flex-grow: 1;
+        overflow-y: auto;
+        text-align: center;
+        width: 100%;
+        max-width: 340px; /* Lebar maksimum untuk teks */
+    }
+    .model-card-right h3 { font-size: 1.3rem; }
+    .model-field { font-size: 0.9rem; }
+
+    /* Tombol Aksi (Batal, Pilih) di tengah bawah */
+    .modal-actions {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    /* PERUBAHAN UTAMA: Tombol navigasi dikelompokkan di kanan bawah */
+    .carousel-nav {
+        width: 32px;
+        height: 32px;
+        background: var(--main-red);
+        box-shadow: none;
+        position: absolute;
+        bottom: 15px;
+        z-index: 10;
+    }
+    #prev-model {
+        right: 55px; /* Posisikan di kiri tombol next (15px + 32px + 8px gap) */
+    }
+    #next-model {
+        right: 15px; /* Posisikan di paling kanan */
+    }
+}
