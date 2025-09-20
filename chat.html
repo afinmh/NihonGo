@@ -20,8 +20,10 @@
     <main id="container">
       <div id="live">
         <nav id="menu">
-          <button id="back-to-index" title="Kembali" aria-label="Back">
-            &#8592;
+          <button id="back-to-index" title="Kembali ke Menu" aria-label="Kembali ke Menu">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 19.5a1 1 0 0 1-.7-.3l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.4 1.4L9.9 12l6.3 6.3a1 1 0 0 1-.7 1.7z"/>
+              </svg>
           </button>
           <a href="https://github.com/sglkc/waifu-otw" title="GitHub">
             <img src="assets/github.svg" width="40" height="40" alt="GitHub">
@@ -32,7 +34,7 @@
           <button id="change-bg" title="Change Background">BG</button>
         </nav>
         <canvas id="canvas"></canvas>
-        <img id="background" src="assets/bg/sekolah.jpg" alt="background" draggable="false">
+        <img id="background" src="assets/bg/sekolah.webp" alt="background" draggable="false">
       </div>
       <div id="chat">
         <main id="messages">
@@ -45,6 +47,24 @@
       </div>
     </main>
     <div id="loader"></div>
+    <!-- Ready Overlay shown after Live2D model is loaded -->
+    <div id="chat-ready-overlay" class="hidden">
+      <div class="overlay-card">
+        <h2 class="overlay-title">Siap Mengobrol?</h2>
+        <p class="overlay-desc">
+          Model kami akan segera menemani obrolanmu. Balasan mungkin sedikit tertunda karena model sedang berpikir dan menyiapkan suara. Santai saja, semua akan segera muncul!
+        </p>
+        <ul class="overlay-list">
+          <li>Balasannya jelas dan mudah dibaca, bahasa Indonesia lebih menonjol.</li>
+          <li>Suara akan terdengar begitu siap, tinggal dengarkan saja.</li>
+          <li>Kamu bisa ganti background kapan pun untuk suasana berbeda.</li>
+        </ul>
+        <button id="chat-ready-ok" class="overlay-button">Oke, mulai!</button>
+        <div class="overlay-credits">
+          Credit: <strong>Mistral AI</strong> & <strong>VoiceVox</strong>. Live2D © pemilik masing‑masing.
+        </div>
+      </div>
+    </div>
     <div id="bg-modal" class="hidden">
       <div class="bg-modal-content">
         <h3>Pilih Background</h3>

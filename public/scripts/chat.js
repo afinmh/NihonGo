@@ -30,7 +30,7 @@ function personaJPName(name) {
     Chika: 'ちか',
     Rin: 'りん',
     Tatsuya: 'たつや',
-    Hana: 'ひより', // Hiyori reading for Hana persona
+    Hana: 'ひより',
     Akira: 'あきら',
   };
   return jp[name] || name;
@@ -104,6 +104,31 @@ async function headUrl(url) {
     throw err;
   }
   return true;
+}
+
+// Live2D motion helpers (global scope so any caller can use them)
+async function waitForLive2DModel(timeoutMs = 10000) {
+  const start = Date.now();
+  while (Date.now() - start < timeoutMs) {
+    try {
+      // @ts-ignore
+      if (window && window.live2dModel && window.playAudioWithMotion) return;
+    } catch {}
+    await sleep(200);
+  }
+  throw new Error('Live2D model not ready');
+}
+
+async function playWithMotion(src) {
+  try {
+    // @ts-ignore
+    if (window && window.live2dModel && window.playAudioWithMotion) {
+      // @ts-ignore
+      return window.playAudioWithMotion(window.live2dModel, src);
+    }
+  } catch {}
+  const audio = new Audio(src);
+  return audio.play();
 }
 
 let lastTtsTime = 0;
@@ -193,8 +218,13 @@ export async function sendChatAndSpeak(message) {
 
   const mp3Url = await ttsVoiceVoxRobust(kanji);
   if (mp3Url) {
-    const audio = new Audio(mp3Url);
-    try { await audio.play(); } catch (_) { /* ignore autoplay errors */ }
+    try {
+      await waitForLive2DModel();
+      await playWithMotion(mp3Url);
+    } catch (_) {
+      const audio = new Audio(mp3Url);
+      try { await audio.play(); } catch (_) { /* ignore autoplay errors */ }
+    }
   }
   return { kanji, reading, indonesia };
 }
@@ -205,6 +235,8 @@ export async function sendChatAndSpeak(message) {
   const input = document.getElementById('message');
   const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
   const messages = document.getElementById('messages');
+  const readyOverlay = document.getElementById('chat-ready-overlay');
+  const readyOk = document.getElementById('chat-ready-ok');
   const bgBtn = document.getElementById('change-bg');
   const bgModal = document.getElementById('bg-modal');
   const bgGrid = document.getElementById('bg-grid');
@@ -221,6 +253,8 @@ export async function sendChatAndSpeak(message) {
   function scrollToBottom() {
     try { messages.scrollTop = messages.scrollHeight; } catch (_) { /* ignore */ }
   }
+
+  function lowerName() { return (selectedName() || '').toLowerCase(); }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -308,4 +342,40 @@ export async function sendChatAndSpeak(message) {
     sessionStorage.setItem('isReturning', 'true');
     window.location.href = '/';
   });
+  
+  // After Live2D ready, show overlay first; start greeting after OK.
+  (async () => {
+    try {
+      await waitForLive2DModel();
+      if (readyOverlay) readyOverlay.classList.remove('hidden');
+    } catch {}
+  })();
+
+  if (readyOk && readyOverlay) {
+    readyOk.addEventListener('click', async () => {
+      try { readyOverlay.classList.add('hidden'); } catch {}
+      // show input form now
+      try { form.style.display = 'flex'; } catch {}
+      // Start greeting
+      try {
+        const name = selectedName();
+        try { messages.innerHTML = ''; } catch {}
+        const greet = document.createElement('div');
+        greet.className = 'reply';
+        greet.innerHTML = `
+          <div class="msg-indo">Halo, aku ${escapeHtml(name)}, mohon kerja samanya!</div>
+          <div class="msg-reading"></div>`;
+        messages.appendChild(greet);
+        scrollToBottom();
+        const audioPath = `/audio/chat/${lowerName()}.mp3`;
+        try {
+          await waitForLive2DModel();
+          await playWithMotion(audioPath);
+        } catch (_) {
+          const a = new Audio(audioPath);
+          try { await a.play(); } catch {}
+        }
+      } catch {}
+    });
+  }
 })();

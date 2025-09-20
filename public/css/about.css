@@ -23,8 +23,8 @@
 #about-logo-left { 
     position: absolute; 
     /* DIUBAH: Disesuaikan agar lebih mirip gambar */
-    left: 45%; 
-    top: 60px; 
+    left: 40%; 
+    top: 40px; 
     width: 320px; 
     height: auto; 
 }
@@ -42,33 +42,33 @@
 /* BARU: Judul kita geser sedikit ke kanan dari posisi normalnya */
 .about-title { 
     position: relative; /* Gunakan relative untuk menggeser */
-    left: 100px;       /* Geser 120px ke kanan */
+    left: 20px;       /* Geser 120px ke kanan */
     font-family: 'Marykate', sans-serif; 
-    top: 20px;
-    font-size: 3.8rem; 
+    top: 25px;
+    font-size: 3.5rem; 
     margin-bottom: 20px; 
 }
 
 /* Dibiarkan normal agar muncul tepat di bawah judul (sebelum digeser) */
 .about-desc { 
     position: relative;  /* Tambahkan ini */
-    top: 25px;        /* Atur jarak vertikal dari judul */
-    left: 30%;       /* Atur pergeseran horizontal */
+    top: 15px;        /* Atur jarak vertikal dari judul */
+    left: 17%;       /* Atur pergeseran horizontal */
     font-family: 'Marykate', sans-serif; 
     font-size: 1.9rem; 
-    line-height: 1.3;
+    line-height: 1.4;
     max-width: 550px;
 }
 
 /* BARU: Deskripsi kedua kita geser ke kiri dari posisi normalnya */
 .about-desc2 {
     position: relative;  /* Gunakan relative untuk menggeser */
-    left: -5%;        /* Geser 100px ke kiri (menggunakan nilai negatif) */
+    left: -20%;        /* Geser 100px ke kiri (menggunakan nilai negatif) */
     margin-top: 40px;    /* Beri jarak dari paragraf pertama */
     font-family: 'Marykate', sans-serif; 
     font-size: 1.9rem; 
     line-height: 1.4;
-    max-width: 480px; /* Batasi lebar paragraf */
+    max-width: 600px; /* Batasi lebar paragraf */
 }
 
 .about-credit { 
@@ -118,7 +118,7 @@
 }
 
 #dev-afinmh { background-image: url('../assets/afinmh.png'); }
-#dev-cklgs { background-image: url('../assets/sglkc.png'); }
+#dev-cklgs { background-image: url('../assets/cikal.png'); }
 
 
 #about-back-button { 

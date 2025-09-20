@@ -149,6 +149,8 @@ html, body {
   animation-name: popup;
   animation-duration: .15s;
   word-break: break-word;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .reply {
@@ -167,8 +169,8 @@ html, body {
 }
 
 /* Chat message content */
-.msg-indo { font-size: 1.05rem; line-height: 1.5; font-weight: 650; }
-.msg-reading { margin-top: 0.25rem; font-size: 0.9rem; color: #e5e7eb; opacity: 0.9; }
+.msg-indo { font-size: 1rem; line-height: 1.45; font-weight: inherit; }
+.msg-reading { margin-top: 0.25rem; font-size: 0.875rem; color: #e5e7eb; opacity: 0.9; }
 .thinking { align-self: center; color: #cbd5e1; font-style: italic; opacity: 0.85; }
 
 .me::selection {
@@ -372,3 +374,16 @@ html, body {
 #bg-close:hover {
     background-color: #3b82f6; /* Warna biru aksen saat hover */
 }
+
+/* Chat Ready Overlay */
+#chat-ready-overlay { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.6); z-index: 1500; }
+#chat-ready-overlay:not(.hidden) { display: flex; }
+#chat-ready-overlay .overlay-card { width: min(720px, 92vw); background: #0f172a; color: #e5e7eb; border: 1px solid #334155; border-radius: 16px; padding: 22px; box-shadow: 0 24px 64px rgba(0,0,0,.5); }
+#chat-ready-overlay .overlay-title { margin: 0 0 10px; font-size: 1.3rem; font-weight: 800; letter-spacing: .2px; }
+#chat-ready-overlay .overlay-desc { margin: 10px 0 12px; line-height: 1.6; color: #cbd5e1; }
+#chat-ready-overlay .overlay-list { margin: 0 0 16px 1.25rem; padding: 0; }
+#chat-ready-overlay .overlay-list li { margin: 6px 0; list-style: disc; }
+#chat-ready-overlay .overlay-button { display: inline-block; border: none; border-radius: 12px; padding: 10px 16px; font-weight: 800; cursor: pointer; color: #0b1220; background: linear-gradient(180deg, #f4b88b 0%, #f39c6b 100%); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+#chat-ready-overlay .overlay-button:hover { filter: brightness(1.05); transform: translateY(-1px); }
+#chat-ready-overlay .overlay-button:active { filter: brightness(0.95); transform: translateY(0); }
+#chat-ready-overlay .overlay-credits { margin-top: 14px; font-size: .85rem; color: #94a3b8; }
