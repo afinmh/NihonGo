@@ -1,112 +1,151 @@
 <div align="center">
-  <h1>Waifu On The Web</h1>
-  <img src="public/assets/thumbnail.png?raw=true" alt="thumbnail">
+  <h1>NihonGo! - Belajar Jepang</h1>
+  <img src="public/assets/thumbnail.png?raw=true" alt="NihonGo Thumbnail">
 
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/dee7e35d-e19a-459d-8f09-dab97e2cfb00/deploy-status)](https://waifu.seya.zip)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/dee7e35d-e19a-459d-8f09-dab97e2cfb00/deploy-status)](https://nihongoo.vercel.app)
   [![Issues](https://img.shields.io/github/issues/sglkc/waifu-otw.svg)](https://github.com/sglkc/waifu-otw/issues)
   [![MIT License](https://img.shields.io/github/license/sglkc/waifu-otw.svg)](LICENSE)
 
-  A client-sided Artificial Intelligence with Natural Language Processor, Live2D, and Speech Recognition.
+  Platform belajar bahasa Jepang bergaya game dengan karakter interaktif Live2D.
 
   <a href="https://github.com/sglkc/waifu-otw/issues">Report a Bug</a>
   <strong>·</strong>
   <a href="https://github.com/sglkc/waifu-otw/issues">Request a Feature</a>
 </div>
 
-## Hello, I'm Chiai!
+## Tentang NihonGo!
 
-Chiai (千愛) is your average teenage girl.
+NihonGo! adalah platform belajar bahasa Jepang yang menggabungkan elemen game dengan karakter interaktif Live2D. Dengan pendekatan yang menyenangkan dan interaktif, belajar bahasa Jepang menjadi lebih mudah dan menyenangkan.
 
-Her name comes from my name + AI. Interestingly, it also means "A thousand love" in Japanese, just like how I love developing her.
-Her model is from [Live2D Sample Model Collection](https://www.live2d.com/en/download/sample-data/), anything else is from the internet,
-and I do not claim any assets here, credits are to the rightful owner.
+Platform ini dilengkapi dengan karakter virtual Live2D yang bisa berinteraksi dengan pengguna, memberikan pengalaman belajar yang unik dan menyenangkan.
 
-## About this project
+## Fitur Utama
 
-I made this for Introduction to Computer Science, my task was just to make a video about the AI I wanted to make.
-Here's the point: I can't make no videos, so I decided to make the AI into reality instead. And to be honest this is the most elaborate project I have ever worked on.
+### Belajar Berbasis Chapter
+Platform ini terdiri dari lima chapter yang dirancang untuk membawa pengguna melalui perjalanan belajar bahasa Jepang yang menyenangkan:
 
-> Shoutout to [nlp.js](https://github.com/axa-group/nlp.js/) for Natural Language Processing, [pixi-live2d-display](https://github.com/guansss/pixi-live2d-display)
-> for the Live2D display, and [Vite](https://vitejs.dev/) for bundling (and TypeScript for the type errors!)
+- **言葉の基本 (Dasar Kata)** - Mempelajari kosakata dasar bahasa Jepang
+- **家の生活 (Kehidupan di Rumah)** - Kosakata sehari-hari dalam konteks rumah tangga
+- **学校の生活 (Kehidupan Sekolah)** - Vocabulary dan percakapan di lingkungan sekolah
+- **公園の物語 (Kisah di Taman)** - Percakapan dan narasi dalam konteks taman
+- **日本語の達人 (Master Bahasa Jepang)** - Materi tingkat lanjut untuk menguasai bahasa Jepang
 
-At first, I made this in plain HTML and JavaScript, but I realized that it's too hard to maintain and requires too much hacks that it'd be hard to understand by anyone.
-If you want the old outdated version, you can go to [static](https://github.com/sglkc/waifu-otw/tree/static) branch, or visit the [demo](https://sglkc.github.io/waifu-otw).
+### Karakter Interaktif Live2D
+Ditemani oleh lima karakter virtual interaktif yang siap mendukung dan memberi semangat dalam proses belajar:
 
-## Features
+- **Chika** - Teman sekelas yang selalu ceria
+- **Hana** - Adik kelas yang polos dan sedikit pemalu
+- **Akira** - Ketua OSIS yang populer dan karismatik
+- **Rin** - Pacar yang energik tapi suka bete (tsundere)
+- **Tatsuya** - Eksekutif muda yang mapan dan misterius
 
-The main focus of this project is the chatting, anything else is not as important. Here's a list of what you can and may do:
+### Mode FreeTalk
+Fitur percakapan bebas dengan karakter pilihan memungkinkan pengguna untuk berlatih bahasa Jepang dalam situasi informal dan kreatif.
 
-### Chat in multiple language
+### Antarmuka yang Menarik
+- Desain bergaya game dengan elemen visual yang menarik
+- Animasi dan efek yang membuat pengalaman belajar lebih hidup
+- Navigasi yang intuitif dan mudah digunakan
+- Sistem pemilihan karakter yang interaktif
 
-Currently, it supports English, Bahasa Indonesia, and Japanese. If you start to chat in another language, the AI should automatically guess the language.
-This is possible by providing multiple data for the AI.
+### Teknologi yang Digunakan
 
-> **Note**
-> Japanese is currently incomplete, it just exist.
+- **Live2D** untuk karakter interaktif
+- **Web Speech API** untuk fitur speech recognition
+- **Vite** untuk bundling dan development
+- **JavaScript/HTML/CSS** untuk frontend
 
-### Live2D
+## Teknologi yang Digunakan
 
-This is the most visual sugar of all time, it deserves no purpose except to drain your data to download a megabyte of Live2D assets.
-But in defense, Live2D is connected to NLP so that the model could react to certain message intents.
+- **Live2D** untuk karakter interaktif
+- **Web Speech API** untuk fitur speech recognition
+- **Vite** untuk bundling dan development
+- **JavaScript/HTML/CSS** untuk frontend
 
-### Speech Recognition
+## Aspek Pembelajaran Bahasa Jepang
 
-This feature will only work in updated Google Chrome browsers. You may use the microphone button on top-left to use your voice.
-The input then will be transcribed to the message box and will be automatically sent once you stopped.
+### Pendekatan Interaktif
+NihonGo! menggunakan pendekatan pembelajaran interaktif yang membuat proses belajar bahasa Jepang menjadi lebih menyenangkan dan efektif:
 
-> **Warning**
-> This feature is very buggy and the most prone to errors, never expect it to work!
+- **Pembelajaran Kontekstual** - Materi disajikan dalam konteks kehidupan sehari-hari
+- **Visual dan Audio** - Kombinasi karakter visual dan suara untuk penguatan memori
+- **Latihan Interaktif** - Berbagai bentuk latihan untuk memperkuat pemahaman
 
-## TODO
+### Materi yang Diajarkan
 
-I'll put this here because I know well I won't do them. Things that can be added/improved and the reason why I didn't do it:
+- **Kosakata** - Pembelajaran kata-kata dasar dan lanjutan
+- **Tata Bahasa** - Struktur kalimat bahasa Jepang
+- **Percakapan** - Dialog sehari-hari dalam berbagai situasi
+- **Kanji dan Kana** - Pengenalan huruf Jepang (Hiragana, Katakana)
 
-| What                          | Why                                                                                                  |
-|-------------------------------|------------------------------------------------------------------------------------------------------|
-| More message intents          | Takes so much time to make the data all by myself                                                    |
-| Expressions                   | Since how NLP and Live2D interacts, it's hard to integrate it. Maybe with nlp.js sentient analysis?  |
-| Smarter AI                    | It's possible, but nlp.js documentation just made it so hard I can't find anything that I want       |
-| Better web UI/UX              | low priority as long as it works                                                                     |
-| Progressive web-app (offline) | lowest priority nobody would want to use this offline lmao                                           |
+### Metode Pembelajaran
 
-## Development
+- **Gamifikasi** - Elemen game untuk meningkatkan motivasi
+- **Pengulangan Spaced** - Teknik pengulangan untuk memperkuat memori jangka panjang
+- **Feedback Instant** - Umpan balik langsung untuk koreksi kesalahan
 
-To get this running on your machine, you could try these steps below:
+## Tangkapan Layar
 
-1. Clone the repository
-  ```sh
-  git clone https://github.com/sglkc/waifu-otw.git
-  cd waifu-otw
-  ```
-2. Install dependencies with a package manager
-  ```sh
-  npm install
-  ```
-3. Train the natural language model with the `train` script
-  ```sh
-  npm run train
-  ```
-4. a. Run in localhost
-  ```sh
-  npm run dev
-  ```
-4. b. If you wish to build for production
-  ```sh
-  npm run build
-  ```
+### Menu Utama
+![Menu Utama](public/assets/bg-level.png?raw=true)
 
-## Contributing
+### Karakter Interaktif
+<div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+  <img src="public/assets/model/chika.png?raw=true" alt="Chika" width="120">
+  <img src="public/assets/model/hana.png?raw=true" alt="Hana" width="120">
+  <img src="public/assets/model/akira.png?raw=true" alt="Akira" width="120">
+  <img src="public/assets/model/rin.png?raw=true" alt="Rin" width="120">
+  <img src="public/assets/model/tatsuya.png?raw=true" alt="Tatsuya" width="120">
+</div>
 
-I really wish for anyone to help with this project, just a simple help with the data is much appreciated!
+## Instalasi
 
-> It's in [src/nlp/](src/nlp/) btw, the more the better!!!!
+Untuk menjalankan proyek ini di mesin lokal Anda:
 
-1. Fork the repository
-2. Create your branch (`git checkout -b patch-1`)
-3. Commit your changes (`git commit -m 'chore: add more english intents'`)
-4. Push to the branch (`git push origin patch-1`)
-5. Open a [pull request](https://github.com/sglkc/waifu-otw/pulls)
+1. Clone repository
+   ```sh
+   git clone https://github.com/sglkc/waifu-otw.git
+   cd waifu-otw
+   ```
 
-## License
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+
+3. Train model bahasa (opsional)
+   ```sh
+   npm run train
+   ```
+
+4. Jalankan dalam mode development
+   ```sh
+   npm run dev
+   ```
+
+5. Atau build untuk produksi
+   ```sh
+   npm run build
+   ```
+
+## Kontribusi
+
+Kontribusi sangat diallowed! Jika Anda ingin membantu mengembangkan proyek ini:
+
+1. Fork repository
+2. Buat branch baru (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buka Pull Request
+
+## Lisensi
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+## Developer
+
+Proyek ini dikembangkan oleh:
+- [sglkc](https://github.com/sglkc)
+- [afinmh](https://github.com/afinmh)
+
+Credit to Live2D and VOICEVOX for assets and voice synthesis.

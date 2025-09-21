@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modelModal = document.getElementById('model-modal');
     const modelCancel = document.getElementById('model-cancel');
     const modelContinue = document.getElementById('model-continue');
+    const modelCancelMobile = document.getElementById('model-cancel-mobile');
+    const modelContinueMobile = document.getElementById('model-continue-mobile');
     const confirmModal = document.getElementById('confirm-modal');
     const confirmOk = document.getElementById('confirm-ok');
     const confirmCancel = document.getElementById('confirm-cancel');
@@ -38,9 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const modelQuote = document.getElementById('model-quote');
     const prevBtn = modelModal ? modelModal.querySelector('.carousel-nav.prev') : null;
     const nextBtn = modelModal ? modelModal.querySelector('.carousel-nav.next') : null;
+    const prevBtnMobile = modelModal ? modelModal.querySelector('.mobile-actions .carousel-nav.prev') : null;
+    const nextBtnMobile = modelModal ? modelModal.querySelector('.mobile-actions .carousel-nav.next') : null;
 
-    const modelLabelMap = { hiyori: 'Hana', shizuku: 'Chika', natori: 'Tatsuya', haru: 'Rin', chitose: 'Akira' };
-    const modelKeyByName = { Hana: 'hiyori', Chika: 'shizuku', Tatsuya: 'natori', Rin: 'haru', Akira: 'chitose' };
+    const modelLabelMap = { shizuku: 'Chika', hiyori: 'Hana', chitose: 'Akira', haru: 'Rin', natori: 'Tatsuya' };
+    const modelKeyByName = { Chika: 'shizuku', Hana: 'hiyori', Akira: 'chitose', Rin: 'haru', Tatsuya: 'natori' };
     let selectedModel = localStorage.getItem('model') || 'Chika';
     let characters = [];
     let currentIndex = 0;
@@ -182,8 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await res.json();
             characters = data.characters || [];
             // Set index to selected model if present
-            const selectedName = modelLabelMap[selectedModel] || selectedModel;
-            const idx = characters.findIndex(c => c.name === selectedName);
+            const idx = characters.findIndex(c => c.name === selectedModel);
             currentIndex = idx >= 0 ? idx : 0;
             renderCarousel();
         } catch (e) {
@@ -204,11 +207,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modelImg) modelImg.src = c.image_url;
         if (modelName) modelName.textContent = c.name;
         if (modelRole) modelRole.textContent = truncate(c.role, 70);
-    if (modelCharacteristics) modelCharacteristics.textContent = truncate(c.characteristics, 160, false);
+        if (modelCharacteristics) modelCharacteristics.textContent = truncate(c.characteristics, 160, false);
         if (modelHobbies) modelHobbies.textContent = truncate(c.hobbies, 120);
         if (modelQuote) modelQuote.textContent = truncate(c.quote, 90);
-        // Update selectedModel key to match current card
-        selectedModel = modelKeyByName[c.name] || selectedModel;
+        // Update selectedModel to match current card
+        selectedModel = c.name;
         updateModelButtonLabel();
     };
 
@@ -222,17 +225,49 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modelCancel && modelModal) {
         modelCancel.addEventListener('click', () => modelModal.classList.add('hidden'));
     }
+    
+    if (modelCancelMobile && modelModal) {
+        modelCancelMobile.addEventListener('click', () => modelModal.classList.add('hidden'));
+    }
 
     if (modelContinue && modelModal) {
         modelContinue.addEventListener('click', () => {
             modelModal.classList.add('hidden'); // hanya tutup modal
+            // Save the selected model to localStorage
+            localStorage.setItem('model', selectedModel);
+            updateModelButtonLabel();
+        });
+    }
+    
+    if (modelContinueMobile && modelModal) {
+        modelContinueMobile.addEventListener('click', () => {
+            modelModal.classList.add('hidden'); // hanya tutup modal
+            // Save the selected model to localStorage
+            localStorage.setItem('model', selectedModel);
             updateModelButtonLabel();
         });
     }
 
     // Carousel navigation
-    if (prevBtn) prevBtn.addEventListener('click', () => { if (!characters.length) return; currentIndex = (currentIndex - 1 + characters.length) % characters.length; renderCarousel(); });
-    if (nextBtn) nextBtn.addEventListener('click', () => { if (!characters.length) return; currentIndex = (currentIndex + 1) % characters.length; renderCarousel(); });
+    const handlePrevClick = () => { 
+        if (!characters.length) return; 
+        currentIndex = (currentIndex - 1 + characters.length) % characters.length; 
+        renderCarousel(); 
+    };
+    
+    const handleNextClick = () => { 
+        if (!characters.length) return; 
+        currentIndex = (currentIndex + 1) % characters.length; 
+        renderCarousel(); 
+    };
+    
+    // Desktop carousel buttons
+    if (prevBtn) prevBtn.addEventListener('click', handlePrevClick);
+    if (nextBtn) nextBtn.addEventListener('click', handleNextClick);
+    
+    // Mobile carousel buttons
+    if (prevBtnMobile) prevBtnMobile.addEventListener('click', handlePrevClick);
+    if (nextBtnMobile) nextBtnMobile.addEventListener('click', handleNextClick);
 
     // --- FreeTalk button --- redirect ke chat.html dengan model yg dipilih
     if (demoButton) {

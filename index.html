@@ -64,7 +64,7 @@
             <div id="model-button"></div>
             
             <div class="level-buttons-container">
-                <div class="level-button" data-level="1" onclick="window.location.href='/chapter1.html'">
+                <div class="level-button" data-level="1" onclick="window.location.href='/chapter1'">
                     <span class="japanese-level-text">言葉の基本</span>
                     <span class="arc-text">Chapter 1 - Dasar Kata</span>
                 </div>
@@ -145,15 +145,21 @@
                 <button class="carousel-nav next" aria-label="Berikutnya">&#10095;</button>
             </div>
             <div class="modal-footer-note">Credit Live2D · Credit VOICEVOX</div>
-            <div class="modal-actions">
+            <!-- Desktop buttons -->
+            <div class="modal-actions desktop-actions">
                 <button id="model-cancel" class="modal-action-btn">Batal</button>
                 <button id="model-continue" class="modal-action-btn">Pilih Model</button>
+            </div>
+            <!-- Mobile buttons with carousel integration -->
+            <div class="modal-actions-container mobile-actions">
+                <button class="carousel-nav prev" aria-label="Sebelumnya">&#10094;</button>
+                <button class="carousel-nav next" aria-label="Berikutnya">&#10095;</button>
             </div>
         </div>
     </div>
 
     <div id="confirm-modal" class="hidden">
-        <div class="modal-content">
+        <div class="modal-content-confirm">
             <h2 class="modal-title">FreeTalk</h2>
             <p id="confirm-selected" style="margin-bottom:10px; font-weight:600;">Model yang dipilih: -</p>
             <p class="modal-note">Jika ingin ganti model silakan tekan tombol model berbentuk lingkaran.</p>
